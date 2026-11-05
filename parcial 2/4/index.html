@@ -10,27 +10,28 @@
     <body>
         <nav class="site-breadcrumbs" aria-label="Migas de pan">
             <ol>
-                <li><a href="../index.html">Parcial 1</a></li>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../index.html">Parcial 2</a></li>
                 <li aria-current="page">Práctica 4: EduControl</li>
             </ol>
-            <a class="site-home-link" href="../index.html">Volver al índice principal</a>
+            <a class="site-home-link" href="../../index.html">Volver al inicio</a>
         </nav>
         <header class="header">
             <h1>Edu<span>Control</span></h1>
             <p>Bienvenido: Prof. Carlos Mendoza</p>
         </header>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Navegación del panel">
             <ul>
-                <li> <a href="#">Inicio</a></li>
-                <li> <a href="#">Mis Cursos</a></li>
-                <li> <a href="#">Calificaciones</a></li>
-                <li> <a href="#">Ajustes</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cursos">Mis cursos</a></li>
+                <li><a href="#calificaciones">Calificaciones</a></li>
+                <li><a href="#avisos">Avisos</a></li>
             </ul>
         </nav>
 
-        <main class="main">
-            <div class="contenedor-cards">
+        <main class="main" id="inicio">
+            <div class="contenedor-cards" id="cursos">
 
                 <div class="card">
                     <h2>Total Alumnos</h2>
@@ -45,7 +46,7 @@
                     <span>18</span>
                 </div>
             </div>
-            <div class="main-card">
+            <div class="main-card" id="calificaciones">
                 <h2>Entregas Recientes</h2>
                 <table>
                     <thead>
@@ -86,7 +87,7 @@
             </div>
         </main>
 
-        <aside class="aside">
+        <aside class="aside" id="avisos">
             <h3>Avisos de dirección</h3>
             <ul>
                 <li><strong>Reunión docente:</strong> Viernes 15:00 hrs.</li>

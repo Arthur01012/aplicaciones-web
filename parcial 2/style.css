@@ -45,24 +45,3 @@ body {
     outline: 2px solid currentColor;
     outline-offset: 3px;
 }
-
-.site-breadcrumbs-overlay {
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.site-breadcrumbs {
-    color: #b4b9e2;
-}
-
-.site-breadcrumbs a,
-.site-home-link {
-    color: #e5d0ae;
-}
-
-.site-breadcrumbs [aria-current="page"] {
-    color: #f2f0ed;
-}

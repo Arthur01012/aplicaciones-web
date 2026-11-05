@@ -10,19 +10,20 @@
     <body>
         <nav class="site-breadcrumbs" aria-label="Migas de pan">
             <ol>
-                <li><a href="../index.html">Parcial 1</a></li>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../index.html">Parcial 2</a></li>
                 <li aria-current="page">Práctica 2: HTML básico</li>
             </ol>
-            <a class="site-home-link" href="../index.html">Volver al índice principal</a>
+            <a class="site-home-link" href="../../index.html">Volver al inicio</a>
         </nav>
         <head> <h1>Mi sitio Web</h1></head>
         <main>
-            <article>
+            <article id="contenido">
                 <h2>
                     Título del articulo
                 </article>
                 <p>
-                    Un parrafo con un <a href="#">enlace</a> texto en
+                    Un parrafo con un <a href="#contenido">enlace</a> texto en
                     <strong>negrita</strong>
                 </p>
                 <img src="bg.jpg" alt="imagen" width="200" height="100">
@@ -36,10 +37,10 @@
                             <li>Banana 🍌</li>
                         </ol>
                     </li>
-                    <li>
+                    <li id="carnes">
                         Carnes
                         <ol>
-                            <li><a href="#">Carna para unos burritos</a></li>
+                            <li><a href="#carnes">Carna para unos burritos</a></li>
                             <li>Pechuga</li>
                             <li>Salmon para sushi</li>
                         </ol>
@@ -58,7 +59,7 @@
 
             <section>
                 <h2>Iniciar sesion</h2>
-                <form action="#">
+                <form>
                     <label for="usuario">Nombre de usuario:</label>
                     <input type="text" name="usuario" id="usuario">
                     <br>

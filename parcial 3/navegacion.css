@@ -1,0 +1,165 @@
+.site-breadcrumbs {
+    display: flex;
+    width: min(100% - 32px, 1120px);
+    min-height: 56px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 auto;
+    color: #596579;
+    font: 500 0.9rem/1.4 Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.site-breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-breadcrumbs li + li::before {
+    margin-right: 8px;
+    color: #98a1b1;
+    content: "/";
+}
+
+.site-breadcrumbs a,
+.site-home-link {
+    color: #435ab1;
+    text-decoration: none;
+}
+
+.site-breadcrumbs a:hover,
+.site-home-link:hover {
+    text-decoration: underline;
+}
+
+.site-breadcrumbs a:focus-visible,
+.site-home-link:focus-visible {
+    border-radius: 3px;
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.site-breadcrumbs [aria-current="page"] {
+    color: #202b40;
+    font-weight: 700;
+}
+
+.site-home-link {
+    flex: none;
+    font-weight: 700;
+}
+
+.arco-accordion_bar .site-breadcrumbs {
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    color: #b4b9e2;
+    font-size: 0.78rem;
+}
+
+.arco-accordion_bar .site-breadcrumbs ol {
+    gap: 0;
+}
+
+.arco-accordion_bar .site-breadcrumbs li + li::before {
+    color: rgb(255 255 255 / 45%);
+}
+
+.arco-accordion_bar .site-breadcrumbs a,
+.arco-accordion_bar .site-partial-nav a {
+    color: #e5d0ae;
+}
+
+.arco-accordion_bar .site-breadcrumbs [aria-current="page"],
+.arco-accordion_bar .site-partial-nav [aria-current="page"] {
+    color: #f2f0ed;
+}
+
+.arco-accordion_bar .site-brand {
+    color: #f2f0ed;
+    text-decoration: none;
+}
+
+.arco-accordion_bar .site-brand:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.arco-accordion_bar .arco-accordion_logo {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.arco-accordion_bar .arco-accordion_bar-meta {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.site-partial-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin: 0;
+    font: 500 0.9rem/1.4 Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.site-partial-nav a {
+    text-decoration: none;
+}
+
+.arco-accordion_bar .site-partial-nav a {
+    color: #e5d0ae;
+}
+
+.site-partial-nav a:hover,
+.site-partial-nav a:focus-visible {
+    text-decoration: underline;
+}
+
+.site-partial-nav a:focus-visible {
+    border-radius: 3px;
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.arco-accordion_bar .site-partial-nav [aria-current="page"] {
+    color: #f2f0ed;
+    font-weight: 700;
+}
+
+.pagina-login > .site-breadcrumbs {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(100% - 32px, 1120px);
+    transform: translateX(-50%);
+}
+
+@media (max-width: 540px) {
+    .site-breadcrumbs {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 0;
+    }
+
+    .arco-accordion_bar .site-breadcrumbs {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 0;
+        padding: 0;
+    }
+
+    .arco-accordion_bar .arco-accordion_bar-meta {
+        align-items: flex-end;
+    }
+}

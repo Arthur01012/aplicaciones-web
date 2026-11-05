@@ -11,23 +11,24 @@
 <body class="bg-light">
     <nav class="site-breadcrumbs" aria-label="Migas de pan">
         <ol>
-            <li><a href="../index.html">Parcial 1</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../index.html">Parcial 2</a></li>
             <li aria-current="page">Práctica 5: JavaScript</li>
         </ol>
-        <a class="site-home-link" href="../index.html">Volver al índice principal</a>
+        <a class="site-home-link" href="../../index.html">Volver al inicio</a>
     </nav>
     <header class="bg-dark text-white p-3 mb-4">
         <nav>
             <ul class="main-nav mb-0">
-                <li class="main-nav-item"> <a href="#">Home</a></li>
-                <li class="main-nav-item"> <a href="#">Cursos</a></li>
-                <li class="main-nav-item"> <a href="#">Instrucciones</a></li>
-                <li class="main-nav-item"> <a href="#">Blog</a></li>
+                <li class="main-nav-item"><a href="#inicio">Inicio</a></li>
+                <li class="main-nav-item"><a href="#seccion-contador">Contador</a></li>
+                <li class="main-nav-item"><a href="#saludo">Saludo</a></li>
+                <li class="main-nav-item"><a href="#validacion">Validación</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container py-4">
+    <main class="container py-4" id="inicio">
         <section>
             <div class="d-flex flex-column gap-3">
                 <h1 class="text-center mb-4">Soy un título</h1>
@@ -38,7 +39,7 @@
                 </div>
 
                 <!-- TARJETA 1: Contador -->
-                <div class="target">
+                <div class="target" id="seccion-contador">
                     <h3 class="h5 mb-3">Contador</h3>
                     <button id="btn-contar" class="btn btn-dark mb-2">+1</button>
                     <p id="mensaje" class="mb-1 text-danger fw-bold"></p>
@@ -51,7 +52,7 @@
                 </div>
 
                 <!-- TARJETA 3: Saludo personalizado -->
-                <div class="target">
+                <div class="target" id="saludo">
                     <h3 class="h5 mb-3">Saludo personalizado</h3>
                     <div class="mb-3">
                         <label for="input-nombre" class="form-label">Escribe tu nombre</label>
@@ -74,7 +75,7 @@
                 </div>
 
                 <!-- TARJETA 5: Calcular descuento -->
-                <div class="target">
+                <div class="target" id="precio">
                     <h3 class="h5 mb-3">Calcular descuento del 15%</h3>
                     <div class="mb-3">
                         <label for="input-precio" class="form-label">Precio original:</label>
@@ -85,7 +86,7 @@
                 </div>
 
                 <!-- TARJETA 6: Validar formulario -->
-                <div class="target">
+                <div class="target" id="validacion">
                     <h3 class="h5 mb-3">Validar un formulario</h3>
                     <form id="form-validacion">
                         <div class="mb-3">

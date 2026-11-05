@@ -1,13 +1,11 @@
 .site-breadcrumbs {
     display: flex;
-    width: min(100% - 32px, 1120px);
-    min-height: 56px;
+    min-height: 48px;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    margin: 0 auto;
     color: #596579;
-    font: 500 0.9rem/1.4 Inter, "Segoe UI", Arial, sans-serif;
+    font-size: 0.9rem;
 }
 
 .site-breadcrumbs ol {
@@ -26,21 +24,10 @@
 }
 
 .site-breadcrumbs a,
-.site-home-link {
-    color: #435ab1;
-    text-decoration: none;
-}
-
+.site-home-link,
 .site-breadcrumbs a:hover,
 .site-home-link:hover {
     text-decoration: underline;
-}
-
-.site-breadcrumbs a:focus-visible,
-.site-home-link:focus-visible {
-    border-radius: 3px;
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
 }
 
 .site-breadcrumbs [aria-current="page"] {
@@ -49,11 +36,16 @@
 }
 
 .site-home-link {
-    flex: none;
     font-weight: 700;
 }
 
-.pagina-login > .site-breadcrumbs {
+.site-home-link:focus-visible,
+.site-breadcrumbs a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.pagina-con-migas > .site-breadcrumbs {
     position: absolute;
     top: 0;
     left: 50%;
@@ -67,6 +59,5 @@
         flex-direction: column;
         justify-content: center;
         gap: 6px;
-        padding: 10px 0;
     }
 }

@@ -13,51 +13,100 @@
     <link rel="stylesheet" href="navegacion.css">
 </head>
 <body>
-    <nav class="site-breadcrumbs site-breadcrumbs-overlay" aria-label="Migas de pan">
-        <ol>
-            <li><a href="../index.html">Inicio</a></li>
-            <li aria-current="page">Parcial 2</li>
-        </ol>
-        <a class="site-home-link" href="../index.html">Volver a la página principal</a>
-    </nav>
-
     <section class="section_arco-accordion" aria-label="Prácticas del parcial 2">
         <header class="arco-accordion_bar">
             <div class="arco-accordion_logo">
-                <span class="arco-accordion_title">Aplicaciones Web</span>
+                <a class="arco-accordion_title site-brand" href="../index.html">Aplicaciones Web</a>
+                <nav class="site-breadcrumbs" aria-label="Migas de pan">
+                    <ol>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li aria-current="page">Parcial 2</li>
+                    </ol>
+                </nav>
             </div>
-            <span class="arco-accordion_bar-muted">Parcial 2 · Prácticas</span>
+            <div class="arco-accordion_bar-meta">
+                <nav class="site-partial-nav" aria-label="Navegación entre parciales">
+                    <a href="../parcial%201/index.html">Parcial 1</a>
+                    <span aria-current="page">Parcial 2</span>
+                    <a href="../parcial%203/index.html">Parcial 3</a>
+                </nav>
+                <span class="arco-accordion_bar-muted">Parcial 2 · Prácticas</span>
+            </div>
         </header>
 
         <div class="arco-accordion_wrapper">
             <ul class="arco-accordion_component" data-arco-accordion data-arco-accordion-active="0" data-arco-accordion-trigger="hover" data-arco-accordion-ease="signature">
                 <li class="arco-accordion_item" data-panel="ochre">
-                    <p class="arco-accordion_label">Práctica 01</p>
+                    <p class="arco-accordion_label">01–03</p>
                     <div class="arco-accordion_content">
-                        <h2 class="arco-accordion_heading">Conexión<br>a MySQL</h2>
+                        <h2 class="arco-accordion_heading">Prácticas<br>01–03</h2>
                         <div class="arco-accordion_bottom">
                             <div class="arco-accordion_media">
                                 <img class="arco-accordion_visual" src="https://cdn.jsdelivr.net/gh/emanuelbento/arco-components@2.1.0/components/accordion/images/accordion_001.svg" alt="" width="540" height="360">
                             </div>
                             <div class="arco-accordion_text">
-                                <p>Práctica de conexión a una base de datos con PHP y MySQL.</p>
+                                <p>Primeras páginas y estructura web.</p>
                                 <ul class="practice-links">
-                                    <li><a href="1/conexion.php">01 · Conexión a base de datos</a></li>
+                                    <li><a href="1/index.html">01 · Blog personal</a></li>
+                                    <li><a href="2/index.html">02 · HTML básico</a></li>
+                                    <li><a href="3/index.html">03 · DevAcademy</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li class="arco-accordion_item" data-panel="lilac">
-                    <p class="arco-accordion_label">Próximamente</p>
+                    <p class="arco-accordion_label">04–06</p>
                     <div class="arco-accordion_content">
-                        <h2 class="arco-accordion_heading">Más prácticas<br>próximamente</h2>
+                        <h2 class="arco-accordion_heading">Prácticas<br>04–06</h2>
                         <div class="arco-accordion_bottom">
                             <div class="arco-accordion_media">
                                 <img class="arco-accordion_visual" src="https://cdn.jsdelivr.net/gh/emanuelbento/arco-components@2.1.0/components/accordion/images/accordion_002.svg" alt="" width="540" height="360">
                             </div>
                             <div class="arco-accordion_text">
-                                <p>Por ahora, esta es la única práctica disponible en la carpeta del parcial 2.</p>
+                                <p>Paneles, interacción y Bootstrap.</p>
+                                <ul class="practice-links">
+                                    <li><a href="4/index.html">04 · Panel EduControl</a></li>
+                                    <li><a href="5/index.html">05 · JavaScript</a></li>
+                                    <li><a href="6/index.html">06 · DevAcademy con Bootstrap</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="arco-accordion_item" data-panel="aqua">
+                    <p class="arco-accordion_label">08 · CSS</p>
+                    <div class="arco-accordion_content">
+                        <h2 class="arco-accordion_heading">Práctica 08<br>y CSS</h2>
+                        <div class="arco-accordion_bottom">
+                            <div class="arco-accordion_media">
+                                <img class="arco-accordion_visual" src="https://cdn.jsdelivr.net/gh/emanuelbento/arco-components@2.1.0/components/accordion/images/accordion_003.svg" alt="" width="540" height="360">
+                            </div>
+                            <div class="arco-accordion_text">
+                                <p>Formularios, estilos y efectos visuales.</p>
+                                <ul class="practice-links">
+                                    <li><a href="8/index.html">08 · Envío de datos</a></li>
+                                    <li><a href="../parcial%201/Psclases_Pselementos_Evisuales/index.html">Pseudoclases y efectos visuales</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="arco-accordion_item" data-panel="coral">
+                    <p class="arco-accordion_label">Extras</p>
+                    <div class="arco-accordion_content">
+                        <h2 class="arco-accordion_heading">Otras<br>prácticas</h2>
+                        <div class="arco-accordion_bottom">
+                            <div class="arco-accordion_media">
+                                <img class="arco-accordion_visual" src="https://cdn.jsdelivr.net/gh/emanuelbento/arco-components@2.1.0/components/accordion/images/accordion_004.svg" alt="" width="540" height="360">
+                            </div>
+                            <div class="arco-accordion_text">
+                                <p>Ejercicios adicionales del parcial.</p>
+                                <ul class="practice-links">
+                                    <li><a href="../parcial%201/formulario/index.html">Registro de perfil</a></li>
+                                    <li><a href="../parcial%201/hola%20mundo/index.html">Hola mundo</a></li>
+                                    <li><a href="practica_lab/index.html">Perfil de usuario</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -67,7 +116,7 @@
 
         <footer class="arco-accordion_bar">
             <span class="arco-accordion_bar-muted">Selecciona un panel para explorar</span>
-            <span class="arco-accordion_counter" aria-live="polite">01 / 02</span>
+            <span class="arco-accordion_counter" aria-live="polite">01 / 04</span>
         </footer>
     </section>
 
