@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PseudoClases, PseudoElementos y Estilos visuales</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../navegacion.css">
+    </head>
+    <body>
+        <nav class="site-breadcrumbs" aria-label="Migas de pan">
+            <ol>
+                <li><a href="../index.html">Parcial 1</a></li>
+                <li aria-current="page">Pseudoclases y efectos visuales</li>
+            </ol>
+            <a class="site-home-link" href="../index.html">Volver al índice principal</a>
+        </nav>
+        <main class="contenedor-pagina">
+            <header class="encabezado">
+                <p class="etiqueta-superior">Equipo 5 · CSS interactivo</p>
+                <h1 class="titulo">Pseudoclases, pseudolementos y efectos
+                    visuales</h1>
+                <p class="introduccion">Explora cada celda y observa cómo una
+                    propiedad transforma elementos básicos de una interfaz.</p>
+            </header>
+
+            <section class="cuadricula-demostraciones"
+                aria-label="Demostraciones de propiedades CSS">
+                <article class="tarjeta-demostracion tarjeta-hover">
+                    <div class="encabezado-tarjeta">
+                        <span class="numero-tarjeta">01</span>
+                        <h2>:hover</h2>
+                    </div>
+                    <p>El botón cambia suavemente al pasar el cursor.</p>
+                    <button class="boton-hover" type="button">Pasa el
+                        cursor</button>
+                    <code>button:hover</code>
+                </article>
+
+                <article class="tarjeta-demostracion tarjeta-focus">
+                    <div class="encabezado-tarjeta">
+                        <span class="numero-tarjeta">02</span>
+                        <h2>:focus</h2>
+                    </div>
+                    <p>Selecciona el campo para ver su contorno.</p>
+                    <label for="focus-input">Tu nombre</label>
+                    <input id="focus-input" type="text"
+                        placeholder="Escribe aquí">
+                    <code>input:focus</code>
+                </article>
+
+                <article class="tarjeta-demostracion tarjeta-activa">
+                    <div class="encabezado-tarjeta">
+                        <span class="numero-tarjeta">03</span>
+                        <h2>:active</h2>
+                    </div>
+                    <p>Mantén presionado el botón para activar el efecto.</p>
+                    <button class="boton-activo"
+                        type="button">Presióname</button>
+                    <code>button:active</code>
+                </article>
+
+                <article class="tarjeta-demostracion tarjeta-hijo">
+                    <div class="encabezado-tarjeta">
+                        <span class="numero-tarjeta">04</span>
+                        <h2>:nth-child()</h2>
+                    </div>
+                    <p>Cada elemento alterna su color según su posición.</p>
+                    <ol class="lista-colores">
+                        <li>Primer elemento</li>
+                        <li>Segundo elemento</li>
+                        <li>Tercer elemento</li>
+                    </ol>
+                    <code>li:nth-child(2)</code>
+                </article>
+
+                <article class="tarjeta-demostracion tarjeta-antes">
+                    <div class="encabezado-tarjeta">
+                        <span class="numero-tarjeta">05</span>
+                        <h2>::before</h2>
+                    </div>
+                    <p class="cita">El contenido decorativo puede aparecer antes
+                        del texto.</p>
+                    <code>.cita::before</code>
+                </article>
+
+                <article class="tarjeta-demostracion tarjeta-despues">
+                    <div class="encabezado-tarjeta">
+                        <span class="numero-tarjeta">06</span>
+                        <h2>::after</h2>
+                    </div>
+                    <p class="estado">Guardado correctamente</p>
+                    <code>.estado::after</code>
+                </article>
+
+                <article class="tarjeta-demostracion tarjeta-degradado">
+                    <div class="encabezado-tarjeta">
+                        <span class="numero-tarjeta">07</span>
+                        <h2>Fondos</h2>
+                    </div>
+                    <p>Un fondo degradado crea profundidad visual.</p>
+                    <div class="muestra-degradado"
+                        aria-label="Muestra de fondo degradado"></div>
+                    <code>linear-gradient()</code>
+                </article>
+                <article class="tarjeta-demostracion tarjeta-sombra">
+                    <div class="encabezado-tarjeta">
+                        <span class="numero-tarjeta">08</span>
+                        <h2>Sombras</h2>
+                    </div>
+                    <p>La sombra separa el elemento de la superficie.</p>
+                    <div class="caja-sombra">Caja elevada</div>
+                    <code>box-shadow</code>
+                </article>
+                <article class="tarjeta-demostracion tarjeta-textShadow">
+                    <div class=" encabezado-tarjeta">
+                        <span class="numero-tarjeta">09</span>
+                        <h2>Sombreado en texto</h2>
+                    </div>
+                    <p>Se el agrega un sombreado al texto</p>
+                    <div class="sombredo-texto">Se le aplica sombreado a este texto</div>
+                    <code>Text-shadow</code>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>

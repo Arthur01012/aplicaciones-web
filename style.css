@@ -1,0 +1,3026 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,800;1,400&family=Alegreya+Sans:wght@400&display=swap");
+
+:root {
+  --illustration-background: #0f1229;
+
+  --moth-wing-warm: #66503a;
+  --moth-wing-warm-shadow: #55432f;
+  --moth-wing-tan: #6c5843;
+  --moth-wing-tan-light: #87705a;
+  --moth-wing-streak: #1e1914;
+  --moth-wing-spot: #75695c;
+  --moth-wing-tip: #34291f;
+  --moth-wing-fringe: #8a8378;
+  --moth-hindwing: #3e3532;
+  --moth-body: #43382f;
+  --moth-collar: #5b5148;
+  --moth-head: #4a4139;
+
+  --callout-line: #a7acd8;
+
+  --serif-font: "Alegreya", "Iowan Old Style", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 2dvh 0;
+  background: #4a4552;
+}
+
+.illustration {
+  container: illustration / inline-size;
+  position: relative;
+  width: min(94vw, 1200px, 122dvh);
+  min-width: 300px;
+  overflow: hidden;
+  background: var(--illustration-background);
+  box-shadow: 0 2.4vmin 5vmin rgb(0 0 0 / 0.45);
+}
+
+.sky {
+  --star-brilliant: #ffffff;
+  --label-ink: #b4b9e2;
+  position: relative;
+  height: 44cqi;
+  overflow: hidden;
+  background: #131939;
+}
+
+.glow,
+.far-range,
+.near-range,
+.far-range::before,
+.near-range::before {
+  position: absolute;
+  inset: 0;
+}
+
+.glow-faintest {
+  background: #1f2958;
+  clip-path: polygon(
+    evenodd,
+    0.2% 1.9%,
+    4.2% 3.1%,
+    5.8% 5%,
+    8.4% 5.9%,
+    9.6% 7.5%,
+    12.8% 7.1%,
+    14.2% 8%,
+    14.9% 10%,
+    13.8% 11.8%,
+    13.4% 14.5%,
+    16.3% 18.6%,
+    18.8% 24.9%,
+    18.4% 20.9%,
+    16.3% 17.3%,
+    17.6% 15.8%,
+    18.2% 17%,
+    19.7% 17.7%,
+    18.6% 20.5%,
+    21.6% 21.6%,
+    23.2% 23.7%,
+    28% 22.5%,
+    29.4% 24.2%,
+    30.8% 23.1%,
+    32.2% 24.8%,
+    32.7% 24.1%,
+    32.4% 23.2%,
+    33.2% 23.2%,
+    35% 26.4%,
+    37.6% 28.6%,
+    38.6% 28.5%,
+    39.2% 31.6%,
+    40.7% 31.8%,
+    41.2% 34.6%,
+    42.8% 37.2%,
+    45.8% 36.4%,
+    46.1% 38.2%,
+    44.9% 43.6%,
+    47.8% 46.8%,
+    48.4% 50.9%,
+    48% 52.3%,
+    48.6% 52.5%,
+    50.9% 57.7%,
+    50.6% 60.9%,
+    54.4% 64.9%,
+    54.8% 69.4%,
+    55.6% 68.8%,
+    56.6% 69.8%,
+    56.8% 72.9%,
+    59.3% 75.9%,
+    61.4% 80.3%,
+    62.3% 80.9%,
+    62.4% 89.1%,
+    59.3% 94.5%,
+    60.2% 100%,
+    56.2% 100%,
+    56.4% 94.9%,
+    55.6% 99.1%,
+    54.4% 98.9%,
+    49.8% 88.1%,
+    50.7% 91.4%,
+    50.6% 92.5%,
+    48.9% 90.5%,
+    48% 86.5%,
+    46.7% 86.8%,
+    45% 82.8%,
+    42.4% 82.3%,
+    41.9% 80.5%,
+    42.1% 78.6%,
+    41.2% 75.5%,
+    41.9% 70.9%,
+    41% 71.3%,
+    37.6% 67.3%,
+    36.2% 69.3%,
+    34.6% 68.4%,
+    33.4% 66%,
+    32.4% 65.3%,
+    31.7% 63.2%,
+    29.2% 63.3%,
+    26.8% 61.4%,
+    25.8% 54.4%,
+    22.9% 44.5%,
+    23.3% 41.4%,
+    23% 40%,
+    21.8% 40.3%,
+    20.8% 39.5%,
+    15.7% 40.5%,
+    15.5% 38.2%,
+    16.2% 33.9%,
+    14.6% 34.4%,
+    12.6% 31.8%,
+    11.2% 32.9%,
+    9.6% 30.7%,
+    10% 32.4%,
+    6.8% 33.2%,
+    1.6% 31.8%,
+    0.4% 28.6%,
+    0.7% 27.7%,
+    0% 27.5%,
+    0.2% 1.9%,
+    55.2% 0.4%,
+    56.6% 0.3%,
+    59% 2%,
+    60.8% 4.5%,
+    60.8% 8.6%,
+    59.4% 14.1%,
+    58.1% 15.9%,
+    54.6% 18.3%,
+    50.6% 16.1%,
+    49.1% 14.1%,
+    48.3% 10.5%,
+    49.1% 6.8%,
+    51.2% 3.6%,
+    55.2% 0.4%,
+    0.2% 1.9%,
+    70% 24%,
+    72.4% 24.2%,
+    73.1% 25.5%,
+    72.6% 29.5%,
+    71.2% 32.4%,
+    70.2% 31.6%,
+    70% 27.7%,
+    69.2% 25.5%,
+    70% 24%,
+    0.2% 1.9%
+  );
+}
+
+.glow-faint {
+  background: #2a3871;
+  clip-path: polygon(
+    evenodd,
+    23.8% 26.7%,
+    26% 30.9%,
+    27.8% 32.8%,
+    28.1% 32.7%,
+    28% 30.9%,
+    26.8% 30%,
+    26.3% 28.6%,
+    26.4% 27.8%,
+    27.2% 28.3%,
+    28.2% 31%,
+    31% 29.1%,
+    34.4% 28.4%,
+    36% 30.9%,
+    36% 32.7%,
+    36.4% 33.5%,
+    40.3% 35.9%,
+    40.7% 40%,
+    40.5% 41.4%,
+    41.8% 42.5%,
+    42.2% 43.6%,
+    42.2% 48.2%,
+    45.2% 51.5%,
+    46% 57.2%,
+    47% 57.1%,
+    49.2% 59%,
+    48.6% 61.4%,
+    49.4% 63.3%,
+    52.6% 65.9%,
+    53.7% 70.5%,
+    53.4% 72.7%,
+    53.7% 74.1%,
+    55.7% 74.5%,
+    56.3% 77.3%,
+    56.2% 79.5%,
+    57.4% 79.6%,
+    57.5% 82.7%,
+    59.8% 85%,
+    59.8% 87.3%,
+    58.6% 92.7%,
+    57.3% 94.5%,
+    57.2% 96.3%,
+    56.6% 91.6%,
+    56% 94.2%,
+    54.6% 92.7%,
+    54.2% 94.1%,
+    52.4% 93.3%,
+    46.4% 77.3%,
+    46.2% 77.3%,
+    47.4% 81.8%,
+    47.2% 82.7%,
+    43.5% 78.2%,
+    43.2% 74.5%,
+    42.5% 71.8%,
+    42.7% 69.1%,
+    42% 69.2%,
+    39.6% 67.2%,
+    38.6% 62.8%,
+    38.2% 63.8%,
+    37.6% 63.3%,
+    34.8% 64.9%,
+    34.2% 63.2%,
+    34.2% 60.4%,
+    33.4% 61.4%,
+    32.4% 59.5%,
+    30.8% 60.5%,
+    28.2% 59.8%,
+    27.9% 55.9%,
+    26.8% 54.2%,
+    26% 50.9%,
+    26% 48.2%,
+    25.1% 45.5%,
+    24.2% 37.9%,
+    23.2% 36.7%,
+    21.8% 37%,
+    20.6% 35.4%,
+    17% 33.6%,
+    17.6% 31.2%,
+    18.2% 30.8%,
+    22% 33.6%,
+    24.4% 37.7%,
+    25.8% 37.6%,
+    21.9% 31.8%,
+    22.6% 30.9%,
+    23% 28.2%,
+    23.8% 26.7%,
+    0% 9.5%,
+    1.4% 10.3%,
+    3% 9.2%,
+    5.6% 9.5%,
+    6% 10%,
+    5.8% 11.4%,
+    6.1% 12.3%,
+    9.8% 13.9%,
+    11.3% 16.4%,
+    11.6% 18.2%,
+    12.8% 19.3%,
+    13.1% 20.5%,
+    12.6% 21.5%,
+    11.4% 21.8%,
+    11.5% 23.6%,
+    10.6% 26.8%,
+    9.2% 28.8%,
+    8.2% 28.2%,
+    8.4% 29.7%,
+    5.2% 29.4%,
+    3.1% 26.8%,
+    5.8% 25.5%,
+    1.8% 25.9%,
+    0% 25.1%,
+    0% 9.5%,
+    23.8% 26.7%,
+    55.2% 2.2%,
+    56.8% 2.9%,
+    57.3% 6.4%,
+    56.3% 13.2%,
+    55.4% 15.4%,
+    54.6% 16%,
+    53.6% 14.9%,
+    52.7% 10.9%,
+    51.3% 8.6%,
+    51.8% 7.2%,
+    53.3% 6.4%,
+    54.1% 3.6%,
+    55.2% 2.2%,
+    23.8% 26.7%,
+    41.4% 58.6%,
+    40.6% 59.1%,
+    40.7% 60%,
+    40.1% 61.8%,
+    40.8% 65.5%,
+    41.8% 66.1%,
+    43.8% 63.2%,
+    44% 63.8%,
+    44.2% 60.2%,
+    42.8% 58.5%,
+    41.4% 58.6%,
+    23.8% 26.7%,
+    71.4% 25.3%,
+    72.4% 25.4%,
+    72.6% 27.3%,
+    71.9% 30.5%,
+    70.8% 31.5%,
+    70.4% 30.3%,
+    70.5% 27.7%,
+    70.8% 26%,
+    71.4% 25.3%,
+    23.8% 26.7%,
+    18% 25.4%,
+    18.4% 26.4%,
+    18% 28.2%,
+    17% 31.2%,
+    16.2% 32.2%,
+    15.6% 30.5%,
+    15.6% 29.1%,
+    18% 25.4%,
+    23.8% 26.7%,
+    19.4% 25.9%,
+    20.8% 25.7%,
+    21.1% 27.3%,
+    20% 30%,
+    18.4% 29.7%,
+    19.4% 25.9%,
+    23.8% 26.7%
+  );
+}
+
+.glow-soft {
+  background: #3b4c8b;
+  clip-path: polygon(
+    evenodd,
+    33.8% 30.4%,
+    34.3% 30.9%,
+    35% 34.5%,
+    38.6% 38.2%,
+    38.8% 39.1%,
+    38.5% 41.4%,
+    40.6% 44.6%,
+    41.2% 50.4%,
+    42.3% 51.4%,
+    42.3% 53.2%,
+    43.8% 54.8%,
+    43.8% 59.1%,
+    42.8% 57.9%,
+    40.6% 58.3%,
+    39.6% 63%,
+    39% 62.2%,
+    38.6% 59.9%,
+    38.2% 61.3%,
+    37.8% 61.3%,
+    36.6% 59.8%,
+    35.4% 59.7%,
+    34.8% 57.7%,
+    29.7% 58.2%,
+    27.6% 53.2%,
+    27.1% 50.9%,
+    27.7% 48.6%,
+    27.4% 45.9%,
+    26% 42.5%,
+    25.6% 40%,
+    25.8% 38.6%,
+    27.3% 39.1%,
+    26% 36.4%,
+    26.3% 33.6%,
+    30.6% 35.5%,
+    30.2% 33.2%,
+    33.8% 30.4%,
+    44.8% 59.2%,
+    46.6% 60.6%,
+    47.2% 61.8%,
+    47.2% 63.8%,
+    48.6% 64.1%,
+    49.6% 66.1%,
+    49.3% 69.1%,
+    50.2% 66.7%,
+    50.4% 68.2%,
+    51% 69.1%,
+    51.2% 70.9%,
+    51.9% 72.3%,
+    52.2% 75%,
+    54.7% 76.8%,
+    55.4% 80.9%,
+    57.1% 86.4%,
+    57% 89.5%,
+    56.8% 90%,
+    56.4% 88.6%,
+    55.8% 92.2%,
+    54.6% 91.9%,
+    54% 90.9%,
+    53.8% 92.8%,
+    51.8% 90.9%,
+    50.1% 86.8%,
+    47.8% 79.5%,
+    45.2% 73.5%,
+    43.4% 71.4%,
+    43.1% 69.5%,
+    43.5% 66.8%,
+    42.8% 67.6%,
+    42.3% 66.8%,
+    43.4% 64.5%,
+    43.8% 65.5%,
+    44.8% 59.2%,
+    33.8% 30.4%,
+    2% 15.9%,
+    5.9% 17.3%,
+    5.7% 19.1%,
+    6.3% 20.9%,
+    6% 22.3%,
+    7% 23.6%,
+    7.2% 25.1%,
+    6.1% 25%,
+    5.2% 23.5%,
+    3.2% 24%,
+    0% 22.5%,
+    0% 16.9%,
+    2% 15.9%,
+    33.8% 30.4%,
+    55.2% 3.9%,
+    56% 4.1%,
+    56.2% 5.9%,
+    55.7% 12.3%,
+    54.6% 14.1%,
+    53.7% 12.7%,
+    53.4% 9.5%,
+    51.9% 8.6%,
+    52.4% 7.6%,
+    54% 7.9%,
+    55.2% 3.9%,
+    33.8% 30.4%,
+    71.4% 26.6%,
+    72% 26.6%,
+    72.1% 28.2%,
+    71.6% 30%,
+    71% 30.3%,
+    70.8% 28.6%,
+    71.4% 26.6%,
+    33.8% 30.4%,
+    44.2% 74.6%,
+    45.5% 76.4%,
+    46% 78.7%,
+    44.4% 76.9%,
+    44.2% 74.6%,
+    33.8% 30.4%
+  );
+}
+
+.glow-bright {
+  background: #5868a5;
+  clip-path: polygon(
+    evenodd,
+    31.6% 34.5%,
+    32.8% 34.5%,
+    36.3% 38.2%,
+    37.4% 40.5%,
+    37.4% 41.8%,
+    40% 46.4%,
+    40.3% 49.5%,
+    40% 51.8%,
+    40.7% 53.2%,
+    39.6% 55%,
+    38.2% 53.1%,
+    39.1% 55.9%,
+    38% 59.5%,
+    37.2% 57.9%,
+    35.6% 57.4%,
+    34.8% 55.7%,
+    34.4% 56.4%,
+    32.2% 55.3%,
+    30.6% 56%,
+    29.7% 52.7%,
+    28.6% 51.4%,
+    29.2% 48.6%,
+    29.2% 45%,
+    27.7% 43.6%,
+    27.1% 40.5%,
+    27.7% 40.5%,
+    29% 42.5%,
+    29.5% 42.3%,
+    27.5% 38.2%,
+    28.4% 35.6%,
+    31.4% 36.8%,
+    31.6% 34.5%,
+    44.6% 63.2%,
+    46.4% 66.5%,
+    47.8% 66.8%,
+    48.8% 69.9%,
+    49.2% 77.3%,
+    50% 80%,
+    50.7% 80.5%,
+    49.2% 75%,
+    49.4% 71.1%,
+    50.8% 74.1%,
+    51.5% 77.7%,
+    54.2% 78.3%,
+    54.4% 82%,
+    50.7% 80.9%,
+    54% 82.4%,
+    55.2% 84%,
+    55.8% 88.8%,
+    54.4% 90.6%,
+    53.4% 89.1%,
+    53.4% 90.6%,
+    52.8% 90.4%,
+    51.2% 86.4%,
+    53.3% 89.1%,
+    52% 85.6%,
+    50.4% 82.6%,
+    49.8% 83.4%,
+    48.2% 78.2%,
+    46% 75.5%,
+    44.1% 70.5%,
+    43.7% 67.7%,
+    44.6% 63.2%,
+    31.6% 34.5%,
+    41.4% 54.5%,
+    42.4% 54.2%,
+    43.1% 55.9%,
+    42.5% 57.3%,
+    40.4% 57.9%,
+    39.2% 61.2%,
+    38.9% 59.5%,
+    39.2% 57.3%,
+    39.8% 56.8%,
+    40.2% 55.2%,
+    41.4% 54.5%,
+    31.6% 34.5%
+  );
+}
+
+.glow-brighter {
+  background: #8e94c4;
+  clip-path: polygon(
+    evenodd,
+    32.2% 36.1%,
+    34.9% 38.2%,
+    35.8% 40.5%,
+    35.4% 41.4%,
+    37% 42.4%,
+    39.1% 46.4%,
+    39.6% 49.5%,
+    39% 53%,
+    36.8% 50%,
+    38.7% 55.5%,
+    38.4% 56.6%,
+    37.4% 55.8%,
+    35.8% 56.3%,
+    34% 51.8%,
+    33.7% 51.8%,
+    34.3% 54.1%,
+    34% 54.8%,
+    32.4% 53.4%,
+    31.2% 53.4%,
+    30.7% 52.3%,
+    30.9% 51.4%,
+    29.9% 50.9%,
+    30.7% 45.5%,
+    28.6% 39.5%,
+    30% 37.5%,
+    31.4% 37.5%,
+    32.8% 38.8%,
+    32.2% 36.1%,
+    46.8% 69.4%,
+    48.3% 71.4%,
+    48.8% 76.9%,
+    46.2% 74.9%,
+    45.7% 72.3%,
+    46.8% 69.4%,
+    32.2% 36.1%,
+    53.4% 83.1%,
+    55.2% 85%,
+    55.1% 87.7%,
+    54.6% 88.9%,
+    53.6% 88.9%,
+    52.9% 86.4%,
+    53.4% 83.1%,
+    32.2% 36.1%,
+    40.4% 55.4%,
+    41.6% 55.6%,
+    41.8% 56.8%,
+    40.6% 57.7%,
+    40.1% 56.4%,
+    40.4% 55.4%,
+    32.2% 36.1%,
+    50.4% 78.9%,
+    52.4% 80%,
+    51.2% 80.6%,
+    50.4% 78.9%,
+    32.2% 36.1%
+  );
+}
+
+.glow-core {
+  background: #ecd9d8;
+  clip-path: polygon(
+    evenodd,
+    35.4% 44.5%,
+    35.8% 46.4%,
+    35.5% 48.2%,
+    33.6% 49.5%,
+    32.9% 49.1%,
+    32.8% 47.7%,
+    33.2% 45.7%,
+    34.2% 45.1%,
+    33.7% 48.2%,
+    34% 48.4%,
+    35.4% 44.5%
+  );
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.faint-stars {
+  width: 0.13cqi;
+  height: 0.13cqi;
+  color: #7e86bf;
+  box-shadow: 26.26cqi 33.41cqi, 6.2cqi 22.14cqi, 33.92cqi 33.35cqi,
+    51.7cqi 39.07cqi, 89.22cqi 33.88cqi, 72.89cqi 21.05cqi, 33.76cqi 14.95cqi,
+    27.49cqi 32.54cqi, 19.5cqi 18.44cqi, 53.47cqi 20.44cqi, 36cqi 20.83cqi,
+    11.58cqi 9.74cqi, 33.14cqi 6.7cqi, 39.72cqi 22.58cqi, 57.99cqi 21.13cqi,
+    52.69cqi 32.17cqi, 31.7cqi 14.36cqi, 62.98cqi 16.05cqi, 88.69cqi 24.18cqi,
+    7.38cqi 9.78cqi, 7.44cqi 15.39cqi, 37.96cqi 20.59cqi, 71.51cqi 27.31cqi,
+    47cqi 26.72cqi, 46.95cqi 11.76cqi, 97.69cqi 8.9cqi, 38.16cqi 13.91cqi,
+    71.88cqi 24.37cqi, 20.1cqi 1.11cqi, 44.32cqi 28.69cqi, 47.81cqi 15.66cqi,
+    28.76cqi 6.27cqi, 50.92cqi 37.19cqi, 73.77cqi 10.7cqi, 43.22cqi 18.67cqi,
+    2.15cqi 10.37cqi, 67.97cqi 11.54cqi, 20.01cqi 5.19cqi, 85.76cqi 31.29cqi,
+    33.1cqi 17.44cqi, 52.86cqi 28.68cqi, 20.61cqi 29.77cqi, 51.26cqi 9.22cqi,
+    97.6cqi 26.74cqi, 48.14cqi 39.88cqi, 8.41cqi 11.68cqi, 81.9cqi 4.67cqi,
+    2.84cqi 29.39cqi, 96.58cqi 35.87cqi, 40.11cqi 1.15cqi, 33.69cqi 24.89cqi,
+    77.23cqi 13.23cqi, 30.83cqi 34.43cqi, 24.77cqi 7.58cqi, 32.7cqi 14.32cqi,
+    91.78cqi 24.1cqi, 49.38cqi 29.8cqi, 39.09cqi 18.31cqi, 8.87cqi 12.4cqi,
+    3.26cqi 6.6cqi, 55.57cqi 11.88cqi, 65.15cqi 10.64cqi, 58.17cqi 33.6cqi,
+    13.56cqi 7.81cqi, 64.61cqi 10.83cqi, 96.63cqi 28.82cqi, 35cqi 24.11cqi,
+    41.58cqi 13.28cqi, 46.64cqi 7.12cqi, 40.18cqi 39.71cqi, 77.76cqi 35.8cqi,
+    27.46cqi 7.52cqi, 81.69cqi 13.32cqi, 35.12cqi 21.98cqi, 39.06cqi 19.14cqi,
+    47.56cqi 32.94cqi, 46.97cqi 18.18cqi, 93.45cqi 30.48cqi, 63.41cqi 27.71cqi,
+    27.38cqi 7.4cqi, 35.74cqi 30.79cqi, 59.48cqi 17.66cqi, 57.25cqi 19.49cqi,
+    8.2cqi 9.24cqi, 65.09cqi 28.36cqi, 46.21cqi 37.24cqi, 69.42cqi 11.55cqi,
+    83.47cqi 14.43cqi, 30cqi 17.94cqi, 90.77cqi 20.62cqi, 51.99cqi 1.27cqi,
+    6.03cqi 35.73cqi, 57.21cqi 15.4cqi, 36.38cqi 19.2cqi, 20.77cqi 16.03cqi,
+    30.28cqi 18.44cqi, 21.4cqi 38.35cqi, 28.32cqi 3.52cqi, 47.68cqi 4.49cqi,
+    47.75cqi 17.13cqi, 83.61cqi 19.44cqi, 10.6cqi 9.03cqi, 71.06cqi 32.88cqi,
+    19.76cqi 28.16cqi, 25.94cqi 1.07cqi, 94.26cqi 7.32cqi, 51.45cqi 29.89cqi,
+    61.39cqi 3.5cqi, 20.59cqi 33.19cqi, 93.49cqi 1.65cqi, 54.28cqi 7.72cqi,
+    1.8cqi 33.8cqi, 73.64cqi 15.72cqi, 20.92cqi 9.52cqi, 38.07cqi 20.06cqi,
+    3.76cqi 16.45cqi, 13.92cqi 6.77cqi, 93.25cqi 23.12cqi, 30.27cqi 26.5cqi,
+    27.32cqi 20.31cqi, 79.97cqi 15.44cqi, 16.37cqi 10.26cqi, 42.1cqi 22.09cqi,
+    47.42cqi 14.55cqi, 44.47cqi 1.5cqi, 91.06cqi 8.71cqi, 83.79cqi 1.14cqi,
+    14.28cqi 33.19cqi, 56.57cqi 37.32cqi, 33.07cqi 22.01cqi, 28.92cqi 29.91cqi,
+    11.71cqi 5.46cqi, 21.25cqi 27.67cqi, 43.26cqi 33.33cqi, 87.3cqi 27.18cqi,
+    41.54cqi 28.3cqi, 30.57cqi 17.14cqi, 35.86cqi 11.55cqi, 6.62cqi 23.99cqi,
+    51.95cqi 4.24cqi, 48.41cqi 5.48cqi, 91.83cqi 16.75cqi, 89.96cqi 35.34cqi,
+    30.14cqi 15.41cqi, 39.65cqi 20.58cqi, 32.6cqi 16.82cqi, 61.79cqi 25.62cqi,
+    33.85cqi 9.1cqi, 26.21cqi 26.6cqi, 46.32cqi 4.01cqi, 32.73cqi 19.55cqi,
+    55.9cqi 26.82cqi, 87.3cqi 14.59cqi, 91.18cqi 35.47cqi, 7.4cqi 10.44cqi,
+    64.23cqi 17.19cqi, 37.18cqi 31.5cqi, 39.18cqi 31.31cqi, 27.47cqi 37.68cqi,
+    83.67cqi 0.49cqi, 49.2cqi 8.6cqi, 96.32cqi 14.1cqi, 71.14cqi 39.54cqi,
+    4.42cqi 7.78cqi, 52.63cqi 40.23cqi, 17.37cqi 32.16cqi, 78.48cqi 10.38cqi,
+    52.67cqi 1.85cqi, 70.61cqi 40.22cqi, 50cqi 1.35cqi, 87.61cqi 27.7cqi,
+    66.65cqi 23.69cqi, 32.32cqi 16.03cqi, 18.83cqi 2.84cqi, 47.54cqi 26.8cqi,
+    72.15cqi 34.41cqi, 40.24cqi 6.06cqi, 71.3cqi 8.62cqi, 87.53cqi 20.79cqi,
+    32.89cqi 11.46cqi, 37.17cqi 39.54cqi, 25.62cqi 20.28cqi, 58.93cqi 5.74cqi,
+    37.9cqi 7.1cqi, 34.74cqi 36.31cqi, 15.15cqi 6.72cqi, 29.68cqi 24.78cqi,
+    18.98cqi 5.31cqi, 6.59cqi 2.2cqi, 60.42cqi 4.85cqi, 28.29cqi 31.97cqi,
+    20.11cqi 9.96cqi, 81.1cqi 13.9cqi, 34.1cqi 18.83cqi, 47.46cqi 1.02cqi,
+    1.15cqi 37.56cqi, 2.43cqi 16.65cqi, 19.5cqi 2.08cqi, 32.69cqi 15.19cqi,
+    56.04cqi 36.71cqi, 59.21cqi 33.88cqi, 90.47cqi 13.55cqi, 89.11cqi 5.77cqi,
+    92.51cqi 22.68cqi, 47.84cqi 19.06cqi, 33.03cqi 4.74cqi, 77.66cqi 23.37cqi,
+    51.75cqi 30.71cqi, 13.63cqi 22.02cqi, 52.05cqi 25.61cqi, 26.84cqi 38.68cqi,
+    3.58cqi 7.16cqi, 50.72cqi 27.42cqi, 47.5cqi 37.34cqi, 57.41cqi 10.12cqi,
+    33.9cqi 27.45cqi, 3.25cqi 33.01cqi, 26.34cqi 11.06cqi, 46.84cqi 37.55cqi,
+    77.06cqi 38.02cqi, 31.03cqi 5.91cqi, 51.84cqi 31.14cqi, 6.95cqi 7.81cqi,
+    62.52cqi 0.54cqi, 64.26cqi 14.4cqi, 22.69cqi 24.1cqi, 42.1cqi 15.56cqi,
+    49.87cqi 14.56cqi, 45.48cqi 28.87cqi, 24.66cqi 1.89cqi, 27.93cqi 19.64cqi,
+    70.17cqi 10.57cqi, 86.73cqi 3.75cqi, 67.62cqi 21.65cqi, 82.64cqi 35.48cqi,
+    40.74cqi 14.61cqi, 41.34cqi 22.89cqi, 12.77cqi 0.91cqi, 54.93cqi 7.27cqi,
+    32.39cqi 20.32cqi, 36.1cqi 8.17cqi, 23.68cqi 29.83cqi, 15.15cqi 10.68cqi,
+    62.77cqi 6.06cqi, 32.34cqi 27.34cqi, 58.15cqi 8.45cqi, 39.82cqi 11.28cqi,
+    54.92cqi 9.55cqi, 86.51cqi 10cqi, 52.93cqi 4.96cqi, 51.96cqi 23.81cqi,
+    43.83cqi 31.77cqi, 99.13cqi 2.34cqi, 41.04cqi 16.2cqi, 95.77cqi 23.99cqi,
+    30.13cqi 14.1cqi, 30.75cqi 14.37cqi, 16.21cqi 36.05cqi, 40.01cqi 30.66cqi,
+    49.75cqi 31.37cqi, 45.58cqi 31.55cqi, 59.45cqi 12.59cqi, 27.11cqi 27.4cqi,
+    75.87cqi 27.81cqi, 4.49cqi 6.21cqi, 23.75cqi 26.3cqi, 36.68cqi 24.47cqi,
+    60.24cqi 6.68cqi, 57.37cqi 34.37cqi, 6.35cqi 15.85cqi, 60.39cqi 11.5cqi,
+    9.84cqi 3.66cqi, 91.3cqi 27.2cqi, 57.01cqi 19.23cqi, 51.93cqi 5.23cqi,
+    34.49cqi 19.05cqi, 13.87cqi 12.76cqi, 75.91cqi 10.17cqi, 27.42cqi 31.4cqi,
+    85.29cqi 0.34cqi, 89.41cqi 31.56cqi, 81.81cqi 38.52cqi, 13.32cqi 12.21cqi,
+    72.78cqi 10.19cqi, 56.39cqi 5.12cqi, 29.26cqi 23.31cqi, 60.01cqi 32.44cqi,
+    44.37cqi 25.38cqi, 98.36cqi 2.68cqi, 14.63cqi 38.61cqi, 40.59cqi 34.92cqi,
+    82.98cqi 14.6cqi, 94.35cqi 38.02cqi, 5.9cqi 16.52cqi, 95.43cqi 19.78cqi,
+    9.62cqi 6.59cqi, 4.04cqi 9.99cqi, 49.77cqi 17.62cqi, 69.92cqi 24.05cqi,
+    26.52cqi 17.2cqi, 54.57cqi 8.85cqi, 4.29cqi 11.05cqi, 27.3cqi 5.71cqi,
+    5.76cqi 9.27cqi, 28.37cqi 17.03cqi, 4.01cqi 2.1cqi, 32.81cqi 20.8cqi,
+    53.68cqi 13.61cqi, 23.19cqi 14.45cqi, 90.22cqi 18.26cqi, 6.49cqi 16.14cqi,
+    20cqi 28.78cqi, 63.36cqi 13.85cqi, 58.24cqi 7.94cqi, 54.03cqi 7.29cqi,
+    76.47cqi 30.74cqi, 29.66cqi 4.25cqi, 23.99cqi 17.17cqi, 59.1cqi 34.28cqi,
+    54.72cqi 2.29cqi, 32.32cqi 18.27cqi, 35.07cqi 16.16cqi, 89.84cqi 0.9cqi,
+    98.17cqi 24.43cqi, 4.59cqi 31.28cqi, 69.07cqi 14.9cqi, 31.57cqi 21.87cqi,
+    3.79cqi 16.34cqi, 12.84cqi 34.85cqi, 19.28cqi 11.75cqi, 76.26cqi 19.06cqi,
+    12.33cqi 20.55cqi, 88.16cqi 37.05cqi, 47.84cqi 7.36cqi, 22.73cqi 38.16cqi,
+    38.99cqi 36.23cqi, 19.34cqi 40.06cqi, 97.34cqi 28.62cqi, 18.65cqi 10.12cqi,
+    13.76cqi 39.32cqi, 26.39cqi 20.88cqi, 63.24cqi 13.6cqi, 34.39cqi 18.17cqi,
+    6.26cqi 5.74cqi, 40.44cqi 39.12cqi, 57.96cqi 21.79cqi, 30.46cqi 25.92cqi,
+    68.61cqi 33.69cqi, 32.27cqi 7.99cqi, 27.39cqi 3.42cqi, 33.21cqi 30.28cqi,
+    81.58cqi 17.92cqi, 31.17cqi 25.43cqi, 94.88cqi 21.2cqi, 61.52cqi 16.53cqi,
+    85.94cqi 32.23cqi, 38.66cqi 19.74cqi, 11.08cqi 16.66cqi, 24.22cqi 30.81cqi,
+    15.38cqi 15.37cqi, 5.28cqi 3.75cqi, 40.03cqi 23.36cqi, 32.57cqi 16.69cqi,
+    71.28cqi 22.1cqi, 25.04cqi 40.02cqi, 95.23cqi 39.42cqi, 6.76cqi 20.48cqi,
+    21.32cqi 5.27cqi, 12.13cqi 9.75cqi, 34.52cqi 18.02cqi, 49.35cqi 15.09cqi,
+    32.26cqi 25.42cqi, 45.02cqi 22.31cqi, 44.89cqi 15.6cqi, 41.24cqi 30.04cqi,
+    30.47cqi 21.06cqi, 22.41cqi 13.05cqi, 33.09cqi 26.38cqi, 20.88cqi 36.38cqi,
+    34.65cqi 17.08cqi, 12.32cqi 10.13cqi, 75cqi 9.3cqi, 2.56cqi 7.99cqi,
+    69.06cqi 29.62cqi, 93.5cqi 25.82cqi, 38.58cqi 22.04cqi, 7.33cqi 10.83cqi,
+    52.17cqi 35.65cqi, 15.54cqi 35.75cqi, 6.54cqi 2.05cqi, 98.07cqi 34.44cqi,
+    83.33cqi 8.61cqi, 2.43cqi 2.72cqi, 61.02cqi 2.46cqi, 36.05cqi 20.9cqi,
+    15.52cqi 11.9cqi, 93.12cqi 24.12cqi, 51.06cqi 29.17cqi, 8.75cqi 33.03cqi,
+    29.63cqi 29.44cqi, 47.25cqi 36.89cqi, 87.12cqi 30.95cqi, 93.6cqi 34.38cqi,
+    22.39cqi 24.92cqi, 20.5cqi 25.82cqi, 78.04cqi 36.15cqi, 1.45cqi 36.27cqi,
+    92.27cqi 2.15cqi, 58.14cqi 33.07cqi, 28.38cqi 11.58cqi, 33.22cqi 15.36cqi,
+    5.31cqi 6.31cqi, 97.27cqi 37.98cqi, 45.78cqi 28.34cqi, 9.27cqi 7.24cqi,
+    92.84cqi 36.27cqi, 15.31cqi 7.03cqi, 47.83cqi 34.77cqi, 39.52cqi 14.64cqi,
+    45.95cqi 10.9cqi, 22.06cqi 24.67cqi, 30.93cqi 25.82cqi, 59.18cqi 29.12cqi,
+    84.63cqi 2.26cqi, 57.49cqi 6.62cqi, 86.42cqi 35.2cqi, 55.51cqi 8.94cqi,
+    29.42cqi 12.16cqi, 31.37cqi 33.94cqi, 83.02cqi 15.16cqi, 10.46cqi 9.31cqi,
+    68.87cqi 10.21cqi, 78.98cqi 28.49cqi, 54.68cqi 7.79cqi, 57.4cqi 3.62cqi,
+    36cqi 8.66cqi, 41.43cqi 29.12cqi, 87.54cqi 13.61cqi, 15.98cqi 20.01cqi,
+    39.07cqi 0.97cqi, 20.56cqi 27.92cqi, 50.31cqi 35.16cqi, 64.6cqi 28.62cqi,
+    78.79cqi 28.73cqi, 29.21cqi 2.61cqi, 15.36cqi 39.21cqi, 2.13cqi 10.58cqi,
+    97.37cqi 13.36cqi, 44.35cqi 31.1cqi, 30.36cqi 5.35cqi, 53.56cqi 3.25cqi,
+    57.88cqi 16.13cqi, 44.31cqi 23.48cqi, 55.67cqi 5.55cqi, 45.11cqi 36.17cqi,
+    79.41cqi 34.89cqi, 94.87cqi 40.21cqi, 39.56cqi 34.43cqi, 25.1cqi 20.6cqi,
+    27.76cqi 31.87cqi, 31.01cqi 17.17cqi, 77.09cqi 0.28cqi, 59.11cqi 14.32cqi,
+    32.88cqi 33.22cqi, 48.43cqi 16.06cqi, 16.17cqi 8.82cqi, 10.66cqi 37.19cqi,
+    89.03cqi 26.76cqi, 74.02cqi 39.62cqi, 15.99cqi 19.37cqi, 52.96cqi 4.45cqi,
+    22.08cqi 11.71cqi, 42.9cqi 20.36cqi, 34.49cqi 32.78cqi, 98.5cqi 36.84cqi,
+    97.63cqi 4.78cqi, 7.78cqi 5.38cqi, 37.58cqi 25.5cqi, 40.95cqi 22.8cqi,
+    49.91cqi 20.09cqi, 78.49cqi 36.58cqi, 35.08cqi 19.71cqi, 41.89cqi 17.23cqi,
+    52.63cqi 33.03cqi, 32.69cqi 24.92cqi, 22.05cqi 2.65cqi, 21.21cqi 10.08cqi,
+    35.71cqi 23.05cqi, 37.74cqi 31.39cqi, 49.87cqi 27.53cqi, 48.34cqi 2.81cqi,
+    68.48cqi 31.06cqi, 64.11cqi 14.48cqi, 21.68cqi 13.9cqi, 47.63cqi 34.71cqi,
+    58.23cqi 27.66cqi, 48.29cqi 35.57cqi, 48.94cqi 9.47cqi, 4.32cqi 9.93cqi,
+    13.5cqi 4.09cqi;
+}
+
+.band-stars {
+  width: 0.1cqi;
+  height: 0.1cqi;
+  color: #cdd0f0;
+  box-shadow: 32.51cqi 23.91cqi, 28.67cqi 17.64cqi, 37.04cqi 16.99cqi,
+    28.69cqi 18.64cqi, 1.41cqi 6.74cqi, 29.15cqi 17.74cqi, 51.91cqi 28.93cqi,
+    36.04cqi 16.46cqi, 47.89cqi 33.36cqi, 46.16cqi 27.38cqi, 53.37cqi 31.43cqi,
+    40.41cqi 21.81cqi, 50.46cqi 32.46cqi, 18.57cqi 12.83cqi, 53.14cqi 39.63cqi,
+    36.24cqi 23.81cqi, 26.77cqi 23.22cqi, 50.21cqi 32.65cqi, 35.86cqi 18.32cqi,
+    37.03cqi 16.77cqi, 34.69cqi 22.95cqi, 33.61cqi 20.95cqi, 47.09cqi 31.16cqi,
+    32.36cqi 24.17cqi, 29.64cqi 19.91cqi, 28.63cqi 17.15cqi, 39.87cqi 17.78cqi,
+    31.78cqi 24.14cqi, 42.57cqi 24.36cqi, 71.88cqi 12.27cqi, 59.29cqi 39.19cqi,
+    55.25cqi 39.95cqi, 35.71cqi 22.72cqi, 28.01cqi 15.16cqi, 49.56cqi 35.31cqi,
+    53.17cqi 39.26cqi, 51cqi 34.73cqi, 37.8cqi 22.09cqi, 7.64cqi 12.18cqi,
+    45.88cqi 28.87cqi, 10.36cqi 11.75cqi, 48.9cqi 27.91cqi, 32.8cqi 24.4cqi,
+    36.68cqi 18.08cqi, 32.65cqi 14.4cqi, 19.99cqi 14.31cqi, 26.16cqi 20.87cqi,
+    33.38cqi 13.98cqi, 29.98cqi 19.32cqi, 52.93cqi 34.56cqi, 35.83cqi 21.76cqi,
+    31.23cqi 20.41cqi, 33.75cqi 20.73cqi, 35.81cqi 21.98cqi, 38.77cqi 23.79cqi,
+    30.27cqi 14.12cqi, 28.33cqi 18.2cqi, 38.49cqi 23.49cqi, 40.88cqi 22.85cqi,
+    37.46cqi 25.36cqi, 38.85cqi 21.78cqi, 32.4cqi 23.31cqi, 71.26cqi 12.19cqi,
+    35.79cqi 24.67cqi, 36.82cqi 20.53cqi, 49.32cqi 32.74cqi, 32.62cqi 20.12cqi,
+    8.41cqi 9.95cqi, 31.93cqi 23.74cqi, 21.21cqi 14.67cqi, 46.02cqi 31.87cqi,
+    28.52cqi 22.72cqi, 53.15cqi 35.85cqi, 47.63cqi 32.29cqi, 30.4cqi 19.34cqi,
+    32.05cqi 22.76cqi, 31.98cqi 24.07cqi, 46.83cqi 36.05cqi, 2.75cqi 7.58cqi,
+    43.77cqi 32.79cqi, 58.41cqi 37.91cqi, 35.23cqi 15.42cqi, 31.72cqi 24.82cqi,
+    46.07cqi 30.53cqi, 46.63cqi 29.83cqi, 54.46cqi 38.44cqi, 54.93cqi 37.17cqi,
+    39.98cqi 17.34cqi, 38.9cqi 22.01cqi, 31.3cqi 20.86cqi, 7.86cqi 6.06cqi,
+    40.7cqi 21.05cqi, 39.48cqi 21.51cqi, 26.56cqi 16.92cqi, 3.02cqi 5.8cqi,
+    11.14cqi 7.4cqi, 16.95cqi 13.37cqi, 22.99cqi 12.98cqi, 30.72cqi 14.43cqi,
+    29.61cqi 20.35cqi, 27.52cqi 22.23cqi, 70.97cqi 12.59cqi, 31.76cqi 19.24cqi,
+    55.09cqi 34.61cqi, 25.97cqi 15.14cqi, 47.11cqi 31.12cqi, 57.08cqi 36.47cqi,
+    30.08cqi 23.75cqi, 2.6cqi 10.07cqi, 34.69cqi 19.55cqi, 4.16cqi 9.93cqi,
+    32.08cqi 16.22cqi, 46.09cqi 27.95cqi, 30.98cqi 21.7cqi, 32.71cqi 18.41cqi,
+    37.36cqi 18.85cqi, 51.32cqi 3.92cqi, 47.49cqi 33.36cqi, 37.44cqi 17.02cqi,
+    20.02cqi 15.06cqi, 5.76cqi 9.88cqi, 53.8cqi 39.72cqi, 30.91cqi 13.87cqi,
+    43.36cqi 25.72cqi, 54.18cqi 34.69cqi, 51.45cqi 36.75cqi, 31.34cqi 17.14cqi,
+    37.31cqi 18.47cqi, 34.37cqi 27.96cqi, 36.7cqi 24.51cqi, 31.28cqi 17.79cqi,
+    36.96cqi 25.2cqi, 8.94cqi 10.61cqi, 38.53cqi 18.34cqi, 52.74cqi 38.59cqi,
+    42.43cqi 23.1cqi, 36.37cqi 18.07cqi, 47.02cqi 29.02cqi, 29.98cqi 21.39cqi,
+    27.32cqi 19.14cqi, 38.67cqi 19.87cqi, 48.13cqi 35.65cqi, 30.18cqi 22.28cqi,
+    41.45cqi 23.59cqi, 48.42cqi 33.45cqi, 31.14cqi 24.11cqi, 39.43cqi 22.05cqi,
+    30.14cqi 18.23cqi, 43.76cqi 22.25cqi, 36.17cqi 22.86cqi, 35.61cqi 20.06cqi,
+    50.31cqi 35.39cqi, 45.52cqi 34.97cqi, 0.35cqi 8.9cqi, 36.73cqi 24.62cqi,
+    9.21cqi 8.12cqi, 56.72cqi 37.73cqi, 48.22cqi 31.54cqi, 55.34cqi 3.94cqi,
+    54.02cqi 38.94cqi, 25.14cqi 16.66cqi, 48.44cqi 30.39cqi, 36.49cqi 23.46cqi,
+    45.49cqi 31.42cqi, 37.28cqi 24.18cqi, 56.37cqi 37.08cqi, 32.74cqi 24.59cqi,
+    55.49cqi 6.21cqi, 3.88cqi 5.11cqi, 36.38cqi 21.17cqi, 72.08cqi 11.73cqi,
+    1.22cqi 10.5cqi, 55.78cqi 4.55cqi, 51.82cqi 33.44cqi, 29.92cqi 24.44cqi,
+    28.53cqi 24.61cqi, 38.09cqi 22.2cqi, 41.31cqi 21.44cqi, 29.74cqi 17.42cqi,
+    8.63cqi 7.16cqi, 54.06cqi 4.06cqi, 21.23cqi 15.26cqi, 37.47cqi 19.64cqi,
+    33.75cqi 16.93cqi, 32.89cqi 18.68cqi, 7.86cqi 5.98cqi, 7.13cqi 11.59cqi,
+    42.69cqi 21.46cqi, 10.63cqi 9.7cqi, 30.59cqi 25.42cqi, 0.32cqi 5.34cqi,
+    29.89cqi 23.17cqi, 33.59cqi 17.27cqi, 54.42cqi 5.08cqi, 50cqi 36.72cqi,
+    55.17cqi 35.18cqi, 43.75cqi 30.84cqi, 37.95cqi 19.18cqi, 29.75cqi 14.46cqi,
+    28.72cqi 15.26cqi, 58.2cqi 39.97cqi, 34.71cqi 22.22cqi, 39.5cqi 21.38cqi,
+    36.14cqi 17.77cqi, 45.51cqi 30.3cqi, 54.99cqi 37.01cqi, 56.23cqi 36.31cqi,
+    5.55cqi 7.98cqi, 28.58cqi 18.13cqi, 49.91cqi 32.3cqi, 43.73cqi 33.56cqi,
+    34.35cqi 22.74cqi, 52.35cqi 39.17cqi, 53.96cqi 35.01cqi, 51.9cqi 39.96cqi,
+    29.82cqi 19.56cqi, 1.74cqi 11.2cqi, 47.3cqi 33.66cqi, 1.03cqi 9.02cqi,
+    6.12cqi 9.99cqi, 39.46cqi 19.63cqi, 35.42cqi 16.94cqi, 39.51cqi 25.1cqi,
+    54.79cqi 36.02cqi, 40.85cqi 23.36cqi, 39.35cqi 20.43cqi, 33.84cqi 23.79cqi,
+    49.53cqi 37.54cqi, 49.73cqi 34.24cqi, 47.21cqi 31.9cqi, 32.25cqi 14.89cqi,
+    44.77cqi 30.1cqi, 56.09cqi 1.67cqi, 37.86cqi 20.21cqi, 30.56cqi 21.44cqi,
+    51.46cqi 36.88cqi, 3.64cqi 4.51cqi, 40.42cqi 24.61cqi, 27.34cqi 18.24cqi,
+    56.51cqi 3.96cqi, 53.55cqi 35.84cqi, 19.7cqi 11.26cqi, 44.59cqi 28.09cqi,
+    29.21cqi 21.45cqi, 55.82cqi 33.9cqi, 31.64cqi 15.18cqi, 1.21cqi 8.6cqi,
+    41.33cqi 19.68cqi, 26.6cqi 18.94cqi, 5.71cqi 5.33cqi, 25.06cqi 13.72cqi,
+    37.71cqi 16.12cqi, 28.36cqi 23.96cqi, 48.64cqi 27.23cqi, 33.52cqi 18.84cqi,
+    34.06cqi 22.05cqi, 29.8cqi 22.05cqi, 48.63cqi 35.74cqi, 0.84cqi 6.09cqi,
+    44.61cqi 24.45cqi, 31.96cqi 24.78cqi, 34.38cqi 24.18cqi, 46.03cqi 27.03cqi,
+    42.67cqi 25.18cqi, 40.81cqi 25.21cqi, 32.04cqi 13.55cqi, 18.18cqi 14.69cqi,
+    41.09cqi 23.94cqi, 35.31cqi 22.97cqi, 49.72cqi 35.89cqi, 37.99cqi 21.77cqi,
+    1.17cqi 8.53cqi, 26.59cqi 22.27cqi, 39.43cqi 25.15cqi, 28.35cqi 17.41cqi,
+    39.18cqi 16.47cqi, 36.38cqi 17.93cqi, 35.31cqi 26.02cqi, 36.55cqi 19.63cqi,
+    29.05cqi 14.72cqi, 55.61cqi 36.18cqi, 48.8cqi 31.81cqi, 31.22cqi 14.63cqi,
+    51.14cqi 36.42cqi, 43.76cqi 28.89cqi, 43.57cqi 32.61cqi, 27.02cqi 18.78cqi,
+    30.7cqi 18.81cqi, 36.12cqi 22.2cqi, 31.53cqi 15.59cqi, 54.04cqi 35.95cqi,
+    51.86cqi 35.39cqi, 44.34cqi 34.66cqi, 35.5cqi 23.83cqi, 55.32cqi 37.9cqi,
+    52.75cqi 39.28cqi, 31.92cqi 17.83cqi, 29.36cqi 25.61cqi, 51.63cqi 29.91cqi,
+    50.39cqi 31.98cqi, 33.12cqi 25.98cqi, 39.39cqi 20.07cqi, 50.39cqi 31.13cqi,
+    0.83cqi 8.67cqi, 0.43cqi 4.45cqi, 49.69cqi 35.53cqi, 56.96cqi 38.36cqi,
+    37.23cqi 23.65cqi, 8.88cqi 9.83cqi, 47.46cqi 28.25cqi, 28.83cqi 16.63cqi,
+    41.4cqi 22.78cqi, 18.8cqi 12.48cqi, 37.25cqi 23.61cqi, 8.95cqi 9.69cqi,
+    38.39cqi 21.29cqi, 29.87cqi 14.05cqi, 0.38cqi 4.59cqi, 34.25cqi 16.7cqi,
+    38.47cqi 18.97cqi, 57.78cqi 38.23cqi, 8.37cqi 10.4cqi, 32.18cqi 19.13cqi,
+    31.29cqi 19.97cqi, 1.64cqi 9.23cqi, 27.61cqi 16.27cqi, 44.89cqi 29.12cqi,
+    47.79cqi 33.16cqi, 38.61cqi 19.5cqi, 38.74cqi 21.08cqi, 31.34cqi 19.11cqi,
+    46.75cqi 30.79cqi, 32cqi 15.16cqi, 32.64cqi 17.54cqi, 30.58cqi 18.73cqi,
+    32.72cqi 19.97cqi, 34.79cqi 17.83cqi, 48.7cqi 32.66cqi, 43.44cqi 24.71cqi,
+    52.77cqi 37.97cqi, 48.38cqi 28.55cqi, 45.57cqi 26.37cqi, 31.13cqi 22.76cqi,
+    35.94cqi 25.85cqi, 54.54cqi 40.08cqi, 37.6cqi 20.34cqi, 27.93cqi 22.88cqi,
+    2.58cqi 7.31cqi, 17.68cqi 11.74cqi, 26.32cqi 21.07cqi, 46.64cqi 30.93cqi,
+    43.3cqi 23.63cqi, 8.37cqi 9.12cqi, 28.73cqi 16.56cqi, 31.38cqi 20.17cqi,
+    8.74cqi 8.83cqi, 4.03cqi 10.36cqi, 38.64cqi 23.06cqi, 30.06cqi 17.1cqi,
+    33.84cqi 22.47cqi, 8.51cqi 10.78cqi, 72.44cqi 11.6cqi, 34.81cqi 28.23cqi,
+    35.37cqi 20.4cqi, 43.42cqi 29.23cqi, 47.33cqi 33.65cqi, 31.8cqi 16.68cqi,
+    34.86cqi 27.94cqi, 32.8cqi 16.88cqi, 32.71cqi 20.1cqi, 28.68cqi 20.72cqi,
+    24.56cqi 16.88cqi, 54.36cqi 40.2cqi, 36.26cqi 26.64cqi, 48.88cqi 30.07cqi,
+    55.54cqi 38.37cqi, 54.48cqi 37.68cqi, 44.64cqi 24.03cqi, 37.92cqi 20.96cqi,
+    31.64cqi 23.77cqi, 25.69cqi 18.79cqi, 39.16cqi 20.74cqi, 57.81cqi 39.7cqi,
+    29.31cqi 18.86cqi, 32.4cqi 19.34cqi, 2.58cqi 7.46cqi, 18.99cqi 12.67cqi,
+    34.71cqi 17.15cqi, 31.76cqi 19.63cqi, 51.48cqi 33.63cqi, 54.51cqi 34.84cqi,
+    37.58cqi 23.73cqi, 23.41cqi 12.24cqi, 53.19cqi 39.78cqi, 49.2cqi 34.52cqi,
+    34.72cqi 22.61cqi, 43.32cqi 31.33cqi, 70.77cqi 12.54cqi, 52.96cqi 39.36cqi,
+    54.41cqi 39.26cqi, 32.02cqi 12.91cqi, 56.91cqi 37.11cqi, 32.14cqi 23.59cqi,
+    40.11cqi 22.69cqi, 44.24cqi 33.93cqi, 48.67cqi 31.02cqi, 33.73cqi 14.23cqi,
+    49.42cqi 34.2cqi, 54.49cqi 35.23cqi, 32.69cqi 23.9cqi, 49.54cqi 33.89cqi,
+    26.12cqi 20.1cqi, 46.36cqi 30.32cqi, 30.38cqi 24.32cqi, 48.9cqi 34.57cqi,
+    40.84cqi 23.26cqi, 32.2cqi 22.96cqi, 37.9cqi 24.61cqi, 28.67cqi 18.89cqi,
+    54.22cqi 35.92cqi, 44.81cqi 31.86cqi, 35.82cqi 21.86cqi, 51.46cqi 36.71cqi,
+    36.75cqi 23.73cqi, 54cqi 40.1cqi, 35.66cqi 16.93cqi, 32.5cqi 17.31cqi,
+    27.98cqi 19.56cqi, 31.9cqi 19.7cqi, 38.47cqi 16.95cqi, 10.87cqi 7.11cqi,
+    37.09cqi 23.62cqi, 33.44cqi 19.85cqi, 37cqi 23.86cqi, 48.22cqi 30.76cqi,
+    29.61cqi 19.87cqi, 54.95cqi 3.98cqi, 54.65cqi 4.89cqi, 2.14cqi 5.2cqi,
+    40.3cqi 22.19cqi, 29.97cqi 22.79cqi, 44.16cqi 31.1cqi, 45.07cqi 27.87cqi,
+    4.29cqi 8.94cqi, 47.4cqi 32.8cqi, 38.05cqi 24.54cqi, 40.4cqi 24.81cqi,
+    34.71cqi 14.75cqi, 33.49cqi 21.91cqi, 47.19cqi 25.25cqi, 1.8cqi 9.38cqi,
+    51.03cqi 39.02cqi, 37.93cqi 21.77cqi, 34.09cqi 16.82cqi, 53.76cqi 33.39cqi,
+    51.95cqi 37.45cqi, 44.49cqi 30.58cqi, 56.66cqi 39.54cqi, 8.01cqi 10.65cqi,
+    1.66cqi 4.87cqi, 53.48cqi 38.99cqi, 48.34cqi 34.16cqi, 51.32cqi 35.15cqi,
+    56.41cqi 39.26cqi, 41.52cqi 23.69cqi, 29.81cqi 21.73cqi, 54.44cqi 33.21cqi,
+    36.27cqi 20.15cqi, 30.28cqi 25.66cqi, 49.68cqi 32.4cqi, 38.7cqi 24.45cqi,
+    29.57cqi 23.17cqi, 35.41cqi 16.53cqi, 7.94cqi 5.82cqi, 54.24cqi 38.92cqi,
+    34.28cqi 19.22cqi, 56.6cqi 37.12cqi, 36.24cqi 20.85cqi, 0.92cqi 4.86cqi,
+    28.36cqi 14.06cqi, 30.41cqi 14.57cqi, 47.56cqi 33.28cqi, 31.16cqi 22.19cqi,
+    51.69cqi 31cqi, 36.92cqi 24cqi, 33.35cqi 16.2cqi, 36.33cqi 24.65cqi,
+    19.99cqi 12.76cqi, 53.62cqi 38.35cqi, 32.84cqi 21.78cqi, 33.84cqi 23.16cqi,
+    36.69cqi 21.01cqi, 37.77cqi 17.87cqi, 51.54cqi 37.09cqi, 6.49cqi 7.78cqi,
+    43.2cqi 21.91cqi, 25.5cqi 18.56cqi, 46.86cqi 30.21cqi, 40.75cqi 19.73cqi,
+    27.75cqi 15.46cqi, 54.54cqi 3.63cqi, 50.31cqi 29.14cqi, 29.26cqi 17.48cqi,
+    32.57cqi 19.15cqi, 46.3cqi 29.73cqi, 49.36cqi 33.61cqi, 32.31cqi 23.43cqi,
+    31.5cqi 16.08cqi, 52.32cqi 3.4cqi, 44.23cqi 25.56cqi, 32.9cqi 16.81cqi,
+    35.33cqi 17.61cqi, 47.74cqi 32.55cqi, 29.08cqi 24.39cqi, 28.28cqi 19.94cqi,
+    2.85cqi 8.69cqi, 46.63cqi 29.19cqi, 30.03cqi 16.76cqi, 70.54cqi 13.16cqi,
+    53.7cqi 34.53cqi, 49.9cqi 31.81cqi, 57.47cqi 39.41cqi, 31.61cqi 21.78cqi,
+    6.51cqi 12.52cqi, 36cqi 23.39cqi, 45.8cqi 27.85cqi, 28.56cqi 24.93cqi,
+    36.72cqi 22.43cqi, 32.14cqi 24.52cqi, 2.11cqi 6.4cqi, 2.09cqi 11.04cqi,
+    8.63cqi 8.76cqi, 29.12cqi 20.76cqi, 55.16cqi 32.72cqi, 39.47cqi 19.14cqi,
+    5.24cqi 11.61cqi, 29.74cqi 18.21cqi, 43.53cqi 24.01cqi, 4.31cqi 7.25cqi,
+    37.15cqi 25.92cqi, 32.85cqi 21.95cqi, 32.39cqi 21.02cqi, 1.49cqi 9.98cqi,
+    27.07cqi 17.37cqi, 37.09cqi 20.75cqi, 30.27cqi 17.9cqi, 36.56cqi 21.47cqi,
+    4.62cqi 8.06cqi, 8.22cqi 7.78cqi, 18.96cqi 14.31cqi, 28.15cqi 18.35cqi,
+    36.27cqi 22.86cqi, 1.87cqi 8.56cqi, 47.01cqi 27.1cqi, 50.9cqi 28.92cqi,
+    32.7cqi 19.24cqi, 30.48cqi 22.46cqi, 31.55cqi 21.48cqi, 71.98cqi 12.11cqi,
+    34.92cqi 17.36cqi, 43.94cqi 26.47cqi, 27.69cqi 15.45cqi, 30.9cqi 21.18cqi,
+    47.78cqi 33.19cqi, 35.56cqi 24.22cqi, 5.77cqi 6.83cqi, 35.12cqi 19.83cqi,
+    33.54cqi 16.38cqi, 53.81cqi 38.86cqi, 39.91cqi 24.64cqi, 38.24cqi 24.38cqi,
+    31.41cqi 18.51cqi, 5.55cqi 11.82cqi, 46.71cqi 35.67cqi, 1.43cqi 9.96cqi,
+    48.68cqi 32.78cqi, 0.54cqi 8.06cqi, 39.82cqi 16.05cqi, 7.01cqi 11.53cqi,
+    5.75cqi 6.29cqi, 29.69cqi 15.95cqi, 21.07cqi 15.71cqi, 35.56cqi 19.52cqi,
+    37.13cqi 21.68cqi, 32cqi 21.47cqi, 46.82cqi 29.16cqi, 30.27cqi 20.19cqi,
+    48.56cqi 32.73cqi, 28.32cqi 16.78cqi, 28.62cqi 25.73cqi, 52.73cqi 39.53cqi,
+    3.51cqi 10.62cqi, 53.74cqi 4.64cqi, 46.98cqi 35.45cqi, 26.87cqi 16.73cqi,
+    26.5cqi 18.07cqi, 30.85cqi 19.17cqi, 0.53cqi 10.25cqi, 40.49cqi 23.42cqi,
+    29.4cqi 21.15cqi, 45.59cqi 30.01cqi, 35.85cqi 16.47cqi, 44.41cqi 28.65cqi,
+    50.48cqi 29.58cqi, 1.34cqi 10.98cqi, 51.03cqi 35.72cqi, 55.43cqi 1.72cqi,
+    35.26cqi 26.67cqi, 43.06cqi 24.49cqi, 29.27cqi 19.89cqi, 54.95cqi 1.4cqi,
+    32.32cqi 20.63cqi, 54.83cqi 39.62cqi, 23.96cqi 14.33cqi, 35.34cqi 15.98cqi,
+    37.46cqi 15.52cqi, 37.49cqi 16.1cqi, 49.82cqi 33.97cqi, 55.83cqi 37.34cqi,
+    33.63cqi 18.7cqi, 53.06cqi 34.55cqi, 6.09cqi 6.88cqi, 29.16cqi 15.76cqi,
+    45cqi 34.93cqi, 46.33cqi 29.66cqi, 50.35cqi 30.33cqi, 34.07cqi 23.33cqi,
+    52cqi 34.21cqi, 43.22cqi 23.89cqi, 47.84cqi 31.16cqi, 48.77cqi 33.04cqi,
+    27.22cqi 22.91cqi, 26.21cqi 18.2cqi, 45.16cqi 31cqi, 5.93cqi 6.68cqi,
+    44.6cqi 33.35cqi, 54.22cqi 35.13cqi, 29.79cqi 23.56cqi, 7.92cqi 5.85cqi,
+    31.98cqi 19.91cqi, 52.36cqi 3.37cqi, 31.56cqi 18.64cqi, 30.99cqi 15.72cqi,
+    31.29cqi 15.23cqi, 30.88cqi 23.78cqi, 32.27cqi 13.02cqi, 51.21cqi 38.2cqi,
+    4.43cqi 11.67cqi, 25.5cqi 17.72cqi, 48.21cqi 33.17cqi, 51.74cqi 38.09cqi,
+    32.99cqi 21.27cqi, 1.2cqi 6.73cqi, 30.59cqi 25.24cqi, 37.62cqi 16.56cqi,
+    50.87cqi 37.23cqi, 35.92cqi 25.55cqi, 34.51cqi 26.21cqi, 33.31cqi 24.54cqi,
+    5.45cqi 12.45cqi, 54.14cqi 38.4cqi, 30.18cqi 15.99cqi, 37.52cqi 20.85cqi,
+    33.94cqi 21.88cqi, 3.42cqi 8.32cqi, 44.14cqi 23.37cqi, 32.25cqi 19.7cqi,
+    54.54cqi 33.09cqi, 44.71cqi 30.26cqi, 43.94cqi 31.19cqi, 3.55cqi 10.45cqi,
+    30.69cqi 20.62cqi, 35.6cqi 22.51cqi, 31.54cqi 21.96cqi, 47.23cqi 26.49cqi,
+    43.73cqi 30.06cqi, 53.15cqi 37.56cqi, 35.55cqi 28.11cqi, 5.29cqi 7.55cqi,
+    47.38cqi 31.7cqi, 4.88cqi 7.76cqi, 45.17cqi 30.47cqi, 29.54cqi 21.68cqi,
+    46.35cqi 28.16cqi, 33.19cqi 16.04cqi, 34cqi 17.13cqi, 55.94cqi 37.48cqi,
+    49.98cqi 36.46cqi, 3.38cqi 10.75cqi, 54.03cqi 38.97cqi, 35.86cqi 25.24cqi,
+    31.52cqi 16.21cqi, 54.5cqi 38.8cqi, 52.39cqi 3.62cqi, 4.58cqi 8.81cqi,
+    54.4cqi 38.71cqi, 35.03cqi 19.41cqi, 3.91cqi 8.47cqi, 30.39cqi 15.71cqi,
+    49.23cqi 36.88cqi;
+}
+
+.dim-stars {
+  width: 0.19cqi;
+  height: 0.19cqi;
+  color: #b9bde6;
+  box-shadow: 94.18cqi 17.73cqi, 52.55cqi 0.35cqi, 96.17cqi 13.46cqi,
+    18.12cqi 13.94cqi, 52.14cqi 2.94cqi, 65.18cqi 12.04cqi, 43.74cqi 33.35cqi,
+    2.47cqi 17.06cqi, 9.46cqi 2.85cqi, 12.5cqi 6.81cqi, 20.03cqi 24.78cqi,
+    83.12cqi 7.44cqi, 39.2cqi 17.63cqi, 72.36cqi 20.56cqi, 77.74cqi 19.55cqi,
+    70.48cqi 11.55cqi, 57.2cqi 37.02cqi, 8.02cqi 31.97cqi, 14.11cqi 16.18cqi,
+    52.57cqi 8.62cqi, 32.59cqi 16.45cqi, 76.25cqi 21.04cqi, 75cqi 16.3cqi,
+    33.59cqi 31.89cqi, 58.4cqi 3.65cqi, 75.08cqi 0.71cqi, 29.14cqi 24.59cqi,
+    64.74cqi 32.67cqi, 99.03cqi 19.14cqi, 83.68cqi 17.43cqi, 32.56cqi 22.05cqi,
+    5.3cqi 33.48cqi, 45.79cqi 34.32cqi, 25.45cqi 18.51cqi, 89.73cqi 1.97cqi,
+    30.64cqi 24.22cqi, 48.79cqi 21.35cqi, 78.76cqi 12.11cqi, 62.29cqi 18.03cqi,
+    34.38cqi 22.17cqi, 93.29cqi 27.37cqi, 79.22cqi 37.87cqi, 16.41cqi 32.46cqi,
+    59.87cqi 5.32cqi, 2.27cqi 39.94cqi, 44.14cqi 8.95cqi, 63.49cqi 13.53cqi,
+    95.77cqi 20.63cqi, 33.06cqi 32.16cqi, 61.5cqi 34.3cqi, 19.1cqi 11.73cqi,
+    36.26cqi 9.78cqi, 20.34cqi 17.84cqi, 42.98cqi 25.59cqi, 49.33cqi 26.4cqi,
+    46.17cqi 32.39cqi, 14.23cqi 4.96cqi, 76.11cqi 17.65cqi, 4.47cqi 34.72cqi,
+    11.4cqi 0.8cqi, 56.54cqi 37.97cqi, 13.09cqi 18.85cqi, 28.28cqi 16.17cqi,
+    13.39cqi 4.21cqi, 15.65cqi 36.19cqi, 97.71cqi 8.31cqi, 66.3cqi 6.8cqi,
+    46.69cqi 25.64cqi, 5.27cqi 8.7cqi, 23.89cqi 24.34cqi, 47.92cqi 3.92cqi,
+    14.25cqi 36.38cqi, 23.6cqi 25.25cqi, 12.83cqi 10.7cqi, 69.36cqi 3cqi,
+    18.45cqi 27.18cqi, 93.09cqi 38.53cqi, 14.47cqi 4.41cqi, 8.65cqi 23.35cqi,
+    23.6cqi 13.9cqi, 51.32cqi 10.48cqi, 56.58cqi 37.73cqi, 49.89cqi 38.79cqi,
+    82.85cqi 18.06cqi, 68.29cqi 4.43cqi, 88.59cqi 5.83cqi, 43.95cqi 6.51cqi,
+    63.8cqi 16.28cqi, 59.81cqi 27.77cqi, 65.13cqi 26cqi, 91.52cqi 16.66cqi,
+    43.48cqi 29.77cqi, 37.81cqi 36.05cqi, 5.29cqi 39.87cqi, 16.06cqi 15.98cqi,
+    40.55cqi 31.33cqi, 45.75cqi 22cqi, 17.41cqi 10.25cqi, 3.57cqi 12.79cqi,
+    8.68cqi 11.51cqi, 14.13cqi 11.84cqi, 4.52cqi 10.7cqi, 73.63cqi 23.22cqi,
+    2.64cqi 6.82cqi, 65.12cqi 30.24cqi, 87.66cqi 21.03cqi, 45.49cqi 16.88cqi,
+    4.84cqi 14.36cqi, 77.75cqi 9.12cqi, 94.21cqi 39.54cqi, 62.03cqi 39.77cqi,
+    94.52cqi 37.83cqi, 3.7cqi 30.03cqi, 72.61cqi 10.71cqi, 24.79cqi 18.35cqi,
+    50.47cqi 38.6cqi, 51.46cqi 29.43cqi, 48.37cqi 39.78cqi, 30.42cqi 13.1cqi,
+    25.55cqi 38.19cqi, 45.51cqi 31.45cqi, 43.42cqi 7.6cqi, 91.8cqi 33.75cqi,
+    43.66cqi 11cqi, 78.38cqi 25.45cqi, 12.58cqi 15.29cqi, 54.51cqi 28.17cqi,
+    19.76cqi 32.19cqi, 2.87cqi 32.8cqi, 35.27cqi 17.95cqi, 93.22cqi 5.05cqi,
+    39.11cqi 1.56cqi, 25.25cqi 5.03cqi, 18.26cqi 11.02cqi, 79.65cqi 37.12cqi,
+    36.93cqi 5.57cqi, 0.44cqi 38.33cqi, 92.14cqi 0.52cqi, 65.59cqi 11.59cqi,
+    18.36cqi 15.66cqi, 29.08cqi 4.25cqi, 62.41cqi 37.8cqi, 42.01cqi 14cqi,
+    39.7cqi 16.08cqi, 37.03cqi 12.04cqi, 21.02cqi 9.01cqi, 94.97cqi 36.05cqi,
+    24.77cqi 11.63cqi, 64.59cqi 32.67cqi, 60.25cqi 37.35cqi, 77.57cqi 15.36cqi,
+    2.46cqi 27.89cqi, 24.65cqi 18.74cqi, 80.69cqi 33.29cqi, 71.57cqi 31.46cqi,
+    57.95cqi 5.81cqi, 80.77cqi 24.62cqi, 48.54cqi 39.82cqi, 70.21cqi 5.11cqi,
+    41.87cqi 10.6cqi, 99.35cqi 12.06cqi, 36.91cqi 23.82cqi, 87.61cqi 21.2cqi,
+    6.24cqi 11.38cqi, 52.09cqi 37.79cqi, 98.59cqi 35.39cqi, 30.15cqi 29.56cqi,
+    13.18cqi 1.06cqi, 31.8cqi 12.8cqi, 86.95cqi 33.07cqi, 38.67cqi 27.39cqi,
+    44.21cqi 25.55cqi, 62.36cqi 7.03cqi, 37.01cqi 15.5cqi, 40.12cqi 2.48cqi,
+    70.88cqi 28.27cqi, 72.72cqi 26.55cqi;
+}
+
+.bright-stars {
+  width: 0.28cqi;
+  height: 0.28cqi;
+  color: #e6e7fb;
+  box-shadow: 37.35cqi 27.6cqi, 31.71cqi 13.37cqi, 27.99cqi 14.09cqi,
+    17.57cqi 14.13cqi, 11.75cqi 6.83cqi, 90.61cqi 24.67cqi, 54.05cqi 34.38cqi,
+    52.51cqi 30.39cqi, 44.36cqi 24.64cqi, 79.8cqi 5.5cqi, 68.23cqi 14.13cqi,
+    99.32cqi 14.37cqi, 37.33cqi 19.43cqi, 40.6cqi 35.58cqi, 33.96cqi 33.81cqi,
+    32.46cqi 30.35cqi, 80.52cqi 22.82cqi;
+}
+
+.brilliant-stars {
+  width: 0.4cqi;
+  height: 0.4cqi;
+  color: var(--star-brilliant);
+  box-shadow: 39.69cqi 29.26cqi, 41.04cqi 13.3cqi, 19.67cqi 6.91cqi,
+    27.29cqi 10.47cqi, 76.21cqi 31.97cqi, 88.38cqi 27.98cqi;
+}
+
+.warm-stars {
+  width: 0.37cqi;
+  height: 0.37cqi;
+  color: #ffd9b3;
+  box-shadow: 37.35cqi 29.34cqi, 32.25cqi 8.72cqi, 58.02cqi 30.96cqi;
+}
+
+.star {
+  position: absolute;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--star-brilliant) 0 30%,
+    rgb(214 218 255 / 0.28) 30% 56%,
+    transparent 56%
+  );
+}
+
+.achernar {
+  left: 85.46cqi;
+  top: 6.42cqi;
+  width: 1.45cqi;
+  height: 1.45cqi;
+}
+
+.rigil-kentaurus {
+  left: 47.98cqi;
+  top: 34.32cqi;
+  width: 1.4cqi;
+  height: 1.4cqi;
+}
+
+.hadar {
+  left: 45.22cqi;
+  top: 33.16cqi;
+  width: 1.15cqi;
+  height: 1.15cqi;
+}
+
+.acrux {
+  left: 40.56cqi;
+  top: 26.7cqi;
+  width: 1.1cqi;
+  height: 1.1cqi;
+}
+
+.pole {
+  position: absolute;
+  left: 58.12cqi;
+  top: 17.16cqi;
+  width: 1.7cqi;
+  height: 1.7cqi;
+  translate: -50% -50%;
+  background: linear-gradient(var(--label-ink), var(--label-ink)) center top /
+      0.1cqi 0.52cqi no-repeat,
+    linear-gradient(var(--label-ink), var(--label-ink)) center bottom / 0.1cqi
+      0.52cqi no-repeat,
+    linear-gradient(var(--label-ink), var(--label-ink)) left center / 0.52cqi
+      0.1cqi no-repeat,
+    linear-gradient(var(--label-ink), var(--label-ink)) right center / 0.52cqi
+      0.1cqi no-repeat;
+}
+
+.label {
+  position: absolute;
+  margin: 0;
+  font: italic 400 max(0.55rem, 1.2cqi) / 1.15 var(--serif-font);
+  color: var(--label-ink);
+  white-space: nowrap;
+}
+
+.carina-label {
+  left: calc(34.15cqi + 1.4cqi);
+  top: 20.68cqi;
+  translate: 0 -50%;
+  padding-left: 8.4cqi;
+}
+
+.carina-label::before,
+.cross-label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 0.1cqi;
+  background: var(--callout-line);
+}
+
+.carina-label::before {
+  left: 0;
+  width: 7.8cqi;
+}
+
+.cross-label {
+  right: calc(100% - 37.49cqi + 1.2cqi);
+  top: 27.74cqi;
+  translate: 0 -50%;
+  padding-right: 3.2cqi;
+}
+
+.cross-label::before {
+  right: 0;
+  width: 2.7cqi;
+}
+
+.clouds-label {
+  left: 63.05cqi;
+  top: 10.72cqi;
+  translate: -50% -50%;
+}
+
+.pole-label {
+  left: calc(58.12cqi + 1.5cqi);
+  top: 17.16cqi;
+  translate: 0 -50%;
+}
+
+.far-range::before,
+.near-range::before {
+  content: "";
+}
+
+.far-range {
+  filter: drop-shadow(0 -0.2cqi 0 #343a58);
+}
+
+.far-range::before {
+  background: #0a0c1f;
+  clip-path: polygon(
+    -0.5% 86.8%,
+    1% 84.8%,
+    1.5% 84.4%,
+    1.8% 84.5%,
+    2.8% 85.6%,
+    5.6% 89.8%,
+    7.3% 92.1%,
+    7.6% 92.3%,
+    8.9% 92.5%,
+    10.1% 93%,
+    14.2% 95%,
+    14.4% 94.9%,
+    16.7% 92.9%,
+    17.5% 92.4%,
+    18.2% 92.8%,
+    21% 95.2%,
+    25.6% 92.5%,
+    26.1% 92.4%,
+    26.8% 92.7%,
+    27.3% 92.1%,
+    27.9% 91.6%,
+    28.4% 92.1%,
+    29.1% 93.1%,
+    30.9% 94.5%,
+    32.9% 94.8%,
+    34.4% 95.2%,
+    35.2% 94.9%,
+    36.5% 94.1%,
+    40.5% 90.8%,
+    41.5% 90.3%,
+    42.5% 90.8%,
+    45.8% 93.5%,
+    46.1% 93.6%,
+    46.8% 93.2%,
+    47.6% 93.3%,
+    50.9% 89.8%,
+    51.9% 89%,
+    52.2% 89%,
+    52.9% 89.6%,
+    55.9% 92.9%,
+    57% 91.6%,
+    59.2% 88%,
+    60% 87.1%,
+    60.3% 87.1%,
+    60.8% 87.7%,
+    64% 92.7%,
+    64.3% 92.6%,
+    65.1% 91.7%,
+    68.4% 87%,
+    68.9% 86.3%,
+    69.4% 86%,
+    71.6% 88.2%,
+    71.9% 88.3%,
+    72.9% 87.4%,
+    73.4% 87.7%,
+    74.2% 88.5%,
+    77% 91.9%,
+    78% 91.8%,
+    79.2% 91.9%,
+    80.5% 92.4%,
+    82% 93.2%,
+    82.3% 93.2%,
+    83% 92.5%,
+    87.1% 88.3%,
+    87.8% 87.6%,
+    88.3% 87.3%,
+    88.9% 87.6%,
+    89.6% 88.3%,
+    92.9% 91.7%,
+    94.4% 90.1%,
+    95.2% 89.5%,
+    95.9% 90.1%,
+    99.2% 93.6%,
+    99.7% 93.6%,
+    100.5% 92.8%,
+    100.5% 101.1%,
+    -0.5% 101.1%
+  );
+}
+
+.near-range {
+  filter: drop-shadow(0 -0.17cqi 0 #22273e);
+}
+
+.near-range::before {
+  background: #08091a;
+  clip-path: polygon(
+    -0.5% 97.7%,
+    4.3% 95.6%,
+    5.6% 95.2%,
+    6.6% 95.4%,
+    8.9% 96.4%,
+    12.7% 94.6%,
+    14.2% 94.1%,
+    16.2% 94.9%,
+    17.7% 95.3%,
+    22.8% 97.3%,
+    25.3% 97.4%,
+    28.6% 96%,
+    29.9% 95.6%,
+    31.1% 96%,
+    34.7% 97.4%,
+    37% 97.4%,
+    40% 97.7%,
+    45.6% 95.4%,
+    46.1% 95.3%,
+    47.6% 95.6%,
+    50.1% 93.9%,
+    51.4% 93.3%,
+    52.7% 93.8%,
+    55.9% 95.9%,
+    58% 95.9%,
+    60% 96.2%,
+    67.3% 98.6%,
+    69.4% 97.8%,
+    71.4% 96.7%,
+    73.2% 95.4%,
+    75.9% 93%,
+    77% 92.3%,
+    77.2% 92.3%,
+    78% 92.8%,
+    81% 95.4%,
+    82.5% 96.5%,
+    84% 96.7%,
+    88.6% 94.6%,
+    90.1% 94.1%,
+    91.4% 94.5%,
+    95.4% 96.5%,
+    98% 97.5%,
+    100.5% 96.7%,
+    100.5% 101.1%,
+    -0.5% 101.1%
+  );
+}
+
+.tor {
+  --granite-lit: #3b3a62;
+  --granite-face: #2b2a4b;
+  --granite-shade: #1d1c38;
+  --granite-crack: #121128;
+  --granite-lichen: #424767;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100cqi;
+  height: 48cqi;
+  pointer-events: none;
+}
+
+.block,
+.cave {
+  position: absolute;
+}
+
+.cave {
+  --moth-in-cave: #1d1814;
+  left: 78.6cqi;
+  top: 35cqi;
+  width: 14.8cqi;
+  height: 8.4cqi;
+  clip-path: polygon(
+    4% 34%,
+    14% 12%,
+    30% 4%,
+    52% 0,
+    74% 6%,
+    90% 18%,
+    100% 40%,
+    97% 70%,
+    86% 94%,
+    62% 100%,
+    36% 98%,
+    14% 90%,
+    2% 66%
+  );
+  background: radial-gradient(
+      ellipse 2.2% 8.6% at 30% 79%,
+      var(--moth-in-cave) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2% 7.6% at 37% 84%,
+      var(--moth-in-cave) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2.3% 9% at 52% 81%,
+      var(--moth-in-cave) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 1.9% 7.2% at 61% 85%,
+      var(--moth-in-cave) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2.1% 8.2% at 70% 80%,
+      var(--moth-in-cave) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 1.9% 7% at 34% 26%,
+      var(--moth-in-cave) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2% 7.6% at 57% 22%,
+      var(--moth-in-cave) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 1.7% 6.2% at 46% 30%,
+      var(--moth-in-cave) 96%,
+      transparent
+    ),
+    radial-gradient(ellipse 34% 30% at 52% 52%, #030411 96%, transparent),
+    #06071a;
+}
+
+.tall-block {
+  left: 91.5cqi;
+  top: 25.6cqi;
+  width: 12.6cqi;
+  height: 19cqi;
+  rotate: 3deg;
+  clip-path: polygon(
+    98.3% 50%,
+    98.4% 78.9%,
+    97.9% 86.6%,
+    96.5% 91.8%,
+    94.8% 96.4%,
+    90.3% 98.4%,
+    84% 99.5%,
+    73.9% 100%,
+    26.2% 100%,
+    15.5% 100%,
+    9.4% 98.8%,
+    6.5% 95.1%,
+    4% 91.4%,
+    2.8% 86.1%,
+    1.8% 78.7%,
+    0.3% 50%,
+    0.9% 25.7%,
+    2.4% 17.1%,
+    4.7% 10.9%,
+    8.9% 6.8%,
+    13.1% 2.7%,
+    19.8% 0,
+    31.6% 0,
+    68.4% 0,
+    79.5% 0.8%,
+    86.1% 3.6%,
+    91.7% 6.3%,
+    95.1% 11%,
+    97.7% 17%,
+    99% 25.7%
+  );
+  background: linear-gradient(
+        87.8deg,
+        transparent 0 45.3%,
+        var(--granite-crack) 45.3% 54.7%,
+        transparent 54.7%
+      )
+      44.7% 102.5% / 5.4% 71.4% no-repeat,
+    radial-gradient(
+      ellipse 4.5% 2% at 28% 10%,
+      var(--granite-lichen) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 3% 1.6% at 33% 12%,
+      var(--granite-lichen) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2.6% 1.4% at 61% 8%,
+      var(--granite-lichen) 96%,
+      transparent
+    ),
+    linear-gradient(174deg, var(--granite-lit) 0 23%, transparent 23%),
+    linear-gradient(97deg, transparent 0 62%, var(--granite-shade) 62%),
+    var(--granite-face);
+}
+
+.roof-block {
+  left: 75.8cqi;
+  top: 28.6cqi;
+  width: 20cqi;
+  height: 8.6cqi;
+  rotate: -5deg;
+  clip-path: polygon(
+    98.5% 50%,
+    98.2% 67.2%,
+    97.5% 77.7%,
+    93.7% 85.3%,
+    88.6% 91.4%,
+    81.9% 96%,
+    72.9% 98.4%,
+    61.3% 100%,
+    38.6% 100%,
+    26.8% 99.1%,
+    18.1% 96%,
+    12.4% 90.4%,
+    7.8% 84.1%,
+    3.5% 77.1%,
+    1.5% 67.3%,
+    0.3% 50%,
+    1% 29.3%,
+    3.6% 20.4%,
+    5.8% 13%,
+    9.7% 7.3%,
+    15.3% 3%,
+    23% 0,
+    35.5% 0,
+    64.3% 0,
+    76.2% 1.1%,
+    83.9% 4.1%,
+    90.3% 7.3%,
+    94.6% 12.7%,
+    96.5% 20.4%,
+    98.2% 29.6%
+  );
+  background: radial-gradient(
+      ellipse 5% 3.4% at 25% 12%,
+      var(--granite-lichen) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 3% 2.4% at 32% 16%,
+      var(--granite-lichen) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 3% 2.2% at 65% 10%,
+      var(--granite-lichen) 96%,
+      transparent
+    ),
+    linear-gradient(176deg, var(--granite-lit) 0 33%, transparent 33%),
+    linear-gradient(to top, var(--granite-crack) 0 20%, transparent 20%),
+    linear-gradient(101deg, transparent 0 76%, var(--granite-shade) 76%),
+    var(--granite-face);
+}
+
+.top-block {
+  left: 81.8cqi;
+  top: 24.8cqi;
+  width: 9.4cqi;
+  height: 5.4cqi;
+  rotate: 8deg;
+  clip-path: polygon(
+    100% 50%,
+    100% 72.2%,
+    98.5% 81.7%,
+    94.8% 87.8%,
+    89.3% 91.6%,
+    84% 95.3%,
+    76.4% 97.6%,
+    65% 99.2%,
+    34.7% 100%,
+    23.4% 98.1%,
+    15.7% 95.8%,
+    9.4% 92.9%,
+    5% 88%,
+    0.8% 82.1%,
+    0 72.6%,
+    0 50%,
+    0.2% 30%,
+    3% 20.8%,
+    6.2% 13.7%,
+    10.3% 7.8%,
+    17.1% 4.6%,
+    25.4% 2.3%,
+    37.1% 1.4%,
+    62.8% 1.8%,
+    74.9% 1.7%,
+    83.6% 3.6%,
+    90% 7.5%,
+    95.1% 12.6%,
+    97.7% 20.4%,
+    99.7% 30%
+  );
+  background: radial-gradient(
+      ellipse 5% 4% at 40% 16%,
+      var(--granite-lichen) 96%,
+      transparent
+    ),
+    linear-gradient(172deg, var(--granite-lit) 0 38%, transparent 38%),
+    linear-gradient(102deg, transparent 0 70%, var(--granite-shade) 70%),
+    var(--granite-face);
+}
+
+.left-block {
+  left: 65.8cqi;
+  top: 35.8cqi;
+  width: 15.6cqi;
+  height: 11cqi;
+  rotate: -3deg;
+  clip-path: polygon(
+    100% 50%,
+    100% 82.9%,
+    99.4% 89.2%,
+    97.2% 93.1%,
+    95.3% 96.7%,
+    91.4% 98.4%,
+    86.2% 100%,
+    76.4% 100%,
+    24.4% 98.6%,
+    15.2% 98%,
+    10% 96.8%,
+    6.3% 95.1%,
+    2.7% 93.2%,
+    1.4% 88.6%,
+    0.6% 81.7%,
+    0 50%,
+    0.3% 23.2%,
+    0.5% 14.2%,
+    2.4% 8.1%,
+    6.7% 4.9%,
+    11.7% 2.3%,
+    19.1% 1.5%,
+    30.1% 1%,
+    70.2% 0.2%,
+    80.9% 1.5%,
+    87.3% 3.5%,
+    91.8% 6.4%,
+    94.5% 10.9%,
+    97.7% 15.5%,
+    100% 23%
+  );
+  background: linear-gradient(
+        87deg,
+        transparent 0 44%,
+        var(--granite-crack) 44% 56%,
+        transparent 56%
+      )
+      31.7% 104.3% / 4.4% 83.4% no-repeat,
+    radial-gradient(
+      ellipse 4.6% 2% at 55% 8%,
+      var(--granite-lichen) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2.6% 1.4% at 60% 10%,
+      var(--granite-lichen) 96%,
+      transparent
+    ),
+    linear-gradient(178deg, var(--granite-lit) 0 22%, transparent 22%),
+    linear-gradient(95deg, transparent 0 79%, var(--granite-shade) 79%),
+    var(--granite-face);
+}
+
+.ledge-block {
+  left: 80.6cqi;
+  top: 41.4cqi;
+  width: 22cqi;
+  height: 7cqi;
+  clip-path: polygon(
+    98.5% 50%,
+    99.7% 83.7%,
+    99.3% 90.3%,
+    98.1% 94.4%,
+    96.1% 97.3%,
+    92.1% 98.3%,
+    87.7% 99.9%,
+    79.1% 100%,
+    21.1% 100%,
+    12% 100%,
+    8.1% 98%,
+    6.1% 95.1%,
+    3.5% 92.9%,
+    2.2% 89.1%,
+    0.8% 83.4%,
+    0 50%,
+    1.1% 18.6%,
+    1.7% 11.7%,
+    2.8% 7%,
+    5% 3.6%,
+    7.5% 0.3%,
+    13.2% 0,
+    23.5% 0,
+    76.4% 0,
+    85.4% 1.2%,
+    90.9% 2.2%,
+    94.8% 3.8%,
+    96.4% 7.7%,
+    97.8% 12%,
+    98.3% 19%
+  );
+  background: linear-gradient(
+        93.6deg,
+        transparent 0 41.8%,
+        var(--granite-crack) 41.8% 58.2%,
+        transparent 58.2%
+      )
+      62.4% 0% / 3.4% 101.4% no-repeat,
+    radial-gradient(
+      ellipse 4% 3% at 24% 12%,
+      var(--granite-lichen) 96%,
+      transparent
+    ),
+    linear-gradient(179deg, var(--granite-lit) 0 20%, transparent 20%),
+    linear-gradient(96deg, transparent 0 82%, var(--granite-shade) 82%),
+    var(--granite-face);
+}
+
+.front-block {
+  left: 69.6cqi;
+  top: 40.4cqi;
+  width: 8cqi;
+  height: 4.6cqi;
+  rotate: -6deg;
+  clip-path: polygon(
+    99.9% 50%,
+    99.8% 73%,
+    99% 82.7%,
+    96.5% 89.6%,
+    91.3% 93.5%,
+    85.7% 96.9%,
+    77.9% 99%,
+    66.2% 99.9%,
+    33.6% 100%,
+    22.4% 98.5%,
+    15.5% 95.4%,
+    10.1% 92%,
+    6.5% 87.1%,
+    2.7% 81.5%,
+    0.1% 73%,
+    0 50%,
+    0.2% 32.3%,
+    2.7% 22.4%,
+    6.4% 14.8%,
+    10.6% 7.8%,
+    17.7% 3.4%,
+    26.7% 0.8%,
+    38.8% 0,
+    60.8% 1.3%,
+    72.4% 2.6%,
+    81.2% 5.1%,
+    87.7% 9.6%,
+    93.2% 15.1%,
+    96.2% 23%,
+    98.1% 32.9%
+  );
+  background: linear-gradient(174deg, var(--granite-lit) 0 36%, transparent 36%),
+    linear-gradient(100deg, transparent 0 66%, var(--granite-shade) 66%),
+    var(--granite-face);
+}
+
+.moths {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.flight {
+  position: absolute;
+  z-index: 2;
+  left: calc(84cqi + var(--entry-x));
+  top: calc(39.5cqi + var(--entry-y));
+  animation: flight-across var(--flight-duration)
+    var(--across-easing, cubic-bezier(0.2, 0.62, 0.36, 1)) var(--flight-delay)
+    infinite;
+}
+
+.moth {
+  position: absolute;
+  display: block;
+  --wing-base: var(--moth-wing-warm);
+  --wing-shadow: var(--moth-wing-warm-shadow);
+  --wing-tan: var(--moth-wing-tan);
+  --wing-tan-light: var(--moth-wing-tan-light);
+  width: 3.8cqi;
+  height: 4.104cqi;
+  margin: -0.862cqi 0 0 -1.9cqi;
+  transform-origin: 50% 21%;
+  rotate: var(--heading);
+  filter: drop-shadow(0 -0.07cqi 0 #7d7899);
+  animation: flight-descent var(--flight-duration)
+    cubic-bezier(0.3, 0.5, 0.42, 1) var(--flight-delay) infinite;
+}
+
+.moth::after,
+.wing::before,
+.wing::after {
+  content: "";
+  position: absolute;
+}
+
+.moth::after {
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  clip-path: polygon(
+    6.3% 2.9%,
+    5.7% 2.9%,
+    5.7% 3.3%,
+    26.7% 21.7%,
+    46.2% 39.7%,
+    44.5% 42.3%,
+    43% 45.4%,
+    38.5% 48.5%,
+    37.4% 54.6%,
+    38.5% 60.8%,
+    43.5% 64.6%,
+    44.6% 70.8%,
+    45% 83.1%,
+    46.6% 92.3%,
+    50% 96.9%,
+    53.4% 92.3%,
+    55% 83.1%,
+    55.4% 70.8%,
+    56.5% 64.6%,
+    61.5% 60.8%,
+    62.6% 54.6%,
+    61.5% 48.5%,
+    57% 45.4%,
+    55.5% 42.3%,
+    53.8% 39.7%,
+    73.3% 21.7%,
+    94.3% 3.3%,
+    94.4% 3%,
+    94.1% 2.8%,
+    93.7% 2.9%,
+    72.7% 21.3%,
+    53.4% 39.2%,
+    50% 37.7%,
+    46.6% 39.2%,
+    27.3% 21.3%
+  );
+  background: radial-gradient(
+      ellipse 2.2% 1.5% at 45.8% 42.2%,
+      var(--moth-wing-streak) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2.2% 1.5% at 54.2% 42.2%,
+      var(--moth-wing-streak) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 6.6% 3% at 50% 41.8%,
+      var(--moth-head) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 9% 1.9% at 50% 45.8%,
+      var(--moth-collar) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 12.6% 11.2% at 50% 54.6%,
+      var(--moth-body) 96%,
+      transparent
+    ),
+    var(--moth-hindwing);
+}
+
+.wing {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 21%;
+  animation: wing-beat var(--wing-beat) ease-in-out var(--wing-phase, 0s)
+    infinite alternate;
+}
+
+.left-wing {
+  transform: scaleX(-1);
+}
+
+.wing::before {
+  inset: 0;
+  clip-path: polygon(
+    1% 26%,
+    1% 70%,
+    11.1% 60.9%,
+    16.3% 63.5%,
+    22.3% 65.2%,
+    28.7% 65.9%,
+    33% 65.6%,
+    39.3% 63.9%,
+    43.1% 62.1%,
+    48% 58.3%,
+    50.6% 55.1%,
+    53.3% 49.7%,
+    54.2% 45.8%,
+    54.5% 41.8%,
+    54% 37.9%,
+    53% 34.1%,
+    51.4% 30.4%,
+    49.3% 27.1%
+  );
+  background: radial-gradient(
+    ellipse 42% 38.9% at 4% 30%,
+    var(--moth-hindwing) 0 100%,
+    var(--moth-wing-tip) 100%
+  );
+}
+
+.wing::after {
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  transform-origin: 14% 21%;
+  rotate: -58.4deg;
+  clip-path: polygon(
+    20.2% 90.2%,
+    27.8% 92.2%,
+    40.6% 97%,
+    55.8% 99.6%,
+    74.2% 99.9%,
+    92% 98%,
+    98.2% 95.3%,
+    100% 91.8%,
+    95.2% 81.5%,
+    83.6% 66.7%,
+    73.2% 57%,
+    52.8% 32.8%,
+    39.8% 22.1%,
+    36% 16.3%,
+    29.2% 12.2%,
+    21.4% 9%,
+    16.4% 5.4%,
+    13.9% 4.5%,
+    13.6% 6.5%,
+    11.8% 8.2%,
+    17.8% 10.7%,
+    22.2% 14.2%,
+    24.7% 18.2%,
+    24.9% 23.1%,
+    22.2% 27.8%,
+    19.5% 30.2%,
+    16% 32.2%,
+    8.5% 34.7%,
+    3.7% 35.3%,
+    0 35.5%,
+    0 52%,
+    13.5% 89.1%
+  );
+  background: radial-gradient(
+      ellipse 6.2% 3.7% at 62% 68.5%,
+      var(--moth-wing-spot) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 4.2% 2% at 51.2% 55.5%,
+      var(--moth-wing-spot) 96%,
+      transparent
+    ),
+    linear-gradient(
+        65.6deg,
+        transparent 0 46.7%,
+        var(--moth-wing-streak) 46.7% 53.3%,
+        transparent 53.3%
+      )
+      36.7% 52.6% / 32.1% 32.6% no-repeat,
+    radial-gradient(
+      ellipse 5% 9.5% at 19.2% 47%,
+      var(--wing-tan-light) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 10.4% 15% at 20.8% 49%,
+      var(--wing-tan) 96%,
+      transparent
+    ),
+    linear-gradient(
+        167.5deg,
+        transparent 0 42.7%,
+        var(--moth-wing-fringe) 42.7% 57.3%,
+        transparent 57.3%
+      )
+      97.3% 101.3% / 26.2% 7% no-repeat,
+    linear-gradient(
+        190.3deg,
+        transparent 0 43.3%,
+        var(--moth-wing-fringe) 43.3% 56.7%,
+        transparent 56.7%
+      )
+      62.9% 101.3% / 37% 7.5% no-repeat,
+    linear-gradient(
+        209deg,
+        transparent 0 46.3%,
+        var(--moth-wing-fringe) 46.3% 53.7%,
+        transparent 53.7%
+      )
+      14.7% 98.3% / 34.8% 12.5% no-repeat,
+    radial-gradient(
+      ellipse 148% 76% at 0 0,
+      transparent 0 88%,
+      var(--moth-wing-tip) 88%
+    ),
+    var(--wing-base);
+}
+
+.flight:nth-child(1) {
+  --entry-x: -3.6cqi;
+  --entry-y: 0.6cqi;
+  --start-x: -72.4cqi;
+  --start-y: -46.1cqi;
+  --start-scale: 1.2;
+  --flight-duration: 11s;
+  --flight-delay: -1s;
+  --wing-beat: 0.2s;
+  --heading: 120deg;
+}
+.flight:nth-child(2) {
+  --entry-x: 2.8cqi;
+  --entry-y: -0.4cqi;
+  --start-x: -56.8cqi;
+  --start-y: -46.1cqi;
+  --start-scale: 1.36;
+  --flight-duration: 12s;
+  --flight-delay: -5s;
+  --wing-beat: 0.24s;
+  --wing-phase: -0.07s;
+  --heading: 126deg;
+}
+.flight:nth-child(3) {
+  --entry-x: -0.6cqi;
+  --entry-y: 0.9cqi;
+  --start-x: -31.4cqi;
+  --start-y: -46.4cqi;
+  --start-scale: 1.04;
+  --flight-duration: 10s;
+  --flight-delay: -8s;
+  --wing-beat: 0.17s;
+  --wing-phase: -0.11s;
+  --heading: 143deg;
+}
+.flight:nth-child(4) {
+  --entry-x: 3.8cqi;
+  --entry-y: 0.2cqi;
+  --start-x: -13.8cqi;
+  --start-y: -46.7cqi;
+  --start-scale: 1.28;
+  --flight-duration: 11.5s;
+  --flight-delay: -3s;
+  --wing-beat: 0.19s;
+  --wing-phase: -0.04s;
+  --heading: 162deg;
+}
+.flight:nth-child(5) {
+  --entry-x: 1.2cqi;
+  --entry-y: -0.8cqi;
+  --start-x: 12.8cqi;
+  --start-y: -44.7cqi;
+  --start-scale: 1.04;
+  --flight-duration: 9.5s;
+  --flight-delay: -6.5s;
+  --wing-beat: 0.22s;
+  --wing-phase: -0.13s;
+  --heading: 198deg;
+}
+.flight:nth-child(6) {
+  --entry-x: 4.4cqi;
+  --entry-y: 0.7cqi;
+  --start-x: 19.6cqi;
+  --start-y: -28.2cqi;
+  --start-scale: 0.96;
+  --flight-duration: 10s;
+  --flight-delay: -2.2s;
+  --wing-beat: 0.26s;
+  --wing-phase: -0.09s;
+  --heading: 218deg;
+}
+.flight:nth-child(7) {
+  --entry-x: -2.2cqi;
+  --entry-y: -0.6cqi;
+  --start-x: 24.2cqi;
+  --start-y: -10.9cqi;
+  --start-scale: 0.8;
+  --flight-duration: 8.5s;
+  --flight-delay: -5.4s;
+  --wing-beat: 0.18s;
+  --wing-phase: -0.02s;
+  --heading: 248deg;
+}
+.flight:nth-child(8) {
+  --entry-x: 0.4cqi;
+  --entry-y: 0.3cqi;
+  --start-x: -92.4cqi;
+  --start-y: -33.8cqi;
+  --start-scale: 1.28;
+  --flight-duration: 13s;
+  --flight-delay: -11s;
+  --wing-beat: 0.25s;
+  --wing-phase: -0.15s;
+  --heading: 108deg;
+}
+.flight:nth-child(9) {
+  --entry-x: -4.2cqi;
+  --entry-y: -0.2cqi;
+  --start-x: -86.8cqi;
+  --start-y: -20.3cqi;
+  --start-scale: 1.12;
+  --flight-duration: 12s;
+  --flight-delay: -4.5s;
+  --wing-beat: 0.21s;
+  --wing-phase: -0.06s;
+  --heading: 102deg;
+}
+.flight:nth-child(10) {
+  --entry-x: 2cqi;
+  --entry-y: 0.8cqi;
+  --start-x: -95cqi;
+  --start-y: -11.3cqi;
+  --start-scale: 1.52;
+  --flight-duration: 11s;
+  --flight-delay: -8s;
+  --wing-beat: 0.23s;
+  --wing-phase: -0.12s;
+  --across-easing: linear;
+  --heading: 102deg;
+}
+.flight:nth-child(11) {
+  --entry-x: -1.4cqi;
+  --entry-y: 0.1cqi;
+  --start-x: -91.6cqi;
+  --start-y: -8.6cqi;
+  --start-scale: 1.36;
+  --flight-duration: 12.5s;
+  --flight-delay: -8.6s;
+  --wing-beat: 0.16s;
+  --wing-phase: -0.08s;
+  --across-easing: linear;
+  --heading: 100deg;
+}
+.flight:nth-child(12) {
+  --entry-x: 3.2cqi;
+  --entry-y: -0.9cqi;
+  --start-x: -25.2cqi;
+  --start-y: -46.6cqi;
+  --start-scale: 1.44;
+  --flight-duration: 14s;
+  --flight-delay: -7s;
+  --wing-beat: 0.2s;
+  --wing-phase: -0.1s;
+  --heading: 149deg;
+}
+
+@keyframes flight-across {
+  from {
+    translate: var(--start-x) 0;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes flight-descent {
+  0% {
+    translate: 0 var(--start-y);
+    scale: var(--start-scale);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  35% {
+    scale: calc(var(--start-scale) * 0.86);
+  }
+  60% {
+    scale: calc(var(--start-scale) * 0.55);
+  }
+  74% {
+    scale: calc(var(--start-scale) * 0.19);
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    translate: 0 0;
+    scale: 0.06;
+    opacity: 0;
+  }
+}
+
+@keyframes wing-beat {
+  from {
+    scale: 1 1;
+  }
+  to {
+    scale: 0.45 1;
+  }
+}
+
+.footer {
+  --ground: #060714;
+  --title-ink: #ecd3ac;
+  --note-ink: #9ca2d0;
+  --sans-serif-font: "Alegreya Sans", "Gill Sans", "Segoe UI", sans-serif;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18cqi 20cqi;
+  grid-template-rows: auto 1fr;
+  column-gap: 3.5cqi;
+  padding: 5cqi 6cqi 2.6cqi;
+  color: #d6d5e8;
+  background: linear-gradient(
+    to bottom,
+    transparent 0 2.6cqi,
+    var(--ground) 2.6cqi
+  );
+}
+
+.text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.ground {
+  position: absolute;
+  z-index: -1;
+  top: -4cqi;
+  left: 0;
+  width: 100%;
+  height: 8cqi;
+  pointer-events: none;
+  background: var(--ground);
+  clip-path: polygon(
+    -1% 57.1%,
+    0 57.9%,
+    2.1% 57%,
+    3.6% 58.5%,
+    4.6% 58.6%,
+    6.7% 55.4%,
+    9.3% 55.4%,
+    11.8% 52.5%,
+    14.4% 55.2%,
+    16.4% 54.6%,
+    19% 57.9%,
+    21.6% 55.7%,
+    23.6% 56.3%,
+    24.6% 54.8%,
+    26.2% 51.1%,
+    28.2% 47.3%,
+    30.8% 45%,
+    31.3% 45.6%,
+    31.8% 47.4%,
+    32.8% 52.8%,
+    33.3% 54.6%,
+    33.9% 55.4%,
+    35.9% 54.8%,
+    38% 56.7%,
+    39% 56%,
+    40.5% 53.4%,
+    43.1% 53.4%,
+    45.1% 50.6%,
+    46.2% 50.7%,
+    48.2% 52.7%,
+    51.3% 48.1%,
+    54.9% 45.6%,
+    55.9% 46.2%,
+    57.4% 51.6%,
+    58.5% 52.4%,
+    60% 50.3%,
+    62% 51.2%,
+    64.6% 43.8%,
+    67.2% 41.4%,
+    68.2% 39.5%,
+    69.7% 38.9%,
+    71.3% 40.5%,
+    72.3% 40.8%,
+    74.3% 37.6%,
+    76.9% 37.6%,
+    79.5% 34.5%,
+    82% 37.1%,
+    84.1% 36.4%,
+    86.6% 39.8%,
+    89.2% 37.8%,
+    91.3% 38.5%,
+    93.8% 34.6%,
+    96.4% 35.5%,
+    98.4% 33.9%,
+    100% 35.8%,
+    101% 40.8%,
+    101% 106.2%,
+    -1% 106.2%
+  );
+}
+
+.title {
+  position: absolute;
+  top: -11.9cqi;
+  left: 6cqi;
+  margin: 0;
+  font: 800 6.6cqi / 0.86 var(--serif-font);
+  letter-spacing: -0.01em;
+  color: var(--title-ink);
+}
+
+.species {
+  margin: 0;
+  font: italic 400 max(0.85rem, 1.9cqi) / 1.2 var(--serif-font);
+  color: var(--title-ink);
+}
+
+.story {
+  margin: 1.4cqi 0 0;
+  max-width: 30em;
+  font: 400 max(0.8rem, 1.42cqi) / 1.55 var(--sans-serif-font);
+}
+
+.partial-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.4cqi;
+}
+
+.partial-button {
+  display: inline-flex;
+  min-height: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgb(180 185 226 / 55%);
+  border-radius: 999px;
+  color: #e7e8f4;
+  background: rgb(35 42 79 / 72%);
+  font: 600 max(0.75rem, 1.1cqi) / 1.2 var(--sans-serif-font);
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.partial-button:hover {
+  transform: translateY(-1px);
+  border-color: #e5d0ae;
+  background: #39436f;
+}
+
+.partial-button:focus-visible {
+  outline: 2px solid #ecd3ac;
+  outline-offset: 3px;
+}
+
+.note {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  align-self: end;
+  margin: 1.6cqi 0 0;
+  font: italic 400 max(0.72rem, 1.12cqi) / 1.4 var(--serif-font);
+  color: var(--note-ink);
+}
+
+.detail {
+  --circle-centre-from-right: 10cqi;
+  position: relative;
+  grid-column: 2 / 4;
+  grid-row: 1;
+  align-self: start;
+  display: grid;
+  grid-template-columns: 19.5cqi 20cqi;
+  column-gap: 2cqi;
+  align-items: center;
+  margin: -5.5cqi 0 0;
+}
+
+.detail::before,
+.detail::after {
+  content: "";
+  position: absolute;
+  left: calc(100% - var(--circle-centre-from-right));
+  translate: -50% 0;
+}
+
+.detail::before {
+  bottom: 100%;
+  width: 0.18cqi;
+  height: 3cqi;
+  background: var(--callout-line);
+}
+
+.detail::after {
+  bottom: calc(100% + 3cqi);
+  width: 2.2cqi;
+  height: 2.2cqi;
+  margin-bottom: -0.1cqi;
+  border: 0.2cqi solid var(--callout-line);
+  border-radius: 50%;
+}
+
+.cave-wall {
+  container-type: inline-size;
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: repeat(15, 7.35%);
+  grid-auto-rows: 12.94%;
+  justify-content: center;
+  width: 20cqi;
+  height: 20cqi;
+  border: 0.36cqi solid var(--callout-line);
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+  background: #5f5459;
+}
+
+.cave-wall::before {
+  --granite-pink-grain: #7d6a67;
+  --granite-pale-grain: #9d9390;
+  --granite-dark-grain: #2c2730;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1cqi;
+  height: 1cqi;
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: 37.5cqi 69.4cqi 0 0.15cqi var(--granite-pale-grain),
+    63.8cqi 14.9cqi 0 0 var(--granite-dark-grain),
+    51.1cqi 71.3cqi 0 0.7cqi var(--granite-dark-grain),
+    73.5cqi 38.4cqi 0 0 var(--granite-dark-grain),
+    1.5cqi 37.3cqi 0 0 var(--granite-pink-grain),
+    46.9cqi 33.8cqi 0 0 var(--granite-pink-grain),
+    43cqi 15.9cqi 0 0.15cqi var(--granite-pink-grain),
+    30.9cqi 60.1cqi 0 0 var(--granite-pale-grain),
+    51.6cqi 44.9cqi 0 0.15cqi var(--granite-pale-grain),
+    36.2cqi 80.7cqi 0 0 var(--granite-dark-grain),
+    96.3cqi 40.9cqi 0 0 var(--granite-dark-grain),
+    11.1cqi 64.7cqi 0 0.15cqi var(--granite-pale-grain),
+    47.9cqi 13.6cqi 0 0.47cqi var(--granite-dark-grain),
+    59.3cqi 18.6cqi 0 0.7cqi var(--granite-dark-grain),
+    33.8cqi 15cqi 0 0.15cqi var(--granite-pink-grain),
+    1.8cqi 36.4cqi 0 0.3cqi var(--granite-pink-grain),
+    72.1cqi 81.6cqi 0 0 var(--granite-pink-grain),
+    59.3cqi 91.6cqi 0 0.15cqi var(--granite-pale-grain),
+    81.6cqi 57.9cqi 0 0 var(--granite-dark-grain),
+    46.1cqi 18cqi 0 0.3cqi var(--granite-dark-grain),
+    76.1cqi 68.8cqi 0 0.3cqi var(--granite-pink-grain),
+    22.6cqi 51cqi 0 0 var(--granite-dark-grain),
+    95.7cqi 54.5cqi 0 0.15cqi var(--granite-pale-grain),
+    77cqi 51.2cqi 0 0 var(--granite-pink-grain),
+    45.9cqi 40.5cqi 0 0.7cqi var(--granite-pink-grain),
+    22.1cqi 34.4cqi 0 0.7cqi var(--granite-pale-grain),
+    43.2cqi 1.1cqi 0 0 var(--granite-pale-grain),
+    62.2cqi 69.6cqi 0 0.47cqi var(--granite-dark-grain),
+    26.9cqi 33.3cqi 0 0.47cqi var(--granite-dark-grain),
+    28.2cqi 94.8cqi 0 0.15cqi var(--granite-pale-grain),
+    74.6cqi 63.4cqi 0 0.3cqi var(--granite-dark-grain),
+    66.7cqi 90.6cqi 0 0 var(--granite-dark-grain),
+    18.9cqi 81.2cqi 0 0 var(--granite-pale-grain),
+    19.3cqi 32.9cqi 0 0.47cqi var(--granite-pink-grain),
+    72.2cqi 56.4cqi 0 0.15cqi var(--granite-dark-grain),
+    39.6cqi 1.3cqi 0 0.47cqi var(--granite-dark-grain),
+    46.1cqi 79.7cqi 0 0.47cqi var(--granite-pink-grain),
+    85.4cqi 26.5cqi 0 0 var(--granite-pink-grain),
+    32cqi 4.9cqi 0 0.3cqi var(--granite-pink-grain),
+    96.4cqi 33.9cqi 0 0 var(--granite-dark-grain),
+    23.3cqi 41.5cqi 0 0.3cqi var(--granite-dark-grain),
+    33.6cqi 20.1cqi 0 0.3cqi var(--granite-pale-grain),
+    39.7cqi 74.6cqi 0 0.3cqi var(--granite-pink-grain),
+    72.2cqi 76.7cqi 0 0 var(--granite-pale-grain),
+    40.9cqi 82.3cqi 0 0 var(--granite-pink-grain),
+    70.2cqi 43.8cqi 0 0.15cqi var(--granite-dark-grain),
+    13.6cqi 46.7cqi 0 0.3cqi var(--granite-pale-grain),
+    78.3cqi 18.3cqi 0 0 var(--granite-pale-grain),
+    66.8cqi 52cqi 0 0 var(--granite-pink-grain),
+    29.4cqi 35.3cqi 0 0.3cqi var(--granite-pink-grain),
+    28.3cqi 11.9cqi 0 0.47cqi var(--granite-pink-grain),
+    15.8cqi 54.3cqi 0 0 var(--granite-pale-grain),
+    17.3cqi 29.8cqi 0 0 var(--granite-dark-grain),
+    19.8cqi 64cqi 0 0.47cqi var(--granite-pale-grain),
+    46.6cqi 11.6cqi 0 0.3cqi var(--granite-pink-grain),
+    33.8cqi 38.6cqi 0 0.3cqi var(--granite-pink-grain),
+    65.4cqi 8.4cqi 0 0.3cqi var(--granite-pale-grain),
+    60cqi 45.2cqi 0 0 var(--granite-pink-grain),
+    7.7cqi 36.5cqi 0 0 var(--granite-pale-grain),
+    51.5cqi 27.3cqi 0 0.15cqi var(--granite-dark-grain),
+    62.4cqi 54.5cqi 0 0 var(--granite-dark-grain),
+    29.3cqi 60.7cqi 0 0.47cqi var(--granite-pale-grain),
+    14.6cqi 29.7cqi 0 0.47cqi var(--granite-dark-grain),
+    57.1cqi 66.9cqi 0 0.15cqi var(--granite-pink-grain),
+    66.7cqi 55.5cqi 0 0.15cqi var(--granite-pink-grain),
+    75.2cqi 14.5cqi 0 0.3cqi var(--granite-pink-grain),
+    84.6cqi 61.5cqi 0 0 var(--granite-dark-grain),
+    70cqi 46cqi 0 0 var(--granite-pink-grain),
+    82.3cqi 51.2cqi 0 0.15cqi var(--granite-pink-grain),
+    41.2cqi 92.1cqi 0 0.3cqi var(--granite-dark-grain),
+    19.5cqi 82.8cqi 0 0 var(--granite-dark-grain),
+    38.2cqi 4cqi 0 0.3cqi var(--granite-pink-grain),
+    66.1cqi 73.2cqi 0 0 var(--granite-dark-grain),
+    24.1cqi 90.7cqi 0 0.15cqi var(--granite-pink-grain),
+    92.9cqi 27.2cqi 0 0.3cqi var(--granite-pink-grain),
+    30cqi 16.8cqi 0 0.15cqi var(--granite-pale-grain),
+    40.5cqi 71.4cqi 0 0.15cqi var(--granite-pale-grain),
+    49.1cqi 90cqi 0 0 var(--granite-dark-grain),
+    77.4cqi 69.2cqi 0 0 var(--granite-pink-grain),
+    50.3cqi 87.3cqi 0 0.3cqi var(--granite-pink-grain),
+    16.6cqi 19.2cqi 0 0.7cqi var(--granite-pink-grain),
+    89.8cqi 52.3cqi 0 0.47cqi var(--granite-dark-grain),
+    66.4cqi 86.7cqi 0 0 var(--granite-pink-grain),
+    77.1cqi 40.5cqi 0 0.15cqi var(--granite-pale-grain),
+    57cqi 60.3cqi 0 0 var(--granite-pale-grain),
+    13.2cqi 51.7cqi 0 0.3cqi var(--granite-pink-grain),
+    55.7cqi 24.9cqi 0 0.3cqi var(--granite-pale-grain),
+    80.1cqi 89.3cqi 0 0.3cqi var(--granite-dark-grain),
+    77.7cqi 56.4cqi 0 0.15cqi var(--granite-pink-grain),
+    34.1cqi 52.2cqi 0 0.15cqi var(--granite-pale-grain),
+    24.4cqi 27.7cqi 0 0 var(--granite-dark-grain),
+    91cqi 32.1cqi 0 0.15cqi var(--granite-dark-grain),
+    45cqi 9.3cqi 0 0.15cqi var(--granite-pink-grain),
+    1.2cqi 44.2cqi 0 0 var(--granite-pink-grain),
+    79.8cqi 22.7cqi 0 0.3cqi var(--granite-pink-grain),
+    25.2cqi 34.5cqi 0 0 var(--granite-pink-grain),
+    86.6cqi 49.9cqi 0 0.7cqi var(--granite-pink-grain),
+    32.5cqi 86.4cqi 0 0.3cqi var(--granite-pink-grain),
+    93.4cqi 28.9cqi 0 0 var(--granite-pink-grain),
+    21.1cqi 13cqi 0 0.47cqi var(--granite-dark-grain),
+    33.4cqi 50.7cqi 0 0 var(--granite-pink-grain),
+    80cqi 31.9cqi 0 0.15cqi var(--granite-pink-grain),
+    67.4cqi 65.8cqi 0 0.15cqi var(--granite-pink-grain),
+    20.4cqi 75.8cqi 0 0.47cqi var(--granite-pale-grain),
+    14.7cqi 17cqi 0 0 var(--granite-pink-grain),
+    12.8cqi 83.9cqi 0 0 var(--granite-pink-grain),
+    59.8cqi 24cqi 0 0 var(--granite-pink-grain),
+    56.9cqi 79.5cqi 0 0 var(--granite-dark-grain),
+    7.1cqi 61.4cqi 0 0.15cqi var(--granite-dark-grain),
+    85.6cqi 32.5cqi 0 0 var(--granite-dark-grain),
+    71.9cqi 72.7cqi 0 0.3cqi var(--granite-pink-grain),
+    64.9cqi 38.8cqi 0 0.47cqi var(--granite-pale-grain),
+    91.5cqi 31.5cqi 0 0 var(--granite-pale-grain),
+    26.2cqi 57.5cqi 0 0.15cqi var(--granite-pale-grain),
+    53.6cqi 58.1cqi 0 0 var(--granite-pink-grain),
+    79.4cqi 38.7cqi 0 0 var(--granite-pink-grain),
+    59.7cqi 16.6cqi 0 0.15cqi var(--granite-pink-grain),
+    23.5cqi 61.4cqi 0 0.47cqi var(--granite-dark-grain),
+    72cqi 80.2cqi 0 0.47cqi var(--granite-pink-grain),
+    45.8cqi 44.2cqi 0 0 var(--granite-dark-grain),
+    20.4cqi 70.5cqi 0 0 var(--granite-pink-grain),
+    89.2cqi 46.7cqi 0 0 var(--granite-dark-grain),
+    53.1cqi 52.7cqi 0 0.15cqi var(--granite-pink-grain),
+    60.1cqi 5.1cqi 0 0.3cqi var(--granite-pink-grain),
+    88.3cqi 22.5cqi 0 0 var(--granite-dark-grain),
+    54.2cqi 14.9cqi 0 0.15cqi var(--granite-dark-grain),
+    61.5cqi 69.4cqi 0 0.7cqi var(--granite-pink-grain),
+    43.3cqi 70.5cqi 0 0.15cqi var(--granite-pink-grain),
+    86.9cqi 51cqi 0 0.15cqi var(--granite-pink-grain),
+    68.1cqi 39.3cqi 0 0.3cqi var(--granite-dark-grain),
+    43.3cqi 66.7cqi 0 0.15cqi var(--granite-pink-grain),
+    88.3cqi 66.1cqi 0 0.3cqi var(--granite-dark-grain),
+    58.4cqi 40.9cqi 0 0 var(--granite-pale-grain),
+    66.1cqi 64.3cqi 0 0.3cqi var(--granite-pink-grain),
+    60.6cqi 20.9cqi 0 0 var(--granite-dark-grain),
+    43cqi 59cqi 0 0.3cqi var(--granite-pale-grain),
+    92cqi 35.7cqi 0 0.47cqi var(--granite-pink-grain),
+    75cqi 68.3cqi 0 0.3cqi var(--granite-dark-grain),
+    54.2cqi 28.7cqi 0 0 var(--granite-dark-grain),
+    44.4cqi 54.9cqi 0 0.3cqi var(--granite-pale-grain),
+    80.8cqi 59.9cqi 0 0.15cqi var(--granite-dark-grain),
+    18.3cqi 84.8cqi 0 0.15cqi var(--granite-pale-grain),
+    48.3cqi 68.7cqi 0 0.47cqi var(--granite-pale-grain),
+    45.3cqi 0.9cqi 0 0.3cqi var(--granite-dark-grain),
+    31.3cqi 84.8cqi 0 0.47cqi var(--granite-dark-grain),
+    20.7cqi 34.3cqi 0 0.7cqi var(--granite-pink-grain),
+    13.3cqi 41.8cqi 0 0.47cqi var(--granite-dark-grain),
+    64.3cqi 19.7cqi 0 0.15cqi var(--granite-pink-grain),
+    60.5cqi 76.8cqi 0 0.47cqi var(--granite-pink-grain),
+    30.7cqi 67.2cqi 0 0 var(--granite-pink-grain),
+    81.7cqi 69.8cqi 0 0.3cqi var(--granite-dark-grain),
+    76.7cqi 76.9cqi 0 0.3cqi var(--granite-pink-grain),
+    35.4cqi 92cqi 0 0.3cqi var(--granite-pale-grain),
+    64.1cqi 61.4cqi 0 0.47cqi var(--granite-dark-grain),
+    46.7cqi 7.2cqi 0 0.15cqi var(--granite-dark-grain),
+    89.1cqi 73.6cqi 0 0.15cqi var(--granite-pale-grain),
+    52.1cqi 65.5cqi 0 0.15cqi var(--granite-pink-grain),
+    71.9cqi 46.3cqi 0 0.7cqi var(--granite-pink-grain),
+    18cqi 18.5cqi 0 0 var(--granite-pink-grain),
+    15cqi 41.1cqi 0 0.15cqi var(--granite-pale-grain),
+    51cqi 42.5cqi 0 0.15cqi var(--granite-pale-grain),
+    19.8cqi 55.4cqi 0 0.3cqi var(--granite-pink-grain),
+    91.2cqi 66.3cqi 0 0.3cqi var(--granite-pale-grain),
+    16.9cqi 63.9cqi 0 0 var(--granite-pale-grain),
+    81.1cqi 74.1cqi 0 0 var(--granite-dark-grain),
+    5.9cqi 64.7cqi 0 0.3cqi var(--granite-pale-grain),
+    8.8cqi 29cqi 0 0.15cqi var(--granite-dark-grain),
+    83.1cqi 59.7cqi 0 0 var(--granite-pink-grain),
+    72.2cqi 63cqi 0 0.15cqi var(--granite-pink-grain),
+    41.2cqi 68.8cqi 0 0.3cqi var(--granite-pink-grain),
+    52.3cqi 10.3cqi 0 0 var(--granite-dark-grain),
+    57.2cqi 14.8cqi 0 0 var(--granite-pink-grain),
+    60.2cqi 46cqi 0 0 var(--granite-pink-grain),
+    55.6cqi 16.5cqi 0 0.7cqi var(--granite-dark-grain),
+    76.4cqi 40.5cqi 0 0.47cqi var(--granite-pale-grain),
+    59.6cqi 82.6cqi 0 0.3cqi var(--granite-dark-grain),
+    64cqi 42.3cqi 0 0.3cqi var(--granite-dark-grain),
+    31cqi 11.2cqi 0 0.3cqi var(--granite-pale-grain),
+    74.4cqi 82.4cqi 0 0 var(--granite-dark-grain),
+    85cqi 51.9cqi 0 0 var(--granite-pink-grain),
+    54.8cqi 98.1cqi 0 0.3cqi var(--granite-pink-grain),
+    67.2cqi 10.3cqi 0 0.15cqi var(--granite-pale-grain),
+    18cqi 44.9cqi 0 0.47cqi var(--granite-dark-grain),
+    30.7cqi 60.4cqi 0 0.3cqi var(--granite-pale-grain),
+    70.9cqi 51.1cqi 0 0.3cqi var(--granite-pink-grain),
+    22.1cqi 23.8cqi 0 0 var(--granite-pale-grain),
+    57.9cqi 11.1cqi 0 0.3cqi var(--granite-pale-grain),
+    91.2cqi 32.2cqi 0 0.7cqi var(--granite-pale-grain),
+    31.1cqi 63.3cqi 0 0.15cqi var(--granite-pink-grain),
+    8.5cqi 37.8cqi 0 0 var(--granite-dark-grain),
+    56.7cqi 43.9cqi 0 0 var(--granite-pink-grain),
+    55.2cqi 93.2cqi 0 0.47cqi var(--granite-dark-grain),
+    37.4cqi 86.4cqi 0 0.47cqi var(--granite-pale-grain),
+    73.9cqi 79cqi 0 0.3cqi var(--granite-pink-grain),
+    86.8cqi 82cqi 0 0.3cqi var(--granite-pale-grain),
+    14cqi 36.8cqi 0 0.15cqi var(--granite-dark-grain),
+    41.4cqi 45.4cqi 0 0 var(--granite-dark-grain),
+    18.5cqi 57.4cqi 0 0.3cqi var(--granite-pink-grain),
+    85.8cqi 32.3cqi 0 0.47cqi var(--granite-pink-grain),
+    67.5cqi 8.4cqi 0 0 var(--granite-pale-grain),
+    40.7cqi 90.7cqi 0 0.15cqi var(--granite-pale-grain),
+    73.5cqi 38cqi 0 0 var(--granite-pink-grain),
+    61.6cqi 90.1cqi 0 0.15cqi var(--granite-pale-grain),
+    40.4cqi 85.2cqi 0 0 var(--granite-pink-grain),
+    61.2cqi 79.2cqi 0 0 var(--granite-dark-grain),
+    39.9cqi 20.4cqi 0 0.15cqi var(--granite-pink-grain),
+    92.5cqi 44.7cqi 0 0 var(--granite-dark-grain),
+    94.5cqi 41.8cqi 0 0 var(--granite-pink-grain),
+    49.9cqi 2.6cqi 0 0 var(--granite-pale-grain),
+    65.7cqi 35.5cqi 0 0 var(--granite-dark-grain);
+}
+
+.cave-wall::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 34%,
+    transparent 0 36%,
+    color-mix(in srgb, var(--illustration-background) 32%, transparent) 36% 50%,
+    color-mix(in srgb, var(--illustration-background) 58%, transparent) 50% 63%,
+    color-mix(in srgb, var(--illustration-background) 82%, transparent) 63%
+  );
+}
+
+.packed-moth,
+.loose-moth::before {
+  clip-path: polygon(
+    50% 100%,
+    51.6% 99.4%,
+    58.2% 94.6%,
+    60.7% 91%,
+    64.6% 87.8%,
+    68% 83.7%,
+    69.9% 77.9%,
+    76.4% 67.2%,
+    86.6% 43%,
+    91.8% 33.3%,
+    97.6% 18.5%,
+    100% 8.2%,
+    99.1% 4.7%,
+    96% 2%,
+    87.1% 0.1%,
+    77.9% 0.4%,
+    70.3% 3%,
+    63.9% 7.8%,
+    60.1% 9.8%,
+    56.8% 10.9%,
+    51.8% 11.1%,
+    50% 11.8%,
+    48.2% 11.1%,
+    43.2% 10.9%,
+    39.9% 9.8%,
+    36.1% 7.8%,
+    29.7% 3%,
+    22.1% 0.4%,
+    12.9% 0.1%,
+    4% 2%,
+    0.9% 4.7%,
+    0% 8.2%,
+    2.4% 18.5%,
+    8.2% 33.3%,
+    13.4% 43%,
+    23.6% 67.2%,
+    30.1% 77.9%,
+    32% 83.7%,
+    35.4% 87.8%,
+    39.3% 91%,
+    41.8% 94.6%,
+    48.4% 99.4%
+  );
+}
+
+.packed-moth {
+  background: radial-gradient(
+      ellipse 3.1% 3.7% at 81% 31.5%,
+      #6e6152 96%,
+      transparent
+    ),
+    linear-gradient(
+        347.5deg,
+        transparent 0 40.2%,
+        var(--moth-wing-fringe) 40.2% 59.8%,
+        transparent 59.8%
+      )
+      1.2% 0% / 13.1% 4.6% no-repeat,
+    linear-gradient(
+        10.3deg,
+        transparent 0 41.4%,
+        var(--moth-wing-fringe) 41.4% 58.6%,
+        transparent 58.6%
+      )
+      14.4% 0% / 18.5% 5.1% no-repeat,
+    linear-gradient(
+        29deg,
+        transparent 0 45.8%,
+        var(--moth-wing-fringe) 45.8% 54.2%,
+        transparent 54.2%
+      )
+      33.7% 3% / 17.4% 10.1% no-repeat,
+    linear-gradient(
+        192.5deg,
+        transparent 0 40.2%,
+        var(--moth-wing-fringe) 40.2% 59.8%,
+        transparent 59.8%
+      )
+      98.8% 0% / 13.1% 4.6% no-repeat,
+    linear-gradient(
+        169.7deg,
+        transparent 0 41.4%,
+        var(--moth-wing-fringe) 41.4% 58.6%,
+        transparent 58.6%
+      )
+      85.6% 0% / 18.5% 5.1% no-repeat,
+    linear-gradient(
+        151deg,
+        transparent 0 45.8%,
+        var(--moth-wing-fringe) 45.8% 54.2%,
+        transparent 54.2%
+      )
+      66.3% 3% / 17.4% 10.1% no-repeat,
+    conic-gradient(
+      from 350.3deg at 50% 48%,
+      var(--moth-hindwing) 0 19.4deg,
+      transparent 19.4deg
+    ),
+    radial-gradient(
+      ellipse 74% 76% at 50% 100%,
+      transparent 0 88%,
+      var(--moth-wing-tip) 88%
+    ),
+    linear-gradient(90deg, var(--wing-base) 0 50%, var(--wing-shadow) 50%);
+}
+
+.loose-moth::before {
+  --moth-eyeshine: #f0973a;
+  background: radial-gradient(
+      ellipse 2.2% 1.9% at 45.8% 95.2%,
+      var(--moth-eyeshine) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2.2% 1.9% at 54.2% 95.2%,
+      var(--moth-eyeshine) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 6.6% 3.9% at 50% 95.6%,
+      var(--moth-head) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 9% 2.5% at 50% 90.4%,
+      var(--moth-collar) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 12.6% 14.5% at 50% 79%,
+      var(--moth-body) 96%,
+      transparent
+    ),
+    linear-gradient(
+        90deg,
+        transparent 0 16.7%,
+        var(--moth-wing-streak) 16.7% 83.3%,
+        transparent 83.3%
+      )
+      50% 63.9% / 1.2% 24.2% no-repeat,
+    radial-gradient(
+      ellipse 3% 3.6% at 18.5% 31.5%,
+      var(--moth-wing-spot) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 3.1% 3.7% at 81% 31.5%,
+      var(--moth-wing-spot) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2% 1.9% at 23.2% 44.5%,
+      var(--moth-wing-spot) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2.1% 2% at 75.6% 44.5%,
+      var(--moth-wing-spot) 96%,
+      transparent
+    ),
+    linear-gradient(
+        245.9deg,
+        transparent 0 46.7%,
+        var(--moth-wing-streak) 46.7% 53.3%,
+        transparent 53.3%
+      )
+      23.3% 47.1% / 16.5% 31% no-repeat,
+    linear-gradient(
+        294.4deg,
+        transparent 0 46.6%,
+        var(--moth-wing-streak) 46.6% 53.4%,
+        transparent 53.4%
+      )
+      74.4% 47.5% / 16% 29.5% no-repeat,
+    radial-gradient(
+      ellipse 1.9% 8.5% at 42.4% 53%,
+      var(--wing-tan-light) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 2.5% 9.5% at 59.6% 53%,
+      var(--wing-tan-light) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 4.4% 14% at 41.8% 51%,
+      var(--wing-tan) 96%,
+      transparent
+    ),
+    radial-gradient(
+      ellipse 5.2% 15% at 60.4% 51%,
+      var(--wing-tan) 96%,
+      transparent
+    ),
+    linear-gradient(
+        347.5deg,
+        transparent 0 40.2%,
+        var(--moth-wing-fringe) 40.2% 59.8%,
+        transparent 59.8%
+      )
+      1.2% 0% / 13.1% 4.6% no-repeat,
+    linear-gradient(
+        10.3deg,
+        transparent 0 41.4%,
+        var(--moth-wing-fringe) 41.4% 58.6%,
+        transparent 58.6%
+      )
+      14.4% 0% / 18.5% 5.1% no-repeat,
+    linear-gradient(
+        29deg,
+        transparent 0 45.8%,
+        var(--moth-wing-fringe) 45.8% 54.2%,
+        transparent 54.2%
+      )
+      33.7% 3% / 17.4% 10.1% no-repeat,
+    linear-gradient(
+        192.5deg,
+        transparent 0 40.2%,
+        var(--moth-wing-fringe) 40.2% 59.8%,
+        transparent 59.8%
+      )
+      98.8% 0% / 13.1% 4.6% no-repeat,
+    linear-gradient(
+        169.7deg,
+        transparent 0 41.4%,
+        var(--moth-wing-fringe) 41.4% 58.6%,
+        transparent 58.6%
+      )
+      85.6% 0% / 18.5% 5.1% no-repeat,
+    linear-gradient(
+        151deg,
+        transparent 0 45.8%,
+        var(--moth-wing-fringe) 45.8% 54.2%,
+        transparent 54.2%
+      )
+      66.3% 3% / 17.4% 10.1% no-repeat,
+    conic-gradient(
+      from 350.3deg at 50% 48%,
+      var(--moth-hindwing) 0 19.4deg,
+      transparent 19.4deg
+    ),
+    radial-gradient(
+      ellipse 74% 76% at 50% 100%,
+      transparent 0 88%,
+      var(--moth-wing-tip) 88%
+    ),
+    linear-gradient(90deg, var(--wing-base) 0 50%, var(--wing-shadow) 50%);
+}
+
+.packed-moth {
+  --wing-base: #574735;
+  --wing-shadow: #4a3c2d;
+  grid-column: span 2;
+  justify-self: center;
+  width: 23cqi;
+  height: 24.84cqi;
+  margin-top: -6cqi;
+}
+
+.packed-moth:nth-child(1) {
+  grid-column: 13 / span 2;
+}
+
+.packed-moth:nth-child(2) {
+  grid-column: 10 / span 2;
+}
+
+.packed-moth:nth-child(5) {
+  grid-column: 9 / span 2;
+}
+
+.packed-moth:nth-child(8) {
+  grid-column: 6 / span 2;
+}
+
+.packed-moth:nth-child(13) {
+  grid-column: 3 / span 2;
+}
+
+.packed-moth:nth-child(19),
+.packed-moth:nth-child(33) {
+  grid-column: 2 / span 2;
+}
+
+.packed-moth:nth-child(3n) {
+  --wing-base: var(--moth-wing-warm);
+  --wing-shadow: var(--moth-wing-warm-shadow);
+}
+
+.packed-moth:nth-child(4n + 1) {
+  --wing-base: #524a40;
+  --wing-shadow: #453e35;
+}
+
+.packed-moth:nth-child(5n + 2) {
+  rotate: -7deg;
+  translate: 1.2cqi 0;
+}
+
+.packed-moth:nth-child(3n + 1) {
+  rotate: 6deg;
+}
+
+.packed-moth:nth-child(7n + 3) {
+  rotate: -12deg;
+  translate: 0.9cqi 1.5cqi;
+}
+
+.packed-moth:nth-child(11n + 5) {
+  rotate: 10deg;
+  translate: -1.2cqi 0.9cqi;
+}
+
+.loose-moth {
+  --wing-base: var(--moth-wing-warm);
+  --wing-shadow: var(--moth-wing-warm-shadow);
+  --wing-tan: var(--moth-wing-tan);
+  --wing-tan-light: var(--moth-wing-tan-light);
+  position: absolute;
+  width: 24cqi;
+  height: 25.92cqi;
+  filter: drop-shadow(0.9cqi 1.8cqi 1.2cqi rgb(0 0 0 / 0.55));
+}
+
+.loose-moth::before,
+.loose-moth::after {
+  content: "";
+  position: absolute;
+}
+
+.loose-moth::before {
+  inset: 0;
+}
+
+.loose-moth::after {
+  --moth-antenna: #2a2520;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(
+        128.2deg,
+        transparent 0 49.6%,
+        var(--moth-antenna) 49.6% 50.4%,
+        transparent 50.4%
+      )
+      6.2% 72.6% / 42.9% 83.4% no-repeat,
+    linear-gradient(
+        51.8deg,
+        transparent 0 49.6%,
+        var(--moth-antenna) 49.6% 50.4%,
+        transparent 50.4%
+      )
+      93.8% 72.6% / 42.9% 83.4% no-repeat,
+    linear-gradient(
+        138.9deg,
+        transparent 0 46.5%,
+        var(--moth-antenna) 46.5% 53.5%,
+        transparent 53.5%
+      )
+      34.7% 0.7% / 13.4% 17.4% no-repeat,
+    linear-gradient(
+        41.1deg,
+        transparent 0 46.5%,
+        var(--moth-antenna) 46.5% 53.5%,
+        transparent 53.5%
+      )
+      65.3% 0.7% / 13.4% 17.4% no-repeat;
+}
+
+.loose-upper {
+  left: 34%;
+  top: 2%;
+  rotate: 16deg;
+}
+
+.loose-middle {
+  left: 9%;
+  top: 17%;
+  rotate: -8deg;
+}
+
+.loose-lower {
+  left: -2%;
+  top: 46%;
+  rotate: 26deg;
+}
+
+.detail figcaption {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  margin-bottom: 2.4cqi;
+  font: 400 max(0.72rem, 1.12cqi) / 1.45 var(--sans-serif-font);
+  text-align: right;
+  text-wrap: balance;
+  color: var(--note-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flight,
+  .moth {
+    animation-play-state: paused;
+  }
+
+  .wing {
+    animation: none;
+  }
+}

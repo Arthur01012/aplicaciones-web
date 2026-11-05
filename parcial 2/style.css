@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+
+.arco-accordion_logo {
+    align-items: center;
+}
+
+.arco-accordion_title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.arco-accordion_text {
+    align-self: end;
+}
+
+.arco-accordion_text p {
+    margin: 0 0 0.8rem;
+}
+
+.practice-links {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.practice-links a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: rgb(13 13 13 / 35%);
+    text-underline-offset: 0.2em;
+}
+
+.practice-links a:hover,
+.practice-links a:focus-visible {
+    text-decoration-color: currentColor;
+}
+
+.practice-links a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.site-breadcrumbs-overlay {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.site-breadcrumbs {
+    color: #b4b9e2;
+}
+
+.site-breadcrumbs a,
+.site-home-link {
+    color: #e5d0ae;
+}
+
+.site-breadcrumbs [aria-current="page"] {
+    color: #f2f0ed;
+}

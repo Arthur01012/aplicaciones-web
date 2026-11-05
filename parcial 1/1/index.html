@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Entrar a la Blog</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../navegacion.css">
+    </head>
+    <body class="pagina-login">
+        <nav class="site-breadcrumbs" aria-label="Migas de pan">
+            <ol>
+                <li><a href="../index.html">Parcial 1</a></li>
+                <li aria-current="page">Práctica 1: Blog personal</li>
+            </ol>
+            <a class="site-home-link" href="../index.html">Volver al índice principal</a>
+        </nav>
+        <main class="formulario">
+            <p class="nombre-sitio">Blog de Arturo</p>
+            <h1>Iniciar sesión</h1>
+            <p>Entra para leer mis desvarios mentales.</p>
+            <form action="pages/infoP.html" method="get">
+                <div class="entradas">
+                    <label for="usuario">Nombre de usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+
+                </div>
+                <div class="entradas"> 
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena"
+                        required>
+                </div>
+                <div class="entrar">
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Usuario</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../navegacion.css">
+    </head>
+    <body class="bg-light d-flex flex-column min-vh-100">
+        <nav class="site-breadcrumbs" aria-label="Migas de pan">
+            <ol>
+                <li><a href="../index.html">Parcial 1</a></li>
+                <li aria-current="page">Perfil de usuario</li>
+            </ol>
+            <a class="site-home-link" href="../index.html">Volver al índice principal</a>
+        </nav>
+        <header>
+            <h1>Ana Garcia</h1>
+            <nav>
+                <div class="container-fluid">
+                    <ul>
+                        <li class="nav-item"> <a href="#" class>Informacio</a></li>
+                        <li class="nav-item"> <a href="#" class>Configuracion</a> </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="container my-4 row align-items-center align-self-center">
+            
+            <section class="card shadow-sm card-body col-md-5 h-25 w-200">
+                <h2>Informacion Publica</h2>
+                <span><strong>Ciudad: </strong>;Madrid, España</span>
+                <span><strong>Edad: </strong>29años</span>
+                <span><strong>Bibliografia: </strong>soy desarrolladoraweb y me
+                    encanta aprender nuevas tecnologias</span>
+                <img src="image/image.png" alt="Foto de perfil">
+            </section>
+
+            <section class="card shadow-sm card-body col-md-7">
+                <form action="#">
+                    <h2>Configuracion de Perfil</h2>
+                    <label for="nombre" class="form-label">Nombre:
+                        <input type="text" id="nombre"
+                            class="mb-3 form-control">
+                    </label>
+
+                    <label for="email" class="form-label">Email:
+                        <input type="email" id="email"
+                            class="mb-3 form-control">
+                    </label>
+
+                    <label for="fecha_nacimiento" class="form-label">Fecha
+                        nacimiento:
+                        <input type="date" id="fecha_nacimiento"
+                            class="mb-3 form-control">
+                    </label>
+
+                    <label for="bibliografia" class="form-label">Bibliografia:
+                        <textarea id="bibliografia"
+                            class=" mb-3 "></textarea>
+                    </label>
+
+                    <label for="foto_perfil" class="form-label">Foto de Perfil:
+                        <input type="file" id="foto_perfil"
+                            class="mb-3 form-control">
+                    </label>
+
+                    <label for="cambiar_contrasena" class="form-label">
+                        Cambiar Contraseña:
+                        <input type="password" id="cambiar_contrasena"
+                            class="mb-3 form-control">
+                    </label>
+
+                    <button class="btn btn-primary w-100">Guardar
+                        Cambios</button>
+                </form>
+            </section>
+        </main>
+        <footer class="text-center py-4 mt-auto">
+            <p class="m-0">&copy; Red social: Perfil Ana garcia</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+.site-breadcrumbs {
+    display: flex;
+    width: min(100% - 32px, 1120px);
+    min-height: 56px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 auto;
+    color: #596579;
+    font: 500 0.9rem/1.4 Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.site-breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-breadcrumbs li + li::before {
+    margin-right: 8px;
+    color: #98a1b1;
+    content: "/";
+}
+
+.site-breadcrumbs a,
+.site-home-link {
+    color: #435ab1;
+    text-decoration: none;
+}
+
+.site-breadcrumbs a:hover,
+.site-home-link:hover {
+    text-decoration: underline;
+}
+
+.site-breadcrumbs a:focus-visible,
+.site-home-link:focus-visible {
+    border-radius: 3px;
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+.site-breadcrumbs [aria-current="page"] {
+    color: #202b40;
+    font-weight: 700;
+}
+
+.site-home-link {
+    flex: none;
+    font-weight: 700;
+}
+
+.pagina-login > .site-breadcrumbs {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: min(100% - 32px, 1120px);
+    transform: translateX(-50%);
+}
+
+@media (max-width: 540px) {
+    .site-breadcrumbs {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 0;
+    }
+}
