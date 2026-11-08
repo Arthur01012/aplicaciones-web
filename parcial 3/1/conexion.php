@@ -1,35 +1,33 @@
 <?php
-$host = getenv("DB_HOST");
-$user = getenv("DB_USER");
-$pass = getenv("DB_PASSWORD");
-$db = getenv("DB_NAME");
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "sistema_cursos";
 
 $mensaje = "Conexión exitosa.";
 $error = false;
 
-if ($host === false || $user === false || $pass === false || $db === false) {
+
+try {
+    $conexion = new mysqli($host, $user, $pass, $db);
+    $conexion->set_charset("utf8mb4");
+} catch (mysqli_sql_exception $excepcion) {
     http_response_code(500);
-    $mensaje = "Configura las variables DB_HOST, DB_USER, DB_PASSWORD y DB_NAME.";
+    $mensaje = "Error de conexión: " . $excepcion->getMessage();
     $error = true;
-} else {
-    try {
-        $conexion = new mysqli($host, $user, $pass, $db);
-        $conexion->set_charset("utf8mb4");
-    } catch (mysqli_sql_exception $excepcion) {
-        http_response_code(500);
-        $mensaje = "Error de conexión: " . $excepcion->getMessage();
-        $error = true;
-    }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conexión a base de datos | Parcial 3</title>
     <link rel="stylesheet" href="../navegacion.css">
 </head>
+
 <body>
     <nav class="site-breadcrumbs" aria-label="Migas de pan">
         <ol>
@@ -44,4 +42,5 @@ if ($host === false || $user === false || $pass === false || $db === false) {
         <p role="<?= $error ? 'alert' : 'status' ?>"><?= htmlspecialchars($mensaje, ENT_QUOTES, 'UTF-8') ?></p>
     </main>
 </body>
+
 </html>
