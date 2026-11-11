@@ -59,45 +59,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Inicio de sesión de EduControl.">
     <title>Iniciar sesión | EduControl</title>
-    <link rel="stylesheet" href="../../navegacion.css">
-    <link rel="stylesheet" href="../styles/login_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/admin.css">
 </head>
-<body class="pagina-login">
-    <nav class="site-breadcrumbs" aria-label="Migas de pan">
-        <ol>
-            <li><a href="../../../index.html">Inicio</a></li>
-            <li><a href="../../index.html">Parcial 3</a></li>
-            <li aria-current="page">EduControl</li>
-        </ol>
-        <a class="site-home-link" href="../../index.html">Volver a prácticas</a>
-    </nav>
-    <main class="formulario">
-        <p class="nombre-sitio">EduControl</p>
-        <h1>Iniciar sesión</h1>
-        <p>Accede al panel académico.</p>
-
-        <?php if ($errorBaseDatos !== ''): ?>
-            <p class="mensaje error" role="alert"><?= escaparHtml($errorBaseDatos) ?></p>
-        <?php elseif ($error !== ''): ?>
-            <p class="mensaje error" role="alert"><?= escaparHtml($error) ?></p>
-        <?php endif; ?>
-
-        <form action="login.php" method="post">
-            <input type="hidden" name="token_csrf" value="<?= escaparHtml(tokenCsrf()) ?>">
-            <div class="entradas">
-                <label for="cuenta">Correo de administrador o usuario docente</label>
-                <input type="text" id="cuenta" name="cuenta" autocomplete="username"
-                    maxlength="190" required value="<?= escaparHtml($cuenta) ?>">
+<body>
+    <main class="login-page">
+        <section class="card login-card" aria-labelledby="login-title">
+            <div class="card-body">
+                <h1 class="text-center" id="login-title">Acceso Admin</h1>
+                <?php if ($errorBaseDatos !== ''): ?>
+                    <div class="alert alert-danger py-2" role="alert"><?= escaparHtml($errorBaseDatos) ?></div>
+                <?php elseif ($error !== ''): ?>
+                    <div class="alert alert-danger py-2" role="alert"><?= escaparHtml($error) ?></div>
+                <?php endif; ?>
+                <form action="login.php" method="post">
+                    <input type="hidden" name="token_csrf" value="<?= escaparHtml(tokenCsrf()) ?>">
+                    <div class="mb-3">
+                        <label class="form-label small mb-1" for="cuenta">Correo Electrónico o usuario docente</label>
+                        <input class="form-control form-control-sm" type="text" id="cuenta" name="cuenta"
+                            autocomplete="username" maxlength="190" required value="<?= escaparHtml($cuenta) ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small mb-1" for="contrasena">Contraseña</label>
+                        <input class="form-control form-control-sm" type="password" id="contrasena" name="contrasena"
+                            autocomplete="current-password" required>
+                    </div>
+                    <button class="btn btn-primary btn-sm w-100 fw-semibold" type="submit">Ingresar</button>
+                </form>
             </div>
-            <div class="entradas">
-                <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena" name="contrasena"
-                    autocomplete="current-password" required>
-            </div>
-            <div class="entrar">
-                <button type="submit">Entrar al dashboard</button>
-            </div>
-        </form>
+        </section>
     </main>
 </body>
 </html>

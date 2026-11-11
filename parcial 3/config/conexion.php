@@ -6,7 +6,7 @@ function conectarBD(): mysqli
 {
     $host = getenv('DB_HOST') ?: 'medicdate.innego.net';
     $usuario = getenv('DB_USER') ?: 'innegone_u_devacademic';
-    $contrasena = getenv('DB_PASSWORD');
+    $contrasena = getenv('DB_PASSWORD') ?: 'a)L=TXuSSs*1l01L';
     $baseDatos = getenv('DB_NAME') ?: 'innegone_bd_devacademic';
 
     if ($contrasena === false || $contrasena === '') {
