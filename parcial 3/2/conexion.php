@@ -4,10 +4,10 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 function conectarBD(): mysqli
 {
-    $host = getenv('DB_HOST') ?: '127.0.0.1';
-    $usuario = getenv('DB_USER') ?: 'root';
-    $contrasena = getenv('DB_PASSWORD') ?: '2007';
-    $baseDatos = getenv('DB_NAME') ?: 'educontrol';
+    $host = getenv('DB_HOST') ?: 'medicdate.innego.net';
+    $usuario = getenv('DB_USER') ?: 'innegone_u_devacademic';
+    $contrasena = getenv('DB_PASSWORD') ?: 'a)L=TXuSSs*1l01L';
+    $baseDatos = getenv('DB_NAME') ?: 'innegone_bd_devacademic';
 
     try {
         $conexion = new mysqli($host, $usuario, $contrasena, $baseDatos);
