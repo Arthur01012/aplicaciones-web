@@ -1,0 +1,105 @@
+body {
+    min-height: 100vh;
+    color: #24292f;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    background:
+        linear-gradient(108deg, transparent 0 78%, rgb(183 215 107 / 35%) 78% 84%, transparent 84%),
+        linear-gradient(73deg, transparent 0 82%, rgb(82 135 54 / 82%) 82% 91%, transparent 91%),
+        linear-gradient(100deg, transparent 0 90%, #91c83e 90% 100%);
+    content: "";
+    pointer-events: none;
+}
+
+.login-page {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 100vh;
+    align-items: flex-start;
+    padding: 48px max(24px, 5.1vw);
+    background: linear-gradient(90deg, rgb(246 247 248 / 92%) 0 49%, transparent 49%);
+}
+
+.login-card {
+    width: min(100%, 380px);
+    border: 1px solid #eceff1;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.8rem rgb(0 0 0 / 7%);
+}
+
+.login-card .card-body {
+    padding: 1.5rem;
+}
+
+.login-card h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.dashboard-shell {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 18px 16px 8px;
+}
+
+.admin-navbar {
+    position: relative;
+    z-index: 1;
+    background: #212529;
+}
+
+.admin-navbar form {
+    margin-bottom: 0;
+}
+
+.admin-content {
+    width: min(100%, 900px);
+    margin: 0 auto;
+    padding: 26px 0 38px;
+}
+
+.admin-content h1 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 700;
+}
+
+.course-table {
+    overflow: hidden;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.2rem 0.6rem rgb(0 0 0 / 6%);
+}
+
+.course-table th,
+.course-table td {
+    vertical-align: middle;
+}
+
+.course-table th {
+    white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+    .login-page {
+        padding: 32px 16px;
+    }
+
+    .login-card .card-body {
+        padding: 1.25rem;
+    }
+
+    .dashboard-shell {
+        padding: 16px 12px 8px;
+    }
+
+    .admin-content {
+        padding-top: 20px;
+    }
+}

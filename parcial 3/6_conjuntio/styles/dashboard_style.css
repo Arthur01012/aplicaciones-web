@@ -66,6 +66,9 @@ body {
     color: #fff;
     font-size: 0.75rem;
     text-decoration: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
 }
 
 .cerrar-sesion:hover,
