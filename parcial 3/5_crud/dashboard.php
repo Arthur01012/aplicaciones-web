@@ -106,7 +106,10 @@ $nombreAdmin = escaparHtml((string) ($_SESSION['admin_nombre'] ?? 'Administrador
                                     <td class="text-nowrap">
                                         <a class="btn btn-primary btn-sm" href="curso_editar.php?idcurso=<?= $idCurso ?>">Editar</a>
                                         <form class="d-inline" action="curso_eliminar.php" method="post"
-                                            onsubmit="return confirm('¿Eliminar el curso seleccionado?');">
+                                            onsubmit="return confirm(<?= json_encode(
+                                                '¿Eliminar el curso "' . $titulo . '"?',
+                                                JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT
+                                            ) ?>);">
                                             <input type="hidden" name="token_csrf" value="<?= escaparHtml(tokenCsrf()) ?>">
                                             <input type="hidden" name="idcurso" value="<?= $idCurso ?>">
                                             <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
