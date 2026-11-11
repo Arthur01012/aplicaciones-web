@@ -34,8 +34,8 @@ $nombreAdmin = escaparHtml((string) ($_SESSION['admin_nombre'] ?? 'Administrador
     <meta name="description" content="Dashboard administrativo con cursos.">
     <title>Gestión de Cursos | Parcial 3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../navegacion.css" rel="stylesheet">
-    <link href="../../styles/admin.css" rel="stylesheet">
+    <link href="../../navegacion.css?v=20261111-3" rel="stylesheet">
+    <link href="../../styles/admin.css?v=20261111-3" rel="stylesheet">
 </head>
 <body>
     <?php renderizarMigasPan([

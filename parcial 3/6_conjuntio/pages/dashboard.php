@@ -66,7 +66,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Panel académico de EduControl.">
     <title>Dashboard | EduControl</title>
-    <link rel="stylesheet" href="../../navegacion.css">
+    <link rel="stylesheet" href="../../navegacion.css?v=20261111-3">
     <link rel="stylesheet" href="../styles/dashboard_style.css">
 </head>
 <body>

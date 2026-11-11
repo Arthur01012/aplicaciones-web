@@ -96,8 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
     <meta name="description" content="Inicio de sesión y dashboard académico.">
     <title>Iniciar sesión | Parcial 3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../navegacion.css" rel="stylesheet">
-    <link href="../../styles/admin.css?v=20261111-2" rel="stylesheet">
+    <link href="../../navegacion.css?v=20261111-3" rel="stylesheet">
+    <link href="../../styles/admin.css?v=20261111-3" rel="stylesheet">
 </head>
 <body class="pagina-login">
     <?php renderizarMigasPan([

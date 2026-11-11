@@ -75,8 +75,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
     <meta name="description" content="Inicio de sesión de EduControl.">
     <title>Iniciar sesión | EduControl</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../navegacion.css">
-    <link rel="stylesheet" href="../../styles/admin.css?v=20261111-2">
+    <link rel="stylesheet" href="../../navegacion.css?v=20261111-3">
+    <link rel="stylesheet" href="../../styles/admin.css?v=20261111-3">
 </head>
 <body class="pagina-login">
     <?php renderizarMigasPan([

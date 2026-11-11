@@ -21,7 +21,7 @@ try {
     <meta name="description" content="Prueba de conexión MySQLi del parcial 3.">
     <title>Conexión MySQL | Parcial 3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../navegacion.css">
+    <link rel="stylesheet" href="../navegacion.css?v=20261111-3">
 </head>
 <body class="bg-light">
     <nav class="site-breadcrumbs" aria-label="Migas de pan">
