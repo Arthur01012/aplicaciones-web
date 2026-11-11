@@ -89,18 +89,27 @@ body {
     list-style: none;
 }
 
-.nav a {
+.nav a,
+.nav .nav-logout {
     display: block;
+    width: 100%;
     padding: 13px 17px;
+    border: 0;
     color: #f4f7fb;
+    background: transparent;
     font-size: 0.8rem;
+    font-family: inherit;
+    text-align: left;
     text-decoration: none;
     transition: background-color 150ms ease;
+    cursor: pointer;
 }
 
 .nav a:hover,
 .nav a:focus-visible,
-.nav li:first-child a {
+.nav li:first-child a,
+.nav .nav-logout:hover,
+.nav .nav-logout:focus-visible {
     color: #fff;
     background: var(--blue);
     outline: none;
@@ -344,7 +353,8 @@ tbody tr:last-child td {
         overflow-x: auto;
     }
 
-    .nav a {
+    .nav a,
+    .nav .nav-logout {
         padding: 12px 13px;
         white-space: nowrap;
     }

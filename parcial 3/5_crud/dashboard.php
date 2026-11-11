@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/seguridad.php';
-exigirSesion(['admin'], '../2_login/pages/login.php?error=acceso_denegado');
+require_once __DIR__ . '/../config/navegacion.php';
+exigirSesion(['admin'], '../2_login/pages/login.php?siguiente=crud&error=acceso_denegado');
 require_once __DIR__ . '/../config/conexion.php';
 
 $cursos = [];
@@ -39,9 +40,16 @@ $nombreAdmin = escaparHtml((string) ($_SESSION['admin_nombre'] ?? 'Administrador
     <meta name="description" content="Administración de cursos de DevAcademy.">
     <title>CRUD de Cursos | Parcial 3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../navegacion.css" rel="stylesheet">
     <link href="../styles/admin.css" rel="stylesheet">
 </head>
 <body>
+    <?php renderizarMigasPan([
+        ['texto' => 'Inicio', 'url' => '../../index.html', 'destino_sesion' => 'inicio'],
+        ['texto' => 'Parcial 3', 'url' => '../index.html', 'destino_sesion' => 'parcial3'],
+        ['texto' => 'Práctica 5: CRUD', 'url' => 'index.php'],
+        ['texto' => 'Gestión de cursos'],
+    ], '../config/logout.php'); ?>
     <header>
         <nav class="navbar navbar-dark admin-navbar">
             <div class="container-fluid px-3 px-md-4">
@@ -60,7 +68,7 @@ $nombreAdmin = escaparHtml((string) ($_SESSION['admin_nombre'] ?? 'Administrador
         <section class="admin-content" aria-labelledby="courses-title">
             <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
                 <h1 class="mb-0" id="courses-title">Gestión de Cursos</h1>
-                <a class="btn btn-success btn-sm fw-semibold" href="../4_alta/alta.php?volver=crud">+ Agregar Nuevo Curso</a>
+                <a class="btn btn-primary btn-sm fw-semibold" href="../4_alta/alta.php?volver=crud">+ Agregar Nuevo Curso</a>
             </div>
 
             <?php if ($errorBaseDatos !== ''): ?>

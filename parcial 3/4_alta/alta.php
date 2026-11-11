@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/seguridad.php';
-exigirSesion(['admin'], '../2_login/pages/login.php?error=acceso_denegado');
+require_once __DIR__ . '/../config/navegacion.php';
+exigirSesion(['admin'], '../2_login/pages/login.php?siguiente=alta&error=acceso_denegado');
 require_once __DIR__ . '/../config/conexion.php';
 require_once __DIR__ . '/../config/cursos.php';
 
@@ -63,9 +64,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
     <meta name="description" content="Formulario de alta de cursos.">
     <title>Agregar Curso | Parcial 3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../navegacion.css" rel="stylesheet">
     <link href="../styles/admin.css" rel="stylesheet">
 </head>
 <body>
+    <?php renderizarMigasPan([
+        ['texto' => 'Inicio', 'url' => '../../index.html', 'destino_sesion' => 'inicio'],
+        ['texto' => 'Parcial 3', 'url' => '../index.html', 'destino_sesion' => 'parcial3'],
+        ['texto' => 'Práctica 4: Alta', 'url' => 'index.php'],
+        ['texto' => 'Registrar curso'],
+    ], '../config/logout.php'); ?>
     <header>
         <nav class="navbar navbar-dark admin-navbar">
             <div class="container-fluid px-3 px-md-4">

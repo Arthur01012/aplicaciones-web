@@ -26,21 +26,42 @@
 }
 
 .site-breadcrumbs a,
-.site-home-link {
+.site-home-link,
+.site-breadcrumb-action,
+.site-home-action {
     color: #435ab1;
     text-decoration: none;
 }
 
 .site-breadcrumbs a:hover,
-.site-home-link:hover {
+.site-home-link:hover,
+.site-breadcrumb-action:hover,
+.site-home-action:hover {
     text-decoration: underline;
 }
 
 .site-breadcrumbs a:focus-visible,
-.site-home-link:focus-visible {
+.site-home-link:focus-visible,
+.site-breadcrumb-action:focus-visible,
+.site-home-action:focus-visible {
     border-radius: 3px;
     outline: 2px solid currentColor;
     outline-offset: 3px;
+}
+
+.site-breadcrumb-action-form {
+    display: inline;
+    margin: 0;
+}
+
+.site-breadcrumb-action,
+.site-home-action {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
 }
 
 .site-breadcrumbs [aria-current="page"] {
@@ -48,9 +69,14 @@
     font-weight: 700;
 }
 
-.site-home-link {
+.site-home-link,
+.site-home-action {
     flex: none;
     font-weight: 700;
+}
+
+.site-breadcrumb-return-form {
+    flex: none;
 }
 
 .arco-accordion_bar .site-breadcrumbs {

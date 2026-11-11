@@ -1,23 +1,25 @@
 <?php
 require_once __DIR__ . '/../../config/seguridad.php';
+require_once __DIR__ . '/../../config/navegacion.php';
 require_once __DIR__ . '/../conexion.php';
 
 iniciarSesionSegura();
 
-if (in_array($_SESSION['rol'] ?? '', ['admin', 'docente'], true)) {
+if (tieneSesionRol('admin') || tieneSesionRol('docente')) {
     header('Location: dashboard.php', true, 303);
     exit;
 }
 
 $error = '';
 $errorBaseDatos = '';
+$credencialesDemo = null;
 $cuenta = trim((string) ($_POST['cuenta'] ?? ''));
 
 try {
-    $conexion = conectarBD();
+    $credencialesDemo = credencialesDemoAdministrador();
 } catch (RuntimeException $excepcion) {
     $errorBaseDatos = $excepcion->getMessage();
-    http_response_code(503);
+    http_response_code(500);
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
@@ -29,9 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
         $error = 'Escribe tu correo o usuario y contraseña.';
     } else {
         try {
-            $usuario = filter_var($cuenta, FILTER_VALIDATE_EMAIL) !== false
-                ? autenticarAdministrador($conexion, $cuenta, $contrasena)
-                : autenticarDocente($conexion, $cuenta, $contrasena);
+            $usuario = autenticarAdministradorDemo($cuenta, $contrasena, $credencialesDemo);
+            if ($usuario === null) {
+                $conexion = conectarBD();
+                $usuario = autenticarAdministrador($conexion, $cuenta, $contrasena);
+                if ($usuario === null && filter_var($cuenta, FILTER_VALIDATE_EMAIL) === false) {
+                    $usuario = autenticarDocente($conexion, $cuenta, $contrasena);
+                }
+            }
 
             if ($usuario === null) {
                 $error = 'Cuenta o contraseña incorrectas.';
@@ -41,6 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
                 $_SESSION['rol'] = $usuario['rol'];
                 $_SESSION[$usuario['rol'] === 'admin' ? 'admin_id' : 'usuario_id'] = $usuario['id'];
                 $_SESSION[$usuario['rol'] === 'admin' ? 'admin_nombre' : 'usuario_nombre'] = $usuario['nombre'];
+                if (($usuario['demo'] ?? false) === true) {
+                    $_SESSION['admin_demo'] = true;
+                } else {
+                    unset($_SESSION['admin_demo']);
+                }
                 header('Location: dashboard.php', true, 303);
                 exit;
             }
@@ -48,6 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
             error_log('Parcial 3: error al iniciar sesión: ' . $excepcion->getMessage());
             http_response_code(500);
             $errorBaseDatos = 'No fue posible validar el acceso. Verifica que la migración de la base de datos esté aplicada.';
+        } catch (RuntimeException $excepcion) {
+            $errorBaseDatos = $excepcion->getMessage();
+            http_response_code(503);
         }
     }
 }
@@ -60,9 +75,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
     <meta name="description" content="Inicio de sesión de EduControl.">
     <title>Iniciar sesión | EduControl</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/admin.css">
+    <link rel="stylesheet" href="../../navegacion.css">
+    <link rel="stylesheet" href="../../styles/admin.css?v=20261111-2">
 </head>
-<body>
+<body class="pagina-login">
+    <?php renderizarMigasPan([
+        ['texto' => 'Inicio', 'url' => '../../../index.html', 'destino_sesion' => 'inicio'],
+        ['texto' => 'Parcial 3', 'url' => '../../index.html', 'destino_sesion' => 'parcial3'],
+        ['texto' => 'Práctica 6', 'url' => '../index.php'],
+        ['texto' => 'Iniciar sesión'],
+    ], '../../config/logout.php'); ?>
     <main class="login-page">
         <section class="card login-card" aria-labelledby="login-title">
             <div class="card-body">
@@ -72,10 +94,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
                 <?php elseif ($error !== ''): ?>
                     <div class="alert alert-danger py-2" role="alert"><?= escaparHtml($error) ?></div>
                 <?php endif; ?>
+                <?php if ($credencialesDemo !== null): ?>
+                    <div class="alert alert-info py-2 small" role="note">
+                        <strong>Acceso demostrativo de administrador</strong><br>
+                        Usuario: <code><?= escaparHtml($credencialesDemo['usuario']) ?></code><br>
+                        Contraseña: <code><?= escaparHtml($credencialesDemo['contrasena']) ?></code>
+                    </div>
+                <?php endif; ?>
                 <form action="login.php" method="post">
                     <input type="hidden" name="token_csrf" value="<?= escaparHtml(tokenCsrf()) ?>">
                     <div class="mb-3">
-                        <label class="form-label small mb-1" for="cuenta">Correo Electrónico o usuario docente</label>
+                        <label class="form-label small mb-1" for="cuenta">Correo Electrónico o nombre de usuario</label>
                         <input class="form-control form-control-sm" type="text" id="cuenta" name="cuenta"
                             autocomplete="username" maxlength="190" required value="<?= escaparHtml($cuenta) ?>">
                     </div>

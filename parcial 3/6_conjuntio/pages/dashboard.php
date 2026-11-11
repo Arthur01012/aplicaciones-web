@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../config/seguridad.php';
+require_once __DIR__ . '/../../config/navegacion.php';
 exigirSesion(['admin', 'docente'], 'login.php');
 require_once __DIR__ . '/../conexion.php';
 
@@ -69,6 +70,12 @@ try {
     <link rel="stylesheet" href="../styles/dashboard_style.css">
 </head>
 <body>
+    <?php renderizarMigasPan([
+        ['texto' => 'Inicio', 'url' => '../../../index.html', 'destino_sesion' => 'inicio'],
+        ['texto' => 'Parcial 3', 'url' => '../../index.html', 'destino_sesion' => 'parcial3'],
+        ['texto' => 'Práctica 6', 'url' => '../index.php'],
+        ['texto' => 'EduControl'],
+    ], '../../config/logout.php'); ?>
     <header class="header">
         <h1>Edu<span>Control</span></h1>
         <div class="header-usuario">
@@ -88,7 +95,13 @@ try {
                 <li><a href="#calificaciones">Entregas</a></li>
             <?php endif; ?>
             <li><a href="#avisos">Avisos</a></li>
-            <li><a href="../../index.html">Prácticas</a></li>
+            <li>
+                <form action="../../config/logout.php" method="post">
+                    <input type="hidden" name="token_csrf" value="<?= escaparHtml(tokenCsrf()) ?>">
+                    <input type="hidden" name="destino" value="parcial3">
+                    <button class="nav-link nav-logout" type="submit">Prácticas</button>
+                </form>
+            </li>
         </ul>
     </nav>
 

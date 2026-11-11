@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/seguridad.php';
-exigirSesion(['admin'], '../2_login/pages/login.php?error=acceso_denegado');
+require_once __DIR__ . '/../config/navegacion.php';
+exigirSesion(['admin'], '../2_login/pages/login.php?siguiente=crud&error=acceso_denegado');
 require_once __DIR__ . '/../config/conexion.php';
 require_once __DIR__ . '/../config/cursos.php';
 
@@ -97,9 +98,17 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Editar Curso | Parcial 3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../navegacion.css" rel="stylesheet">
     <link href="../styles/admin.css" rel="stylesheet">
 </head>
 <body>
+    <?php renderizarMigasPan([
+        ['texto' => 'Inicio', 'url' => '../../index.html', 'destino_sesion' => 'inicio'],
+        ['texto' => 'Parcial 3', 'url' => '../index.html', 'destino_sesion' => 'parcial3'],
+        ['texto' => 'Práctica 5: CRUD', 'url' => 'index.php'],
+        ['texto' => 'Gestión de cursos', 'url' => 'dashboard.php'],
+        ['texto' => 'Editar curso'],
+    ], '../config/logout.php'); ?>
     <header>
         <nav class="navbar navbar-dark admin-navbar">
             <div class="container-fluid px-3 px-md-4">

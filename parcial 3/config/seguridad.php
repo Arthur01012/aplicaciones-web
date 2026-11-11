@@ -29,13 +29,76 @@ function exigirSesion(array $roles, string $rutaLogin): void
 {
     iniciarSesionSegura();
 
-    $rol = $_SESSION['rol'] ?? '';
-    $idUsuario = $_SESSION['admin_id'] ?? $_SESSION['usuario_id'] ?? null;
-
-    if (!in_array($rol, $roles, true) || !is_int($idUsuario) || $idUsuario < 1) {
-        header('Location: ' . $rutaLogin, true, 303);
-        exit;
+    foreach ($roles as $rol) {
+        if (tieneSesionRol($rol)) {
+            return;
+        }
     }
+
+    header('Location: ' . $rutaLogin, true, 303);
+    exit;
+}
+
+function tieneSesionRol(string $rol): bool
+{
+    if (($_SESSION['rol'] ?? '') !== $rol) {
+        return false;
+    }
+
+    if ($rol === 'admin' && ($_SESSION['admin_demo'] ?? false) === true) {
+        return true;
+    }
+
+    $idUsuario = match ($rol) {
+        'admin' => $_SESSION['admin_id'] ?? null,
+        'docente' => $_SESSION['usuario_id'] ?? null,
+        default => null,
+    };
+
+    return is_int($idUsuario) && $idUsuario > 0;
+}
+
+function credencialesDemoAdministrador(): ?array
+{
+    $usuario = getenv('DEMO_ADMIN_USERNAME');
+    $contrasena = getenv('DEMO_ADMIN_PASSWORD');
+
+    if (($usuario === false || $usuario === '') && ($contrasena === false || $contrasena === '')) {
+        if (in_array($_SERVER['REMOTE_ADDR'] ?? '', ['127.0.0.1', '::1'], true)) {
+            return ['usuario' => 'carlos.mendoza', 'contrasena' => 'EduControl2026!'];
+        }
+
+        return null;
+    }
+
+    if ($usuario === false || $usuario === '' || $contrasena === false || $contrasena === '') {
+        throw new RuntimeException(
+            'Configura DEMO_ADMIN_USERNAME y DEMO_ADMIN_PASSWORD para habilitar el acceso demostrativo.'
+        );
+    }
+
+    return ['usuario' => $usuario, 'contrasena' => $contrasena];
+}
+
+function autenticarAdministradorDemo(string $usuario, string $contrasena, ?array $credenciales): ?array
+{
+    if (
+        $credenciales === null
+        || !isset($credenciales['usuario'], $credenciales['contrasena'])
+        || !is_string($credenciales['usuario'])
+        || !is_string($credenciales['contrasena'])
+        || !hash_equals($credenciales['usuario'], $usuario)
+        || !hash_equals($credenciales['contrasena'], $contrasena)
+    ) {
+        return null;
+    }
+
+    return [
+        'id' => 0,
+        'nombre' => 'Administrador de demostración',
+        'rol' => 'admin',
+        'demo' => true,
+    ];
 }
 
 function tokenCsrf(): string
@@ -80,15 +143,25 @@ function cerrarSesionSegura(): void
     session_destroy();
 }
 
-function autenticarAdministrador(mysqli $conexion, string $email, string $contrasena): ?array
+function autenticarAdministrador(mysqli $conexion, string $cuenta, string $contrasena): ?array
 {
-    $consulta = $conexion->prepare(
-        "SELECT id, nombre, psw
-         FROM usuarios
-         WHERE email = ? AND rol = 'admin' AND activo = 1
-         LIMIT 1"
-    );
-    $consulta->bind_param('s', $email);
+    if (filter_var($cuenta, FILTER_VALIDATE_EMAIL) !== false) {
+        $consulta = $conexion->prepare(
+            "SELECT id, nombre, psw
+             FROM usuarios
+             WHERE email = ? AND rol = 'admin' AND activo = 1
+             LIMIT 1"
+        );
+    } else {
+        $consulta = $conexion->prepare(
+            "SELECT id, nombre, psw
+             FROM usuarios
+             WHERE nombre_usuario = ? AND rol = 'admin' AND activo = 1
+             LIMIT 1"
+        );
+    }
+
+    $consulta->bind_param('s', $cuenta);
     $consulta->execute();
     $consulta->bind_result($id, $nombre, $hash);
     $encontrado = $consulta->fetch();

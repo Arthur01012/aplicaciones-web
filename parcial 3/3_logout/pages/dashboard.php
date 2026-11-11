@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../config/seguridad.php';
+require_once __DIR__ . '/../../config/navegacion.php';
 exigirSesion(['admin'], 'login.php?error=acceso_denegado');
 require_once __DIR__ . '/../../config/conexion.php';
 
@@ -33,9 +34,16 @@ $nombreAdmin = escaparHtml((string) ($_SESSION['admin_nombre'] ?? 'Administrador
     <meta name="description" content="Dashboard administrativo con cursos.">
     <title>Gestión de Cursos | Parcial 3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../navegacion.css" rel="stylesheet">
     <link href="../../styles/admin.css" rel="stylesheet">
 </head>
 <body>
+    <?php renderizarMigasPan([
+        ['texto' => 'Inicio', 'url' => '../../../index.html', 'destino_sesion' => 'inicio'],
+        ['texto' => 'Parcial 3', 'url' => '../../index.html', 'destino_sesion' => 'parcial3'],
+        ['texto' => 'Práctica 3', 'url' => '../index.php'],
+        ['texto' => 'Panel'],
+    ], '../../config/logout.php'); ?>
     <header>
         <nav class="navbar navbar-dark admin-navbar">
             <div class="container-fluid px-3 px-md-4">
@@ -55,13 +63,31 @@ $nombreAdmin = escaparHtml((string) ($_SESSION['admin_nombre'] ?? 'Administrador
         <section class="admin-content" aria-labelledby="courses-title">
             <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
                 <h1 class="mb-0" id="courses-title">Gestión de Cursos</h1>
-                <a class="btn btn-success btn-sm fw-semibold" href="../../4_alta/alta.php">+ Agregar Nuevo Curso</a>
+                <a class="btn btn-primary btn-sm fw-semibold" href="../../4_alta/alta.php">+ Agregar Nuevo Curso</a>
             </div>
 
             <?php if ($errorBaseDatos !== ''): ?>
                 <div class="alert alert-danger" role="alert"><?= escaparHtml($errorBaseDatos) ?></div>
             <?php elseif ($cursos === []): ?>
-                <p class="alert alert-info" role="status">No hay cursos activos registrados.</p>
+                <div class="table-responsive course-table bg-white">
+                    <table class="table table-sm table-striped table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Título</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Destacado</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center" colspan="6">No existen cursos registrados.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             <?php else: ?>
                 <div class="table-responsive course-table bg-white">
                     <table class="table table-sm table-striped table-hover mb-0">

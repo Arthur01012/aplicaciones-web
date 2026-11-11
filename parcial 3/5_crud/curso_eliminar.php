@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/seguridad.php';
-exigirSesion(['admin'], '../2_login/pages/login.php?error=acceso_denegado');
+exigirSesion(['admin'], '../2_login/pages/login.php?siguiente=crud&error=acceso_denegado');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !validarTokenCsrf($_POST['token_csrf'] ?? null)) {
     http_response_code(400);

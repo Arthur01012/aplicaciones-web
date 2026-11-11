@@ -1,16 +1,7 @@
 <?php
 require_once __DIR__ . '/../../config/seguridad.php';
-iniciarSesionSegura();
-
-if (
-    !isset($_SESSION['admin_id'])
-    || !is_int($_SESSION['admin_id'])
-    || $_SESSION['admin_id'] < 1
-    || ($_SESSION['rol'] ?? '') !== 'admin'
-) {
-    header('Location: login.php?error=acceso_denegado');
-    exit;
-}
+require_once __DIR__ . '/../../config/navegacion.php';
+exigirSesion(['admin'], 'login.php?error=acceso_denegado');
 
 $nombreAdmin = htmlspecialchars(
     (string) ($_SESSION['admin_nombre'] ?? 'Administrador'),
@@ -26,9 +17,16 @@ $nombreAdmin = htmlspecialchars(
     <meta name="description" content="Gestión de cursos de DevAcademy.">
     <title>Gestión de Cursos | DevAcademy Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../navegacion.css" rel="stylesheet">
     <link href="../../styles/admin.css" rel="stylesheet">
 </head>
 <body>
+    <?php renderizarMigasPan([
+        ['texto' => 'Inicio', 'url' => '../../../index.html', 'destino_sesion' => 'inicio'],
+        ['texto' => 'Parcial 3', 'url' => '../../index.html', 'destino_sesion' => 'parcial3'],
+        ['texto' => 'Práctica 2', 'url' => '../index.php'],
+        ['texto' => 'Panel'],
+    ], '../../config/logout.php'); ?>
     <header>
         <nav class="navbar navbar-dark admin-navbar">
             <div class="container-fluid px-3 px-md-4">
@@ -48,9 +46,9 @@ $nombreAdmin = htmlspecialchars(
         <section class="admin-content" aria-labelledby="courses-title">
             <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
                 <h1 class="mb-0" id="courses-title">Gestión de Cursos</h1>
-                <button class="btn btn-success btn-sm fw-semibold" type="button" data-bs-toggle="modal" data-bs-target="#course-modal">
-                    <span aria-hidden="true">+</span> Agregar Nuevo Curso
-                </button>
+                <a class="btn btn-primary btn-sm fw-semibold" href="../../5_crud/dashboard.php">
+                    Abrir altas, bajas y cambios
+                </a>
             </div>
 
             <div class="table-responsive course-table bg-white">
@@ -102,7 +100,8 @@ $nombreAdmin = htmlspecialchars(
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="mb-0 text-secondary">La tabla contiene datos estáticos, como indica la práctica. Las operaciones de cursos aún no están conectadas a la base de datos.</p>
+                    <p class="mb-3 text-secondary">Esta pantalla es la vista de la práctica 2. Para registrar, editar o eliminar cursos en la base de datos, abre la gestión CRUD.</p>
+                    <a class="btn btn-primary btn-sm" href="../../5_crud/dashboard.php">Ir a gestión CRUD</a>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal">Cerrar</button>
@@ -119,7 +118,8 @@ $nombreAdmin = htmlspecialchars(
                     <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <p class="mb-0 text-secondary">La eliminación estará disponible cuando la práctica conecte los cursos con la base de datos.</p>
+                    <p class="mb-3 text-secondary">Las altas, bajas y cambios reales están disponibles en la práctica CRUD.</p>
+                    <a class="btn btn-primary btn-sm" href="../../5_crud/dashboard.php">Ir a gestión CRUD</a>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary btn-sm" type="button" data-bs-dismiss="modal">Cerrar</button>

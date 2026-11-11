@@ -1,6 +1,0 @@
--- EduControl utiliza el esquema compartido de parcial 3.
--- Para instalar en una base vacía, revisa ../archivos/devAcademic_es.sql.
--- Para migrar la base hospedada conservando sus tablas, crea un respaldo y
--- revisa/ejecuta ../archivos/actualizar_devAcademic_es.sql.
--- No importes este archivo: el esquema y los datos de migración se mantienen
--- en los dos scripts anteriores para evitar divergencias entre prácticas.
