@@ -17,7 +17,7 @@ if (tieneSesionRol('admin')) {
     header('Location: ' . $destinoAdministrador, true, 303);
     exit;
 } elseif (tieneSesionRol('docente')) {
-    header('Location: ../../6_conjuntio/pages/dashboard.php', true, 303);
+    header('Location: ../../Integracion/pages/dashboard.php', true, 303);
     exit;
 }
 
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
                 }
                 $destino = $usuario['rol'] === 'admin'
                     ? $destinoAdministrador
-                    : '../../6_conjuntio/pages/dashboard.php';
+                    : '../../Integracion/pages/dashboard.php';
                 header('Location: ' . $destino, true, 303);
                 exit;
             }

@@ -5,7 +5,8 @@ if (!isset($_SESSION['admin_id'])) {
     header('Location: login.php?error=acceso_denegado');
     exit;
 }
-require_once __DIR__ . '/../../config/conexion.php'; // adjust path to config
+require_once __DIR__ . '/../../config/conexion.php';
+$conexion = conectarBD();
 // Consulta de lectura de cursos
 $sql = "SELECT * FROM cursos ORDER BY idcurso DESC";
 $resultado = mysqli_query($conexion, $sql);
@@ -26,14 +27,14 @@ $resultado = mysqli_query($conexion, $sql);
         <span class="nav-link text-white">Hola, <?= htmlspecialchars($_SESSION['admin_nombre'] ?? 'Administrador') ?></span>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../3_logout/logout.php">Cerrar Sesión</a>
+        <a class="nav-link" href="logout.php">Cerrar Sesión</a>
       </li>
     </ul>
   </div>
 </nav>
 <div class="container my-4">
     <h2 class="mb-4">Gestión de Cursos</h2>
-    <a href="curso_crear.php" class="btn btn-success mb-3">Agregar Nuevo Curso</a>
+    <a href="../../4_alta/alta.php" class="btn btn-success mb-3">Agregar Nuevo Curso</a>
     <table class="table table-striped">
         <thead class="table-dark">
             <tr>
@@ -61,8 +62,8 @@ $resultado = mysqli_query($conexion, $sql);
                         <?php endif; ?>
                     </td>
                     <td>
-                        <a href="curso_editar.php?id=<?= $curso['idcurso'] ?>" class="btn btn-primary btn-sm me-1">Editar</a>
-                        <a href="curso_eliminar.php?id=<?= $curso['idcurso'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este curso?');">Eliminar</a>
+                        <a href="../../5_crud/editar.php?idcurso=<?= $curso['idcurso'] ?>" class="btn btn-primary btn-sm me-1">Editar</a>
+                        <a href="../../4_alta/curso_eliminar.php?idcurso=<?= $curso['idcurso'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar este curso?');">Eliminar</a>
                     </td>
                 </tr>
             <?php endwhile; ?>

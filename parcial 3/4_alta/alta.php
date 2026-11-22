@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once __DIR__ . '/../../config/conexion.php'; // adjust path to config from 4_alta
+require_once __DIR__ . '/../config/conexion.php';
+$conexion = conectarBD();
 
 // Redirect if not logged in
 if (!isset($_SESSION['admin_id'])) {
@@ -57,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="card shadow-sm border-0">
                 <div class="card-body p-4">
                     <h3 class="card-title text-center fw-bold mb-4">Crear Nuevo Curso</h3>
+                    <a href="../2_login/pages/dashboard.php" class="d-block mb-3">← Volver al Dashboard</a>
                     <?php if ($error): ?>
                         <div class="alert alert-danger py-2">
                             <?= htmlspecialchars($error) ?>

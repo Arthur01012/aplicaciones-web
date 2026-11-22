@@ -6,6 +6,7 @@ if (!isset($_SESSION['admin_id'])) {
     exit;
 }
 require_once __DIR__ . '/../config/conexion.php';
+$conexion = conectarBD();
 
 // Obtener listado de cursos
 $sql = "SELECT * FROM cursos ORDER BY idcurso DESC";
@@ -30,7 +31,8 @@ $resultado = mysqli_query($conexion, $sql);
 <hr>
 <main>
     <h2>Gestión de Cursos</h2>
-    <a href="alta.php">+ Agregar Nuevo Curso</a>
+    <a href="alta.php">+ Agregar Nuevo Curso</a> |
+    <a href="../6_upload_index/carrusel_listado.php">Gestionar Carrusel</a>
     <br><br>
     <table border="1" cellpadding="5">
         <thead>

@@ -2,10 +2,11 @@
 session_start();
 // Seguridad: solo administradores
 if (!isset($_SESSION['admin_id'])) {
-    header('Location: login.php');
+    header('Location: ../5_crud/login.php');
     exit;
 }
 require_once __DIR__ . '/../config/conexion.php';
+$conexion = conectarBD();
 
 $sql = "SELECT * FROM carrusel ORDER BY orden ASC, id DESC";
 $resultado = mysqli_query($conexion, $sql);
@@ -19,7 +20,7 @@ $resultado = mysqli_query($conexion, $sql);
 </head>
 <body class="bg-light p-4">
 <h1>Gestión del Carrusel</h1>
-<a href="dashboard.php" class="btn btn-link me-3">Volver al Dashboard</a>
+<a href="../5_crud/dashboard.php" class="btn btn-link me-3">Volver al Dashboard</a>
 <a href="carrusel_agregar.php" class="btn btn-success">+ Subir Nueva Imagen</a>
 <br><br>
 <table class="table table-bordered">

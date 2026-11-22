@@ -65,7 +65,7 @@ function credencialesDemoAdministrador(): ?array
 
     if (($usuario === false || $usuario === '') && ($contrasena === false || $contrasena === '')) {
         if (in_array($_SERVER['REMOTE_ADDR'] ?? '', ['127.0.0.1', '::1'], true)) {
-            return ['usuario' => 'carlos.mendoza', 'contrasena' => 'EduControl2026!'];
+            return ['usuario' => 'carlos.mendoza_admin@gmail.com', 'contrasena' => 'EduControl2026!'];
         }
 
         return null;

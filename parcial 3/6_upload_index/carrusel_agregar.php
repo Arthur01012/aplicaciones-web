@@ -2,10 +2,11 @@
 session_start();
 // Seguridad: solo administradores
 if (!isset($_SESSION['admin_id'])) {
-    header('Location: login.php');
+    header('Location: ../5_crud/login.php');
     exit;
 }
 require_once __DIR__ . '/../config/conexion.php';
+$conexion = conectarBD();
 
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

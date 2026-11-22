@@ -3,6 +3,7 @@
 
 // 1. Conexión a la BD
 require_once __DIR__ . '/../config/conexion.php';
+$conexion = conectarBD();
 
 // 2. Consultas
 // Carrusel activo

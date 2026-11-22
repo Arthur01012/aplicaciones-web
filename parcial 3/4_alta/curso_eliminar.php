@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once __DIR__ . '/../../config/conexion.php'; // adjust path to config from 4_alta folder
+require_once __DIR__ . '/../config/conexion.php';
+$conexion = conectarBD();
 
 // Ensure user is logged in
 if (!isset($_SESSION['admin_id'])) {

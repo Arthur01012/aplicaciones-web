@@ -8,6 +8,7 @@ if (isset($_SESSION['admin_id'])) {
 }
 
 require_once __DIR__ . '/../config/conexion.php';
+$conexion = conectarBD();
 
 $error = '';
 
