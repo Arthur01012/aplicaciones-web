@@ -1,3 +1,0 @@
--- El esquema compartido está centralizado en:
--- ../archivos/devAcademic_es.sql (instalación nueva)
--- ../archivos/actualizar_devAcademic_es.sql (actualización conservadora)
