@@ -21,8 +21,17 @@ $resCursos = mysqli_query($conexion, $sqlCursos);
     <title>Catálogo de Cursos – DevAcademy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../navegacion.css?v=20261111-3">
 </head>
 <body class="container py-3">
+<nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <ol>
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../index.html">Parcial 3</a></li>
+        <li aria-current="page">Práctica 7: Catálogo</li>
+    </ol>
+    <a class="site-home-link" href="../index.html">Volver a prácticas</a>
+</nav>
 
 <!-- Carrusel dinámico -->
 <?php if ($resCarrusel && mysqli_num_rows($resCarrusel) > 0): ?>

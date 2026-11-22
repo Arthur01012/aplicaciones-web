@@ -85,8 +85,18 @@ if (!$curso) {
 <head>
 <meta charset="UTF-8">
 <title>Editar Curso</title>
+<link rel="stylesheet" href="../navegacion.css?v=20261111-3">
 </head>
 <body>
+<nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <ol>
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../index.html">Parcial 3</a></li>
+        <li><a href="dashboard.php">Práctica 5: CRUD</a></li>
+        <li aria-current="page">Editar curso</li>
+    </ol>
+    <a class="site-home-link" href="../index.html">Volver a prácticas</a>
+</nav>
 
 <h1>Editar Curso</h1>
 

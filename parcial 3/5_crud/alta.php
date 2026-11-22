@@ -82,8 +82,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
 <meta charset="UTF-8">
 <title>Agregar Curso</title>
+<link rel="stylesheet" href="../navegacion.css?v=20261111-3">
 </head>
 <body>
+<nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <ol>
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../index.html">Parcial 3</a></li>
+        <li><a href="dashboard.php">Práctica 5: CRUD</a></li>
+        <li aria-current="page">Agregar curso</li>
+    </ol>
+    <a class="site-home-link" href="../index.html">Volver a prácticas</a>
+</nav>
 
 <h1>Agregar Nuevo Curso</h1>
 

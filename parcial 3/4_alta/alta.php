@@ -50,9 +50,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Alta de Curso</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../navegacion.css?v=20261111-3">
 </head>
-<body class="bg-light d-flex align-items-center min-vh-100">
-<div class="container">
+<body class="bg-light">
+<nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <ol>
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../index.html">Parcial 3</a></li>
+        <li aria-current="page">Práctica 4: Alta</li>
+    </ol>
+    <a class="site-home-link" href="../index.html">Volver a prácticas</a>
+</nav>
+<div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card shadow-sm border-0">

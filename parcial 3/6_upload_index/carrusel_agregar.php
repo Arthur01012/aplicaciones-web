@@ -66,8 +66,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Subir Imagen para Carrusel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../navegacion.css?v=20261111-3">
 </head>
 <body class="bg-light p-4">
+<nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <ol>
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../index.html">Parcial 3</a></li>
+        <li><a href="carrusel_listado.php">Práctica 6: Carrusel</a></li>
+        <li aria-current="page">Subir imagen</li>
+    </ol>
+    <a class="site-home-link" href="../index.html">Volver a prácticas</a>
+</nav>
 <h1>Subir Imagen para Carrusel</h1>
 <a href="carrusel_listado.php" class="btn btn-link mb-3">Ver Listado</a>
 <?php if ($error): ?>

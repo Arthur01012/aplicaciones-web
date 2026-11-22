@@ -41,7 +41,7 @@ $nombreAdmin = escaparHtml((string) ($_SESSION['admin_nombre'] ?? 'Administrador
     <?php renderizarMigasPan([
         ['texto' => 'Inicio', 'url' => '../../../index.html', 'destino_sesion' => 'inicio'],
         ['texto' => 'Parcial 3', 'url' => '../../index.html', 'destino_sesion' => 'parcial3'],
-        ['texto' => 'Práctica 3', 'url' => '../index.php'],
+        ['texto' => 'Práctica 3', 'url' => '../index.html'],
         ['texto' => 'Panel'],
     ], '../../config/logout.php'); ?>
     <header>

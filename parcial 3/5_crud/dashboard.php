@@ -17,6 +17,7 @@ $resultado = mysqli_query($conexion, $sql);
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="../navegacion.css?v=20261111-3">
     <style>
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
@@ -24,6 +25,14 @@ $resultado = mysqli_query($conexion, $sql);
     </style>
 </head>
 <body>
+<nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <ol>
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../index.html">Parcial 3</a></li>
+        <li aria-current="page">Práctica 5: CRUD</li>
+    </ol>
+    <a class="site-home-link" href="../index.html">Volver a prácticas</a>
+</nav>
 <header>
     <span>Bienvenido, <?= htmlspecialchars($_SESSION['admin_nombre']) ?></span> |
     <a href="logout.php">Cerrar Sesión</a>

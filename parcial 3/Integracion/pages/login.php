@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $errorBaseDatos === '') {
     <?php renderizarMigasPan([
         ['texto' => 'Inicio', 'url' => '../../../index.html', 'destino_sesion' => 'inicio'],
         ['texto' => 'Parcial 3', 'url' => '../../index.html', 'destino_sesion' => 'parcial3'],
-        ['texto' => 'Práctica 6', 'url' => '../index.php'],
+        ['texto' => 'Práctica 8', 'url' => '../index.php'],
         ['texto' => 'Iniciar sesión'],
     ], '../../config/logout.php'); ?>
     <main class="login-page">

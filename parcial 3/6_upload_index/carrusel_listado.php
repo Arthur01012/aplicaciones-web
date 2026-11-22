@@ -17,8 +17,17 @@ $resultado = mysqli_query($conexion, $sql);
     <meta charset="UTF-8">
     <title>Listado de Imágenes Carrusel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../navegacion.css?v=20261111-3">
 </head>
 <body class="bg-light p-4">
+<nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <ol>
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../index.html">Parcial 3</a></li>
+        <li aria-current="page">Práctica 6: Carrusel</li>
+    </ol>
+    <a class="site-home-link" href="../index.html">Volver a prácticas</a>
+</nav>
 <h1>Gestión del Carrusel</h1>
 <a href="../5_crud/dashboard.php" class="btn btn-link me-3">Volver al Dashboard</a>
 <a href="carrusel_agregar.php" class="btn btn-success">+ Subir Nueva Imagen</a>

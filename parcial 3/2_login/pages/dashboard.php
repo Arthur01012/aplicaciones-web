@@ -17,8 +17,18 @@ $resultado = mysqli_query($conexion, $sql);
     <meta charset="UTF-8">
     <title>Panel de Administración - Cursos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../navegacion.css?v=20261111-3">
 </head>
 <body class="bg-light">
+<nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <ol>
+        <li><a href="../../../index.html">Inicio</a></li>
+        <li><a href="../../index.html">Parcial 3</a></li>
+        <li><a href="login.php">Práctica 2</a></li>
+        <li aria-current="page">Dashboard</li>
+    </ol>
+    <a class="site-home-link" href="../../index.html">Volver a prácticas</a>
+</nav>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
   <a class="navbar-brand" href="#">DevAcademy Admin</a>
   <div class="collapse navbar-collapse">

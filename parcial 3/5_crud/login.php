@@ -49,12 +49,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Login - DevAcademy</title>
+    <link rel="stylesheet" href="../navegacion.css?v=20261111-3">
     <style>
         body { font-family: Arial, sans-serif; margin: 2rem; }
         .error { color: red; }
     </style>
 </head>
 <body>
+<nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <ol>
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../index.html">Parcial 3</a></li>
+        <li aria-current="page">Práctica 5: Login CRUD</li>
+    </ol>
+    <a class="site-home-link" href="../index.html">Volver a prácticas</a>
+</nav>
 <h1>Iniciar Sesión</h1>
 <?php if ($error): ?>
     <p class="error"><?= htmlspecialchars($error) ?></p>

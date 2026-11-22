@@ -54,9 +54,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Login Administrador</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../navegacion.css?v=20261111-3">
 </head>
 <body class="bg-light">
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+<nav class="site-breadcrumbs" aria-label="Migas de pan">
+    <ol>
+        <li><a href="../../../index.html">Inicio</a></li>
+        <li><a href="../../index.html">Parcial 3</a></li>
+        <li aria-current="page">Práctica 2: Login</li>
+    </ol>
+    <a class="site-home-link" href="../../index.html">Volver a prácticas</a>
+</nav>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 56px);">
     <div class="col-md-4">
         <div class="card shadow-sm">
             <div class="card-body">
